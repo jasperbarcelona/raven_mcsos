@@ -685,6 +685,7 @@ a, a:hover, a:active, a:focus{
 }
 
 .recipient-label{
+	width: 150px;
 	font-size: 14px;
 }
 
@@ -754,6 +755,12 @@ a, a:hover, a:active, a:focus{
 	height: 100%;
 	width: 85%;
 	padding-top: 3px !important;
+	position: relative;
+}
+
+.recipient-row {
+	height: 30px;
+	width: 100%;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: row;
@@ -820,7 +827,7 @@ a, a:hover, a:active, a:focus{
 }
 
 #compose-message-modal-body{
-	height: 200px !important;
+	height: 300px !important;
 	position: relative;
 	width: 100%;
 	padding: 0;
@@ -1028,7 +1035,7 @@ a, a:hover, a:active, a:focus{
 }
 
 .message-modal-dialog{
-	width: 700px;
+	width: 900px;
 }
 
 .new-message-modal-dialog{
