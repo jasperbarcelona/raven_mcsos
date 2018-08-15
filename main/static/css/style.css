@@ -706,7 +706,7 @@ a, a:hover, a:active, a:focus{
 
 .compose-message-middle{
 	float: left;
-	height: 50px;
+	position: relative;
 	width: 100%;
 	border-bottom: 1px solid #e5e5e5;
 	border-top: 1px solid #e5e5e5;
@@ -747,15 +747,14 @@ a, a:hover, a:active, a:focus{
 	-webkit-justify-content: left;
 	justify-content: left;
 	padding-left: 15px;
-	border-right: 1px solid #e5e5e5;
 }
 
 .compose-message-middle-right{
 	float: left;
-	height: 100%;
 	width: 85%;
 	padding-top: 3px !important;
 	position: relative;
+	border-left: 1px solid #e5e5e5;
 }
 
 .recipient-row {

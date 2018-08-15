@@ -694,8 +694,8 @@ def get_schedule():
 
 @app.route('/records/fetch', methods=['GET', 'POST'])
 def fetch_records():
-    path = 'static/records/GRADE7_RECORDS.xlsx'
-    rows = 167
+    path = 'static/records/Grade7.xlsx'
+    rows = 197
     cols = 8
 
     book = xlrd.open_workbook(path)
@@ -801,8 +801,8 @@ def fetch_records():
         db.session.commit()
         total_students += 1
 
-    path = 'static/records/GRADE8_RECORDS.xlsx'
-    rows = 154
+    path = 'static/records/Grade8.xlsx'
+    rows = 189
     cols = 8
 
     book = xlrd.open_workbook(path)
@@ -906,8 +906,8 @@ def fetch_records():
         db.session.commit()
         total_students += 1
 
-    path = 'static/records/GRADE9_RECORDS.xlsx'
-    rows = 143
+    path = 'static/records/Grade9.xlsx'
+    rows = 47
     cols = 8
 
     book = xlrd.open_workbook(path)
@@ -1011,8 +1011,8 @@ def fetch_records():
         db.session.commit()
         total_students += 1
 
-    path = 'static/records/GRADE10_RECORDS.xlsx'
-    rows = 106
+    path = 'static/records/Grade10.xlsx'
+    rows = 159
     cols = 8
 
     book = xlrd.open_workbook(path)
@@ -1116,8 +1116,8 @@ def fetch_records():
         db.session.commit()
         total_students += 1
 
-    path = 'static/records/GRADE11_RECORDS.xlsx'
-    rows = 193
+    path = 'static/records/Grade11.xlsx'
+    rows = 181
     cols = 8
 
     book = xlrd.open_workbook(path)
@@ -1221,8 +1221,8 @@ def fetch_records():
         db.session.commit()
         total_students += 1
 
-    path = 'static/records/GRADE12_RECORDS.xlsx'
-    rows = 146
+    path = 'static/records/Grade12.xlsx'
+    rows = 173
     cols = 8
 
     book = xlrd.open_workbook(path)
