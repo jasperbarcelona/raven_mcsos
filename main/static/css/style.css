@@ -1235,7 +1235,7 @@ a, a:hover, a:active, a:focus{
 }
 
 .dropdown-menu li a{
-	color: #E7295A !important;
+	color: #373A3C !important;
 }
 
 .dropdown-menu li a:hover{
@@ -1948,7 +1948,7 @@ table.table tbody:not(.access-tbody) tr td {
 #calendar-container table td{
 	text-align: center;
 	width: 100px;
-	color: #E7295A;
+	color: #373A3C;
 }
 
 .day{
