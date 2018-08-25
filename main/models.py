@@ -290,7 +290,7 @@ class K12(db.Model, Serializer):
     middle_name = db.Column(db.String(30))
     level = db.Column(db.String(30), default='None')
     group = db.Column(db.String(30))
-    section = db.Column(db.String(30), default='None')
+    section = db.Column(db.String(160), default='None')
     absences = db.Column(db.String(3))
     lates = db.Column(db.String(3))
     parent_id = db.Column(db.Integer)
