@@ -668,8 +668,8 @@ def nocache(view):
 def send_email(new_user,email_address,user_name,school_name,password):
     try:
         s = smtplib.SMTP('smtp.gmail.com', 587)
-        myGmail = 'barcelona.jasperoliver@gmail.com'
-        myGMPasswd = 'royalpsalms11'
+        myGmail = 'hello@pisara.tech'
+        myGMPasswd = 'ratmaxi8'
         message = text(('Hi, %s!\r\n \r\nWelcome to Pisara! %s has added you as administrator for %s. '
                    'Please go to your school\'s Pisara Dashboard URL and login with your email.\r\n \r\n'
                    'Your temporary password is: %s\r\n \r\nWe strongly recommend that you change it '
