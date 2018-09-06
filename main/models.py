@@ -86,10 +86,12 @@ class Module(db.Model):
 class Schedule(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     school_no = db.Column(db.String(32))
-    junior_kinder_morning_class = db.Column(Boolean, unique=False)
-    junior_kinder_afternoon_class = db.Column(Boolean, unique=False)
-    senior_kinder_morning_class = db.Column(Boolean, unique=False)
-    senior_kinder_afternoon_class = db.Column(Boolean, unique=False)
+    nursery_morning_class = db.Column(Boolean, unique=False)
+    nursery_afternoon_class = db.Column(Boolean, unique=False)
+    preparatory_morning_class = db.Column(Boolean, unique=False)
+    preparatory_afternoon_class = db.Column(Boolean, unique=False)
+    kinder_morning_class = db.Column(Boolean, unique=False)
+    kinder_afternoon_class = db.Column(Boolean, unique=False)
     first_grade_morning_class = db.Column(Boolean, unique=False)
     first_grade_afternoon_class = db.Column(Boolean, unique=False)
     second_grade_morning_class = db.Column(Boolean, unique=False)
@@ -115,14 +117,18 @@ class Schedule(db.Model):
     twelfth_grade_morning_class = db.Column(Boolean, unique=False)
     twelfth_grade_afternoon_class = db.Column(Boolean, unique=False)
 
-    junior_kinder_morning_start = db.Column(db.String(30))
-    junior_kinder_morning_end = db.Column(db.String(30))
-    junior_kinder_afternoon_start = db.Column(db.String(30))
-    junior_kinder_afternoon_end = db.Column(db.String(30))
-    senior_kinder_morning_start = db.Column(db.String(30))
-    senior_kinder_morning_end = db.Column(db.String(30))
-    senior_kinder_afternoon_start = db.Column(db.String(30))
-    senior_kinder_afternoon_end = db.Column(db.String(30))
+    nursery_morning_start = db.Column(db.String(30))
+    nursery_morning_end = db.Column(db.String(30))
+    nursery_afternoon_start = db.Column(db.String(30))
+    nursery_afternoon_end = db.Column(db.String(30))
+    preparatory_morning_start = db.Column(db.String(30))
+    preparatory_morning_end = db.Column(db.String(30))
+    preparatory_afternoon_start = db.Column(db.String(30))
+    preparatory_afternoon_end = db.Column(db.String(30))
+    kinder_morning_start = db.Column(db.String(30))
+    kinder_morning_end = db.Column(db.String(30))
+    kinder_afternoon_start = db.Column(db.String(30))
+    kinder_afternoon_end = db.Column(db.String(30))
     first_grade_morning_start = db.Column(db.String(30))
     first_grade_morning_end = db.Column(db.String(30))
     first_grade_afternoon_start = db.Column(db.String(30))
@@ -554,10 +560,12 @@ class Regular(db.Model, Serializer):
     __public__= [
         'school_no',
         'day',
-        'junior_kinder_morning_class',
-        'junior_kinder_afternoon_class',
-        'senior_kinder_morning_class',
-        'senior_kinder_afternoon_class',
+        'nursery_morning_class',
+        'nursery_afternoon_class',
+        'preparatory_morning_class',
+        'preparatory_afternoon_class',
+        'kinder_morning_class',
+        'kinder_afternoon_class',
         'first_grade_morning_class',
         'first_grade_afternoon_class',
         'second_grade_morning_class',
@@ -582,14 +590,18 @@ class Regular(db.Model, Serializer):
         'eleventh_grade_afternoon_class',
         'twelfth_grade_morning_class',
         'twelfth_grade_afternoon_class',
-        'junior_kinder_morning_start',
-        'junior_kinder_morning_end',
-        'junior_kinder_afternoon_start',
-        'junior_kinder_afternoon_end',
-        'senior_kinder_morning_start',
-        'senior_kinder_morning_end',
-        'senior_kinder_afternoon_start',
-        'senior_kinder_afternoon_end',
+        'nursery_morning_start',
+        'nursery_morning_end',
+        'nursery_afternoon_start',
+        'nursery_afternoon_end',
+        'preparatory_morning_start',
+        'preparatory_morning_end',
+        'preparatory_afternoon_start',
+        'preparatory_afternoon_end',
+        'kinder_morning_start',
+        'kinder_morning_end',
+        'kinder_afternoon_start',
+        'kinder_afternoon_end',
         'first_grade_morning_start',
         'first_grade_morning_end',
         'first_grade_afternoon_start',
@@ -642,10 +654,12 @@ class Regular(db.Model, Serializer):
     id = db.Column(db.Integer, primary_key=True)
     school_no = db.Column(db.String(32))
     day = db.Column(db.String(20))
-    junior_kinder_morning_class = db.Column(Boolean, unique=False)
-    junior_kinder_afternoon_class = db.Column(Boolean, unique=False)
-    senior_kinder_morning_class = db.Column(Boolean, unique=False)
-    senior_kinder_afternoon_class = db.Column(Boolean, unique=False)
+    nursery_morning_class = db.Column(Boolean, unique=False)
+    nursery_afternoon_class = db.Column(Boolean, unique=False)
+    preparatory_morning_class = db.Column(Boolean, unique=False)
+    preparatory_afternoon_class = db.Column(Boolean, unique=False)
+    kinder_morning_class = db.Column(Boolean, unique=False)
+    kinder_afternoon_class = db.Column(Boolean, unique=False)
     first_grade_morning_class = db.Column(Boolean, unique=False)
     first_grade_afternoon_class = db.Column(Boolean, unique=False)
     second_grade_morning_class = db.Column(Boolean, unique=False)
@@ -671,14 +685,18 @@ class Regular(db.Model, Serializer):
     twelfth_grade_morning_class = db.Column(Boolean, unique=False)
     twelfth_grade_afternoon_class = db.Column(Boolean, unique=False)
 
-    junior_kinder_morning_start = db.Column(db.String(30))
-    junior_kinder_morning_end = db.Column(db.String(30))
-    junior_kinder_afternoon_start = db.Column(db.String(30))
-    junior_kinder_afternoon_end = db.Column(db.String(30))
-    senior_kinder_morning_start = db.Column(db.String(30))
-    senior_kinder_morning_end = db.Column(db.String(30))
-    senior_kinder_afternoon_start = db.Column(db.String(30))
-    senior_kinder_afternoon_end = db.Column(db.String(30))
+    nursery_morning_start = db.Column(db.String(30))
+    nursery_morning_end = db.Column(db.String(30))
+    nursery_afternoon_start = db.Column(db.String(30))
+    nursery_afternoon_end = db.Column(db.String(30))
+    preparatory_morning_start = db.Column(db.String(30))
+    preparatory_morning_end = db.Column(db.String(30))
+    preparatory_afternoon_start = db.Column(db.String(30))
+    preparatory_afternoon_end = db.Column(db.String(30))
+    kinder_morning_start = db.Column(db.String(30))
+    kinder_morning_end = db.Column(db.String(30))
+    kinder_afternoon_start = db.Column(db.String(30))
+    kinder_afternoon_end = db.Column(db.String(30))
     first_grade_morning_start = db.Column(db.String(30))
     first_grade_morning_end = db.Column(db.String(30))
     first_grade_afternoon_start = db.Column(db.String(30))

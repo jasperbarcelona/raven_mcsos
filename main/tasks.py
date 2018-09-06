@@ -184,10 +184,12 @@ def check_if_late(school_no,api_key,id_no,name,level,section,date,group,log_time
     else:
         schedule = Regular.query.filter_by(school_no=school_no,day=time.strftime('%A')).first()
 
-    if level == 'Junior Kinder':
-        educ = 'junior_kinder'
-    elif level == 'Senior Kinder':
-        educ = 'senior_kinder'
+    if level == 'Nursery':
+        educ = 'nursery'
+    elif level == 'Preparatory':
+        educ = 'preparatory'
+    elif level == 'Kinder':
+        educ = 'kinder'
     elif level == '1st Grade':
         educ = 'first_grade'
     elif level == '2nd Grade':

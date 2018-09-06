@@ -1090,14 +1090,18 @@ $(".tab-pane").css({'background-image':'url(../static/images/watermark.png)','ba
 function save_sched(){
     schedules = []
     for (var i = 0; i <= days.length - 1; i++) {
-        schedules.push($('#'+days[i]+'_junior_kinder_morning_start').val());
-        schedules.push($('#'+days[i]+'_junior_kinder_morning_end').val());
-        schedules.push($('#'+days[i]+'_junior_kinder_afternoon_start').val());
-        schedules.push($('#'+days[i]+'_junior_kinder_afternoon_end').val());
-        schedules.push($('#'+days[i]+'_senior_kinder_morning_start').val());
-        schedules.push($('#'+days[i]+'_senior_kinder_morning_end').val());
-        schedules.push($('#'+days[i]+'_senior_kinder_afternoon_start').val());
-        schedules.push($('#'+days[i]+'_senior_kinder_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_nursery_morning_start').val());
+        schedules.push($('#'+days[i]+'_nursery_morning_end').val());
+        schedules.push($('#'+days[i]+'_nursery_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_nursery_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_preparatory_morning_start').val());
+        schedules.push($('#'+days[i]+'_preparatory_morning_end').val());
+        schedules.push($('#'+days[i]+'_preparatory_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_preparatory_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_kinder_morning_start').val());
+        schedules.push($('#'+days[i]+'_kinder_morning_end').val());
+        schedules.push($('#'+days[i]+'_kinder_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_kinder_afternoon_end').val());
         schedules.push($('#'+days[i]+'_first_grade_morning_start').val());
         schedules.push($('#'+days[i]+'_first_grade_morning_end').val());
         schedules.push($('#'+days[i]+'_first_grade_afternoon_start').val());
@@ -1161,29 +1165,41 @@ function save_sched(){
 }
 
 function save_calendar_sched(){
-    if ($('#junior_kinder_morning_class').is(":checked")){
-      save_junior_kinder_morning_class = true;
+    if ($('#nursery_morning_class').is(":checked")){
+      save_nursery_morning_class = true;
     }
     else{
-      save_junior_kinder_morning_class = false;
+      save_nursery_morning_class = false;
     }
-    if ($('#junior_kinder_afternoon_class').is(":checked")){
-      save_junior_kinder_afternoon_class = true;
-    }
-    else{
-      save_junior_kinder_afternoon_class = false;
-    }
-    if ($('#senior_kinder_morning_class').is(":checked")){
-      save_senior_kinder_morning_class = true;
+    if ($('#nursery_afternoon_class').is(":checked")){
+      save_nursery_afternoon_class = true;
     }
     else{
-      save_senior_kinder_morning_class = false;
+      save_nursery_morning_class = false;
     }
-    if ($('#senior_kinder_afternoon_class').is(":checked")){
-      save_senior_kinder_afternoon_class = true;
+    if ($('#preparatory_morning_class').is(":checked")){
+      save_preparatory_morning_class = true;
     }
     else{
-      save_senior_kinder_afternoon_class = false;
+      save_preparatory_morning_class = false;
+    }
+    if ($('#preparatory_afternoon_class').is(":checked")){
+      save_preparatory_afternoon_class = true;
+    }
+    else{
+      save_preparatory_afternoon_class = false;
+    }
+    if ($('#kinder_morning_class').is(":checked")){
+      save_kinder_morning_class = true;
+    }
+    else{
+      save_kinder_morning_class = false;
+    }
+    if ($('#kinder_afternoon_class').is(":checked")){
+      save_kinder_afternoon_class = true;
+    }
+    else{
+      save_kinder_afternoon_class = false;
     }
     if ($('#first_grade_morning_class').is(":checked")){
       save_first_grade_morning_class = true;
@@ -1330,15 +1346,20 @@ function save_calendar_sched(){
       save_twelfth_grade_afternoon_class = false;
     }
 
-    save_junior_kinder_morning_start = $('#junior_kinder_morning_start').val();
-    save_junior_kinder_morning_end = $('#junior_kinder_morning_end').val();
-    save_junior_kinder_afternoon_start = $('#junior_kinder_afternoon_start').val();
-    save_junior_kinder_afternoon_end = $('#junior_kinder_afternoon_end').val();
+    save_nursery_morning_start = $('#nursery_morning_start').val();
+    save_nursery_morning_end = $('#nursery_morning_end').val();
+    save_nursery_afternoon_start = $('#nursery_afternoon_start').val();
+    save_nursery_afternoon_end = $('#nursery_afternoon_end').val();
 
-    save_senior_kinder_morning_start = $('#senior_kinder_morning_start').val();
-    save_senior_kinder_morning_end = $('#senior_kinder_morning_end').val();
-    save_senior_kinder_afternoon_start = $('#senior_kinder_afternoon_start').val();
-    save_senior_kinder_afternoon_end = $('#senior_kinder_afternoon_end').val();
+    save_preparatory_morning_start = $('#preparatory_morning_start').val();
+    save_preparatory_morning_end = $('#preparatory_morning_end').val();
+    save_preparatory_afternoon_start = $('#preparatory_afternoon_start').val();
+    save_preparatory_afternoon_end = $('#preparatory_afternoon_end').val();
+
+    save_kinder_morning_start = $('#kinder_morning_start').val();
+    save_kinder_morning_end = $('#kinder_morning_end').val();
+    save_kinder_afternoon_start = $('#kinder_afternoon_start').val();
+    save_kinder_afternoon_end = $('#kinder_afternoon_end').val();
 
     save_first_grade_morning_start = $('#first_grade_morning_start').val();
     save_first_grade_morning_end = $('#first_grade_morning_end').val();
@@ -1404,10 +1425,12 @@ function save_calendar_sched(){
     $('#save-calendar-sched').attr('disabled',true);
     $('#save-calendar-sched').button('loading');
     $.post('/schedule/irregular/save',{
-      save_junior_kinder_morning_class:save_junior_kinder_morning_class,
-      save_junior_kinder_afternoon_class:save_junior_kinder_afternoon_class,
-      save_senior_kinder_morning_class:save_senior_kinder_morning_class,
-      save_senior_kinder_afternoon_class:save_senior_kinder_afternoon_class,
+      save_nursery_morning_class:save_nursery_morning_class,
+      save_nursery_afternoon_class:save_nursery_afternoon_class,
+      save_preparatory_morning_class:save_preparatory_morning_class,
+      save_preparatory_afternoon_class:save_preparatory_afternoon_class,
+      save_kinder_morning_class:save_kinder_morning_class,
+      save_kinder_afternoon_class:save_kinder_afternoon_class,
       save_first_grade_morning_class:save_first_grade_morning_class,
       save_first_grade_afternoon_class:save_first_grade_afternoon_class,
       save_second_grade_morning_class:save_second_grade_morning_class,
@@ -1433,14 +1456,18 @@ function save_calendar_sched(){
       save_twelfth_grade_morning_class:save_twelfth_grade_morning_class,
       save_twelfth_grade_afternoon_class:save_twelfth_grade_afternoon_class,
 
-      save_junior_kinder_morning_start:save_junior_kinder_morning_start,
-      save_junior_kinder_morning_end:save_junior_kinder_morning_end,
-      save_junior_kinder_afternoon_start:save_junior_kinder_afternoon_start,
-      save_junior_kinder_afternoon_end:save_junior_kinder_afternoon_end,
-      save_senior_kinder_morning_start:save_senior_kinder_morning_start,
-      save_senior_kinder_morning_end:save_senior_kinder_morning_end,
-      save_senior_kinder_afternoon_start:save_senior_kinder_afternoon_start,
-      save_senior_kinder_afternoon_end:save_senior_kinder_afternoon_end,
+      save_nursery_morning_start:save_nursery_morning_start,
+      save_nursery_morning_end:save_nursery_morning_end,
+      save_nursery_afternoon_start:save_nursery_afternoon_start,
+      save_nursery_afternoon_end:save_nursery_afternoon_end,
+      save_preparatory_morning_start:save_preparatory_morning_start,
+      save_preparatory_morning_end:save_preparatory_morning_end,
+      save_preparatory_afternoon_start:save_preparatory_afternoon_start,
+      save_preparatory_afternoon_end:save_preparatory_afternoon_end,
+      save_kinder_morning_start:save_kinder_morning_start,
+      save_kinder_morning_end:save_kinder_morning_end,
+      save_kinder_afternoon_start:save_kinder_afternoon_start,
+      save_kinder_afternoon_end:save_kinder_afternoon_end,
       save_first_grade_morning_start:save_first_grade_morning_start,
       save_first_grade_morning_end:save_first_grade_morning_end,
       save_first_grade_afternoon_start:save_first_grade_afternoon_start,
@@ -1836,15 +1863,20 @@ function populate_regular_schedule(date,month,day,year){
       year:year
   },
   function(data){
-    $('#junior_kinder_morning_start').val(data['junior_kinder_morning_start']);
-    $('#junior_kinder_morning_end').val(data['junior_kinder_morning_end']);
-    $('#junior_kinder_afternoon_start').val(data['junior_kinder_afternoon_start']);
-    $('#junior_kinder_afternoon_end').val(data['junior_kinder_afternoon_end']);
+    $('#nursery_morning_start').val(data['nursery_morning_start']);
+    $('#nursery_morning_end').val(data['nursery_morning_end']);
+    $('#nursery_afternoon_start').val(data['nursery_afternoon_start']);
+    $('#nursery_afternoon_end').val(data['nursery_afternoon_end']);
 
-    $('#senior_kinder_morning_start').val(data['senior_kinder_morning_start']);
-    $('#senior_kinder_morning_end').val(data['senior_kinder_morning_end']);
-    $('#senior_kinder_afternoon_start').val(data['senior_kinder_afternoon_start']);
-    $('#senior_kinder_afternoon_end').val(data['senior_kinder_afternoon_end']);
+    $('#preparatory_morning_start').val(data['preparatory_morning_start']);
+    $('#preparatory_morning_end').val(data['preparatory_morning_end']);
+    $('#preparatory_afternoon_start').val(data['preparatory_afternoon_start']);
+    $('#preparatory_afternoon_end').val(data['preparatory_afternoon_end']);
+
+    $('#kinder_morning_start').val(data['kinder_morning_start']);
+    $('#kinder_morning_end').val(data['kinder_morning_end']);
+    $('#kinder_afternoon_start').val(data['kinder_afternoon_start']);
+    $('#kinder_afternoon_end').val(data['kinder_afternoon_end']);
 
     $('#first_grade_morning_start').val(data['first_grade_morning_start']);
     $('#first_grade_morning_end').val(data['first_grade_morning_end']);
@@ -1919,38 +1951,55 @@ function populate_irregular_schedule(date,month,day,year){
         year:year
     },
     function(data){
-      if (data['junior_kinder_morning_class']){
-        $('#junior_kinder_morning_class').prop('checked', true);
-        junior_kinder_morning_class = true;
+      if (data['nursery_morning_class']){
+        $('#nursery_morning_class').prop('checked', true);
+        nursery_morning_class = true;
       }
       else{
-        $('#junior_kinder_morning_class').prop('checked', false);
-        junior_kinder_morning_class =  false;
+        $('#nursery_morning_class').prop('checked', false);
+        nursery_morning_class =  false;
       }
-      if (data['junior_kinder_afternoon_class']){
-        $('#junior_kinder_afternoon_class').prop('checked', true);
-        junior_kinder_afternoon_class = true;
+      if (data['nursery_afternoon_class']){
+        $('#nursery_afternoon_class').prop('checked', true);
+        nursery_afternoon_class = true;
       }
       else{
-        $('#junior_kinder_afternoon_class').prop('checked', false);
-        junior_kinder_afternoon_class =  false;
+        $('#nursery_afternoon_class').prop('checked', false);
+        nursery_afternoon_class =  false;
       }
 
-      if (data['senior_kinder_morning_class']){
-        $('#senior_kinder_morning_class').prop('checked', true);
-        senior_kinder_morning_class = true;
+      if (data['preparatory_morning_class']){
+        $('#preparatory_morning_class').prop('checked', true);
+        preparatory_morning_class = true;
       }
       else{
-        $('#senior_kinder_morning_class').prop('checked', false);
-        senior_kinder_morning_class =  false;
+        $('#preparatory_morning_class').prop('checked', false);
+        preparatory_morning_class =  false;
       }
-      if (data['senior_kinder_afternoon_class']){
-        $('#senior_kinder_afternoon_class').prop('checked', true);
-        senior_kinder_afternoon_class = true;
+      if (data['preparatory_afternoon_class']){
+        $('#preparatory_afternoon_class').prop('checked', true);
+        preparatory_afternoon_class = true;
       }
       else{
-        $('#senior_kinder_afternoon_class').prop('checked', false);
-        senior_kinder_afternoon_class =  false;
+        $('#preparatory_afternoon_class').prop('checked', false);
+        preparatory_afternoon_class =  false;
+      }
+
+      if (data['kinder_morning_class']){
+        $('#kinder_morning_class').prop('checked', true);
+        kinder_morning_class = true;
+      }
+      else{
+        $('#kinder_morning_class').prop('checked', false);
+        kinder_morning_class =  false;
+      }
+      if (data['kinder_afternoon_class']){
+        $('#kinder_afternoon_class').prop('checked', true);
+        kinder_afternoon_class = true;
+      }
+      else{
+        $('#kinder_afternoon_class').prop('checked', false);
+        kinder_afternoon_class =  false;
       }
 
       if (data['first_grade_morning_class']){
@@ -2159,15 +2208,20 @@ function populate_irregular_schedule(date,month,day,year){
 
       $('.no-class-checkbox').change();
 
-      $('#junior_kinder_morning_start').val(data['junior_kinder_morning_start']);
-      $('#junior_kinder_morning_end').val(data['junior_kinder_morning_end']);
-      $('#junior_kinder_afternoon_start').val(data['junior_kinder_afternoon_start']);
-      $('#junior_kinder_afternoon_end').val(data['junior_kinder_afternoon_end']);
+      $('#nursery_morning_start').val(data['nursery_morning_start']);
+      $('#nursery_morning_end').val(data['nursery_morning_end']);
+      $('#nursery_afternoon_start').val(data['nursery_afternoon_start']);
+      $('#nursery_afternoon_end').val(data['nursery_afternoon_end']);
 
-      $('#senior_kinder_morning_start').val(data['senior_kinder_morning_start']);
-      $('#senior_kinder_morning_end').val(data['senior_kinder_morning_end']);
-      $('#senior_kinder_afternoon_start').val(data['senior_kinder_afternoon_start']);
-      $('#senior_kinder_afternoon_end').val(data['senior_kinder_afternoon_end']);
+      $('#preparatory_morning_start').val(data['preparatory_morning_start']);
+      $('#preparatory_morning_end').val(data['preparatory_morning_end']);
+      $('#preparatory_afternoon_start').val(data['preparatory_afternoon_start']);
+      $('#preparatory_afternoon_end').val(data['preparatory_afternoon_end']);
+
+      $('#kinder_morning_start').val(data['kinder_morning_start']);
+      $('#kinder_morning_end').val(data['kinder_morning_end']);
+      $('#kinder_afternoon_start').val(data['kinder_afternoon_start']);
+      $('#kinder_afternoon_end').val(data['kinder_afternoon_end']);
 
       $('#first_grade_morning_start').val(data['first_grade_morning_start']);
       $('#first_grade_morning_end').val(data['first_grade_morning_end']);
@@ -2235,10 +2289,12 @@ function populate_irregular_schedule(date,month,day,year){
 }
 
 function listen_to_checkbox(){
-  if (($('#junior_kinder_morning_class').prop('checked') == junior_kinder_morning_class) &&
-     ($('#junior_kinder_afternoon_class').prop('checked') == junior_kinder_afternoon_class) &&
-     ($('#senior_kinder_morning_class').prop('checked') == senior_kinder_morning_class) &&
-     ($('#senior_kinder_afternoon_class').prop('checked') == senior_kinder_afternoon_class) &&
+  if (($('#nursery_morning_class').prop('checked') == nursery_morning_class) &&
+     ($('#nursery_afternoon_class').prop('checked') == nursery_afternoon_class) &&
+     ($('#preparatory_morning_class').prop('checked') == preparatory_morning_class) &&
+     ($('#preparatory_afternoon_class').prop('checked') == preparatory_afternoon_class) &&
+     ($('#kinder_morning_class').prop('checked') == kinder_morning_class) &&
+     ($('#kinder_afternoon_class').prop('checked') == kinder_afternoon_class) &&
      ($('#first_grade_morning_class').prop('checked') == first_grade_morning_class) &&
      ($('#first_grade_afternoon_class').prop('checked') == first_grade_afternoon_class) &&
      ($('#second_grade_morning_class').prop('checked') == second_grade_morning_class) &&
@@ -2284,15 +2340,20 @@ function populate_schedule(){
       $(".schedule-nav-tabs li:eq(0) a").tab('show');
       
       for (var i = 0; i <= days.length - 1; i++) {
-        $('#'+days[i]+'_junior_kinder_morning_start').val(data[days[i]]['junior_kinder_morning_start']);
-        $('#'+days[i]+'_junior_kinder_morning_end').val(data[days[i]]['junior_kinder_morning_end']);
-        $('#'+days[i]+'_junior_kinder_afternoon_start').val(data[days[i]]['junior_kinder_afternoon_start']);
-        $('#'+days[i]+'_junior_kinder_afternoon_end').val(data[days[i]]['junior_kinder_afternoon_end']);
+        $('#'+days[i]+'_nursery_morning_start').val(data[days[i]]['nursery_morning_start']);
+        $('#'+days[i]+'_nursery_morning_end').val(data[days[i]]['nursery_morning_end']);
+        $('#'+days[i]+'_nursery_afternoon_start').val(data[days[i]]['nursery_afternoon_start']);
+        $('#'+days[i]+'_nursery_afternoon_end').val(data[days[i]]['nursery_afternoon_end']);
 
-        $('#'+days[i]+'_senior_kinder_morning_start').val(data[days[i]]['senior_kinder_morning_start']);
-        $('#'+days[i]+'_senior_kinder_morning_end').val(data[days[i]]['senior_kinder_morning_end']);
-        $('#'+days[i]+'_senior_kinder_afternoon_start').val(data[days[i]]['senior_kinder_afternoon_start']);
-        $('#'+days[i]+'_senior_kinder_afternoon_end').val(data[days[i]]['senior_kinder_afternoon_end']);
+        $('#'+days[i]+'_preparatory_morning_start').val(data[days[i]]['preparatory_morning_start']);
+        $('#'+days[i]+'_preparatory_morning_end').val(data[days[i]]['preparatory_morning_end']);
+        $('#'+days[i]+'_preparatory_afternoon_start').val(data[days[i]]['preparatory_afternoon_start']);
+        $('#'+days[i]+'_preparatory_afternoon_end').val(data[days[i]]['preparatory_afternoon_end']);
+
+        $('#'+days[i]+'_kinder_morning_start').val(data[days[i]]['kinder_morning_start']);
+        $('#'+days[i]+'_kinder_morning_end').val(data[days[i]]['kinder_morning_end']);
+        $('#'+days[i]+'_kinder_afternoon_start').val(data[days[i]]['kinder_afternoon_start']);
+        $('#'+days[i]+'_kinder_afternoon_end').val(data[days[i]]['kinder_afternoon_end']);
 
         $('#'+days[i]+'_first_grade_morning_start').val(data[days[i]]['first_grade_morning_start']);
         $('#'+days[i]+'_first_grade_morning_end').val(data[days[i]]['first_grade_morning_end']);

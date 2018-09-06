@@ -35,17 +35,6 @@ services:
       - celery
       - rabbitmq
 
-  ravenclock:
-    restart: always
-    build: ./ravenclock
-    volumes:
-      - ./ravenclock:/usr/src/app/
-    ports:
-      - "5000:5000"
-    command: /usr/local/bin/gunicorn -w 2 -b :5000 clock:app
-    depends_on:
-      - main
-
   rabbitmq:
     restart: always
     image: rabbitmq
