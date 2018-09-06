@@ -2422,12 +2422,12 @@ function populate_schedule(){
 
 function save_admin(){
   $('#save-admin').button('loading');
-  if ($('#is_super_admin').is(":checked")){
+/*  if ($('#is_super_admin').is(":checked")){
     is_super_admin = true;
   }
   else{
     is_super_admin = false;
-  }
+  }*/
   first_name = $('#add_admin_first_name').val();
   last_name = $('#add_admin_last_name').val();
   email = $('#add_admin_email').val();
@@ -2435,7 +2435,7 @@ function save_admin(){
       first_name:first_name,
       last_name:last_name,
       email:email,
-      is_super_admin:is_super_admin
+      /*is_super_admin:is_super_admin*/
   },
   function(data){
     $('#add-admin-error').html('');

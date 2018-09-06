@@ -2705,19 +2705,7 @@ def new_account():
             name=account_info['account_name'].title(),
             added_by=session['user_id'],\
             join_date=datetime.datetime.now().strftime('%B %d, %Y'),
-            timestamp=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S:%f'),
-            students_access=account_info['students_access'],
-            staff_access=account_info['staff_access'],
-            logs_access=account_info['logs_access'],
-            attendance_access=account_info['attendance_access'],
-            wallet_access=account_info['wallet_access'],
-            fees_access=account_info['fees_access'],
-            transactions_access=account_info['transactions_access'],
-            accounts_access=account_info['accounts_access'],
-            broadcast_access=account_info['broadcast_access'],
-            schedule_access=account_info['schedule_access'],
-            calendar_access=account_info['calendar_access'],
-            new_id_access=account_info['new_id_access']
+            timestamp=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S:%f')
             )
 
         db.session.add(new_account)
