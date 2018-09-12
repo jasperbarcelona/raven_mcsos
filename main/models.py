@@ -325,7 +325,7 @@ class College(db.Model, Serializer):
     added_by = db.Column(db.String(60))
 
 class Staff(db.Model, Serializer):
-    __public__ = ['id','school_no','id_no','student_id','first_name','last_name','middle_name',
+    __public__ = ['id','school_no','id_no','staff_id','first_name','last_name','middle_name',
                   'department','group','email','mobile','added_by']
     id = db.Column(db.Integer, primary_key=True)
     school_no = db.Column(db.String(32))
