@@ -285,7 +285,7 @@ class Log(db.Model, Serializer):
     timestamp = db.Column(db.String(50))
 
 class K12(db.Model, Serializer):
-    __public__ = ['id','school_no','id_no','first_name','last_name','middle_name',
+    __public__ = ['id','school_no','id_no','student_id','first_name','last_name','middle_name',
                   'level','group','section','absences','lates','parent_id','parent_relation',
                   'parent_contact','added_by']
     id = db.Column(db.Integer, primary_key=True)
@@ -307,11 +307,12 @@ class K12(db.Model, Serializer):
     added_by = db.Column(db.String(60))
 
 class College(db.Model, Serializer):
-    __public__ = ['id','school_no','id_no','first_name','last_name','middle_name',
+    __public__ = ['id','school_no','id_no','student_id','first_name','last_name','middle_name',
                   'level','department','group','email','mobile','added_by']
     id = db.Column(db.Integer, primary_key=True)
     school_no = db.Column(db.String(32))
     id_no = db.Column(db.String(20))
+    student_id = db.Column(db.String(30))
     first_name = db.Column(db.String(30))
     last_name = db.Column(db.String(30))
     middle_name = db.Column(db.String(30))
@@ -324,7 +325,7 @@ class College(db.Model, Serializer):
     added_by = db.Column(db.String(60))
 
 class Staff(db.Model, Serializer):
-    __public__ = ['id','school_no','id_no','first_name','last_name','middle_name',
+    __public__ = ['id','school_no','id_no','student_id','first_name','last_name','middle_name',
                   'department','group','email','mobile','added_by']
     id = db.Column(db.Integer, primary_key=True)
     school_no = db.Column(db.String(32))
