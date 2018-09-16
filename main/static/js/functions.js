@@ -1142,14 +1142,66 @@ function save_sched(){
         schedules.push($('#'+days[i]+'_tenth_grade_morning_end').val());
         schedules.push($('#'+days[i]+'_tenth_grade_afternoon_start').val());
         schedules.push($('#'+days[i]+'_tenth_grade_afternoon_end').val());
-        schedules.push($('#'+days[i]+'_eleventh_grade_morning_start').val());
-        schedules.push($('#'+days[i]+'_eleventh_grade_morning_end').val());
-        schedules.push($('#'+days[i]+'_eleventh_grade_afternoon_start').val());
-        schedules.push($('#'+days[i]+'_eleventh_grade_afternoon_end').val());
-        schedules.push($('#'+days[i]+'_twelfth_grade_morning_start').val());
-        schedules.push($('#'+days[i]+'_twelfth_grade_morning_end').val());
-        schedules.push($('#'+days[i]+'_twelfth_grade_afternoon_start').val());
-        schedules.push($('#'+days[i]+'_twelfth_grade_afternoon_end').val());
+
+
+
+        schedules.push($('#'+days[i]+'_eleventh_grade_abm_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_abm_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_abm_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_abm_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_css_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_css_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_css_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_css_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_gas_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_gas_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_gas_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_gas_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_humss_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_humss_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_humss_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_humss_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_stem_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_stem_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_stem_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_stem_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_welding_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_welding_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_welding_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_welding_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_cookery_morning_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_cookery_morning_end').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_cookery_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_eleventh_grade_cookery_afternoon_end').val());
+
+        schedules.push($('#'+days[i]+'_twelfth_grade_abm_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_abm_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_abm_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_abm_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_css_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_css_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_css_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_css_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_gas_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_gas_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_gas_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_gas_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_humss_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_humss_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_humss_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_humss_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_stem_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_stem_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_stem_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_stem_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_welding_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_welding_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_welding_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_welding_afternoon_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_cookery_morning_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_cookery_morning_end').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_cookery_afternoon_start').val());
+        schedules.push($('#'+days[i]+'_twelfth_grade_cookery_afternoon_end').val());
     };
 
     $('#save-sched').button('loading');
@@ -1321,30 +1373,192 @@ function save_calendar_sched(){
     else{
       save_tenth_grade_afternoon_class = false;
     }
-    if ($('#eleventh_grade_morning_class').is(":checked")){
-      save_eleventh_grade_morning_class = true;
+
+
+
+    if ($('#eleventh_grade_abm_morning_class').is(":checked")){
+      save_eleventh_grade_abm_morning_class = true;
     }
     else{
-      save_eleventh_grade_morning_class = false;
+      save_eleventh_grade_abm_morning_class = false;
     }
-    if ($('#eleventh_grade_afternoon_class').is(":checked")){
-      save_eleventh_grade_afternoon_class = true;
-    }
-    else{
-      save_eleventh_grade_afternoon_class = false;
-    }
-    if ($('#twelfth_grade_morning_class').is(":checked")){
-      save_twelfth_grade_morning_class = true;
+    if ($('#eleventh_grade_abm_afternoon_class').is(":checked")){
+      save_eleventh_grade_abm_afternoon_class = true;
     }
     else{
-      save_twelfth_grade_morning_class = false;
+      save_eleventh_grade_abm_afternoon_class = false;
     }
-    if ($('#twelfth_grade_afternoon_class').is(":checked")){
-      save_twelfth_grade_afternoon_class = true;
+
+    if ($('#eleventh_grade_css_morning_class').is(":checked")){
+      save_eleventh_grade_css_morning_class = true;
     }
     else{
-      save_twelfth_grade_afternoon_class = false;
+      save_eleventh_grade_css_morning_class = false;
     }
+    if ($('#eleventh_grade_css_afternoon_class').is(":checked")){
+      save_eleventh_grade_css_afternoon_class = true;
+    }
+    else{
+      save_eleventh_grade_css_afternoon_class = false;
+    }
+
+    if ($('#eleventh_grade_gas_morning_class').is(":checked")){
+      save_eleventh_grade_gas_morning_class = true;
+    }
+    else{
+      save_eleventh_grade_gas_morning_class = false;
+    }
+    if ($('#eleventh_grade_gas_afternoon_class').is(":checked")){
+      save_eleventh_grade_gas_afternoon_class = true;
+    }
+    else{
+      save_eleventh_grade_gas_afternoon_class = false;
+    }
+
+    if ($('#eleventh_grade_humss_morning_class').is(":checked")){
+      save_eleventh_grade_humss_morning_class = true;
+    }
+    else{
+      save_eleventh_grade_humss_morning_class = false;
+    }
+    if ($('#eleventh_grade_humss_afternoon_class').is(":checked")){
+      save_eleventh_grade_humss_afternoon_class = true;
+    }
+    else{
+      save_eleventh_grade_humss_afternoon_class = false;
+    }
+
+    if ($('#eleventh_grade_stem_morning_class').is(":checked")){
+      save_eleventh_grade_stem_morning_class = true;
+    }
+    else{
+      save_eleventh_grade_stem_morning_class = false;
+    }
+    if ($('#eleventh_grade_stem_afternoon_class').is(":checked")){
+      save_eleventh_grade_stem_afternoon_class = true;
+    }
+    else{
+      save_eleventh_grade_stem_afternoon_class = false;
+    }
+
+    if ($('#eleventh_grade_welding_morning_class').is(":checked")){
+      save_eleventh_grade_welding_morning_class = true;
+    }
+    else{
+      save_eleventh_grade_welding_morning_class = false;
+    }
+    if ($('#eleventh_grade_welding_afternoon_class').is(":checked")){
+      save_eleventh_grade_welding_afternoon_class = true;
+    }
+    else{
+      save_eleventh_grade_welding_afternoon_class = false;
+    }
+
+    if ($('#eleventh_grade_cookery_morning_class').is(":checked")){
+      save_eleventh_grade_cookery_morning_class = true;
+    }
+    else{
+      save_eleventh_grade_cookery_morning_class = false;
+    }
+    if ($('#eleventh_grade_cookery_afternoon_class').is(":checked")){
+      save_eleventh_grade_cookery_afternoon_class = true;
+    }
+    else{
+      save_eleventh_grade_cookery_afternoon_class = false;
+    }
+
+
+    if ($('#twelfth_grade_abm_morning_class').is(":checked")){
+      save_twelfth_grade_abm_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_abm_morning_class = false;
+    }
+    if ($('#twelfth_grade_abm_afternoon_class').is(":checked")){
+      save_twelfth_grade_abm_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_abm_afternoon_class = false;
+    }
+
+    if ($('#twelfth_grade_css_morning_class').is(":checked")){
+      save_twelfth_grade_css_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_css_morning_class = false;
+    }
+    if ($('#twelfth_grade_css_afternoon_class').is(":checked")){
+      save_twelfth_grade_css_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_css_afternoon_class = false;
+    }
+
+    if ($('#twelfth_grade_gas_morning_class').is(":checked")){
+      save_twelfth_grade_gas_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_gas_morning_class = false;
+    }
+    if ($('#twelfth_grade_gas_afternoon_class').is(":checked")){
+      save_twelfth_grade_gas_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_gas_afternoon_class = false;
+    }
+
+    if ($('#twelfth_grade_humss_morning_class').is(":checked")){
+      save_twelfth_grade_humss_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_humss_morning_class = false;
+    }
+    if ($('#twelfth_grade_humss_afternoon_class').is(":checked")){
+      save_twelfth_grade_humss_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_humss_afternoon_class = false;
+    }
+
+    if ($('#twelfth_grade_stem_morning_class').is(":checked")){
+      save_twelfth_grade_stem_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_stem_morning_class = false;
+    }
+    if ($('#twelfth_grade_stem_afternoon_class').is(":checked")){
+      save_twelfth_grade_stem_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_stem_afternoon_class = false;
+    }
+
+    if ($('#twelfth_grade_welding_morning_class').is(":checked")){
+      save_twelfth_grade_welding_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_welding_morning_class = false;
+    }
+    if ($('#twelfth_grade_welding_afternoon_class').is(":checked")){
+      save_twelfth_grade_welding_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_welding_afternoon_class = false;
+    }
+
+    if ($('#twelfth_grade_cookery_morning_class').is(":checked")){
+      save_twelfth_grade_cookery_morning_class = true;
+    }
+    else{
+      save_twelfth_grade_cookery_morning_class = false;
+    }
+    if ($('#twelfth_grade_cookery_afternoon_class').is(":checked")){
+      save_twelfth_grade_cookery_afternoon_class = true;
+    }
+    else{
+      save_twelfth_grade_cookery_afternoon_class = false;
+    }
+
 
     save_nursery_morning_start = $('#nursery_morning_start').val();
     save_nursery_morning_end = $('#nursery_morning_end').val();
@@ -1411,15 +1625,63 @@ function save_calendar_sched(){
     save_tenth_grade_afternoon_start = $('#tenth_grade_afternoon_start').val();
     save_tenth_grade_afternoon_end = $('#tenth_grade_afternoon_end').val();
 
-    save_eleventh_grade_morning_start = $('#eleventh_grade_morning_start').val();
-    save_eleventh_grade_morning_end = $('#eleventh_grade_morning_end').val();
-    save_eleventh_grade_afternoon_start = $('#eleventh_grade_afternoon_start').val();
-    save_eleventh_grade_afternoon_end = $('#eleventh_grade_afternoon_end').val();
+    save_eleventh_grade_abm_morning_start = $('#eleventh_grade_abm_morning_start').val();
+    save_eleventh_grade_abm_morning_end = $('#eleventh_grade_abm_morning_end').val();
+    save_eleventh_grade_abm_afternoon_start = $('#eleventh_grade_abm_afternoon_start').val();
+    save_eleventh_grade_abm_afternoon_end = $('#eleventh_grade_abm_afternoon_end').val();
+    save_eleventh_grade_css_morning_start = $('#eleventh_grade_css_morning_start').val();
+    save_eleventh_grade_css_morning_end = $('#eleventh_grade_css_morning_end').val();
+    save_eleventh_grade_css_afternoon_start = $('#eleventh_grade_css_afternoon_start').val();
+    save_eleventh_grade_css_afternoon_end = $('#eleventh_grade_css_afternoon_end').val();
+    save_eleventh_grade_gas_morning_start = $('#eleventh_grade_gas_morning_start').val();
+    save_eleventh_grade_gas_morning_end = $('#eleventh_grade_gas_morning_end').val();
+    save_eleventh_grade_gas_afternoon_start = $('#eleventh_grade_gas_afternoon_start').val();
+    save_eleventh_grade_gas_afternoon_end = $('#eleventh_grade_gas_afternoon_end').val();
+    save_eleventh_grade_humss_morning_start = $('#eleventh_grade_humss_morning_start').val();
+    save_eleventh_grade_humss_morning_end = $('#eleventh_grade_humss_morning_end').val();
+    save_eleventh_grade_humss_afternoon_start = $('#eleventh_grade_humss_afternoon_start').val();
+    save_eleventh_grade_humss_afternoon_end = $('#eleventh_grade_humss_afternoon_end').val();
+    save_eleventh_grade_stem_morning_start = $('#eleventh_grade_stem_morning_start').val();
+    save_eleventh_grade_stem_morning_end = $('#eleventh_grade_stem_morning_end').val();
+    save_eleventh_grade_stem_afternoon_start = $('#eleventh_grade_stem_afternoon_start').val();
+    save_eleventh_grade_stem_afternoon_end = $('#eleventh_grade_stem_afternoon_end').val();
+    save_eleventh_grade_welding_morning_start = $('#eleventh_grade_welding_morning_start').val();
+    save_eleventh_grade_welding_morning_end = $('#eleventh_grade_welding_morning_end').val();
+    save_eleventh_grade_welding_afternoon_start = $('#eleventh_grade_welding_afternoon_start').val();
+    save_eleventh_grade_welding_afternoon_end = $('#eleventh_grade_welding_afternoon_end').val();
+    save_eleventh_grade_cookery_morning_start = $('#eleventh_grade_cookery_morning_start').val();
+    save_eleventh_grade_cookery_morning_end = $('#eleventh_grade_cookery_morning_end').val();
+    save_eleventh_grade_cookery_afternoon_start = $('#eleventh_grade_cookery_afternoon_start').val();
+    save_eleventh_grade_cookery_afternoon_end = $('#eleventh_grade_cookery_afternoon_end').val();
 
-    save_twelfth_grade_morning_start = $('#twelfth_grade_morning_start').val();
-    save_twelfth_grade_morning_end = $('#twelfth_grade_morning_end').val();
-    save_twelfth_grade_afternoon_start = $('#twelfth_grade_afternoon_start').val();
-    save_twelfth_grade_afternoon_end = $('#twelfth_grade_afternoon_end').val();
+    save_twelfth_grade_abm_morning_start = $('#twelfth_grade_abm_morning_start').val();
+    save_twelfth_grade_abm_morning_end = $('#twelfth_grade_abm_morning_end').val();
+    save_twelfth_grade_abm_afternoon_start = $('#twelfth_grade_abm_afternoon_start').val();
+    save_twelfth_grade_abm_afternoon_end = $('#twelfth_grade_abm_afternoon_end').val();
+    save_twelfth_grade_css_morning_start = $('#twelfth_grade_css_morning_start').val();
+    save_twelfth_grade_css_morning_end = $('#twelfth_grade_css_morning_end').val();
+    save_twelfth_grade_css_afternoon_start = $('#twelfth_grade_css_afternoon_start').val();
+    save_twelfth_grade_css_afternoon_end = $('#twelfth_grade_css_afternoon_end').val();
+    save_twelfth_grade_gas_morning_start = $('#twelfth_grade_gas_morning_start').val();
+    save_twelfth_grade_gas_morning_end = $('#twelfth_grade_gas_morning_end').val();
+    save_twelfth_grade_gas_afternoon_start = $('#twelfth_grade_gas_afternoon_start').val();
+    save_twelfth_grade_gas_afternoon_end = $('#twelfth_grade_gas_afternoon_end').val();
+    save_twelfth_grade_humss_morning_start = $('#twelfth_grade_humss_morning_start').val();
+    save_twelfth_grade_humss_morning_end = $('#twelfth_grade_humss_morning_end').val();
+    save_twelfth_grade_humss_afternoon_start = $('#twelfth_grade_humss_afternoon_start').val();
+    save_twelfth_grade_humss_afternoon_end = $('#twelfth_grade_humss_afternoon_end').val();
+    save_twelfth_grade_stem_morning_start = $('#twelfth_grade_stem_morning_start').val();
+    save_twelfth_grade_stem_morning_end = $('#twelfth_grade_stem_morning_end').val();
+    save_twelfth_grade_stem_afternoon_start = $('#twelfth_grade_stem_afternoon_start').val();
+    save_twelfth_grade_stem_afternoon_end = $('#twelfth_grade_stem_afternoon_end').val();
+    save_twelfth_grade_welding_morning_start = $('#twelfth_grade_welding_morning_start').val();
+    save_twelfth_grade_welding_morning_end = $('#twelfth_grade_welding_morning_end').val();
+    save_twelfth_grade_welding_afternoon_start = $('#twelfth_grade_welding_afternoon_start').val();
+    save_twelfth_grade_welding_afternoon_end = $('#twelfth_grade_welding_afternoon_end').val();
+    save_twelfth_grade_cookery_morning_start = $('#twelfth_grade_cookery_morning_start').val();
+    save_twelfth_grade_cookery_morning_end = $('#twelfth_grade_cookery_morning_end').val();
+    save_twelfth_grade_cookery_afternoon_start = $('#twelfth_grade_cookery_afternoon_start').val();
+    save_twelfth_grade_cookery_afternoon_end = $('#twelfth_grade_cookery_afternoon_end').val();
 
 
     $('#save-calendar-sched').attr('disabled',true);
@@ -1451,10 +1713,36 @@ function save_calendar_sched(){
       save_ninth_grade_afternoon_class:save_ninth_grade_afternoon_class,
       save_tenth_grade_morning_class:save_tenth_grade_morning_class,
       save_tenth_grade_afternoon_class:save_tenth_grade_afternoon_class,
-      save_eleventh_grade_morning_class:save_eleventh_grade_morning_class,
-      save_eleventh_grade_afternoon_class:save_eleventh_grade_afternoon_class,
-      save_twelfth_grade_morning_class:save_twelfth_grade_morning_class,
-      save_twelfth_grade_afternoon_class:save_twelfth_grade_afternoon_class,
+      
+      save_eleventh_grade_abm_morning_class:save_eleventh_grade_abm_morning_class,
+      save_eleventh_grade_abm_afternoon_class:save_eleventh_grade_abm_afternoon_class,
+      save_eleventh_grade_css_morning_class:save_eleventh_grade_css_morning_class,
+      save_eleventh_grade_css_afternoon_class:save_eleventh_grade_css_afternoon_class,
+      save_eleventh_grade_gas_morning_class:save_eleventh_grade_gas_morning_class,
+      save_eleventh_grade_gas_afternoon_class:save_eleventh_grade_gas_afternoon_class,
+      save_eleventh_grade_humss_morning_class:save_eleventh_grade_humss_morning_class,
+      save_eleventh_grade_humss_afternoon_class:save_eleventh_grade_humss_afternoon_class,
+      save_eleventh_grade_stem_morning_class:save_eleventh_grade_stem_morning_class,
+      save_eleventh_grade_stem_afternoon_class:save_eleventh_grade_stem_afternoon_class,
+      save_eleventh_grade_welding_morning_class:save_eleventh_grade_welding_morning_class,
+      save_eleventh_grade_welding_afternoon_class:save_eleventh_grade_welding_afternoon_class,
+      save_eleventh_grade_cookery_morning_class:save_eleventh_grade_cookery_morning_class,
+      save_eleventh_grade_cookery_afternoon_class:save_eleventh_grade_cookery_afternoon_class,
+
+      save_twelfth_grade_abm_morning_class:save_twelfth_grade_abm_morning_class,
+      save_twelfth_grade_abm_afternoon_class:save_twelfth_grade_abm_afternoon_class,
+      save_twelfth_grade_css_morning_class:save_twelfth_grade_css_morning_class,
+      save_twelfth_grade_css_afternoon_class:save_twelfth_grade_css_afternoon_class,
+      save_twelfth_grade_gas_morning_class:save_twelfth_grade_gas_morning_class,
+      save_twelfth_grade_gas_afternoon_class:save_twelfth_grade_gas_afternoon_class,
+      save_twelfth_grade_humss_morning_class:save_twelfth_grade_humss_morning_class,
+      save_twelfth_grade_humss_afternoon_class:save_twelfth_grade_humss_afternoon_class,
+      save_twelfth_grade_stem_morning_class:save_twelfth_grade_stem_morning_class,
+      save_twelfth_grade_stem_afternoon_class:save_twelfth_grade_stem_afternoon_class,
+      save_twelfth_grade_welding_morning_class:save_twelfth_grade_welding_morning_class,
+      save_twelfth_grade_welding_afternoon_class:save_twelfth_grade_welding_afternoon_class,
+      save_twelfth_grade_cookery_morning_class:save_twelfth_grade_cookery_morning_class,
+      save_twelfth_grade_cookery_afternoon_class:save_twelfth_grade_cookery_afternoon_class,
 
       save_nursery_morning_start:save_nursery_morning_start,
       save_nursery_morning_end:save_nursery_morning_end,
@@ -1508,14 +1796,64 @@ function save_calendar_sched(){
       save_tenth_grade_morning_end:save_tenth_grade_morning_end,
       save_tenth_grade_afternoon_start:save_tenth_grade_afternoon_start,
       save_tenth_grade_afternoon_end:save_tenth_grade_afternoon_end,
-      save_eleventh_grade_morning_start:save_eleventh_grade_morning_start,
-      save_eleventh_grade_morning_end:save_eleventh_grade_morning_end,
-      save_eleventh_grade_afternoon_start:save_eleventh_grade_afternoon_start,
-      save_eleventh_grade_afternoon_end:save_eleventh_grade_afternoon_end,
-      save_twelfth_grade_morning_start:save_twelfth_grade_morning_start,
-      save_twelfth_grade_morning_end:save_twelfth_grade_morning_end,
-      save_twelfth_grade_afternoon_start:save_twelfth_grade_afternoon_start,
-      save_twelfth_grade_afternoon_end:save_twelfth_grade_afternoon_end
+      
+      save_eleventh_grade_abm_morning_start:save_eleventh_grade_abm_morning_start,
+      save_eleventh_grade_abm_morning_end:save_eleventh_grade_abm_morning_end,
+      save_eleventh_grade_abm_afternoon_start:save_eleventh_grade_abm_afternoon_start,
+      save_eleventh_grade_abm_afternoon_end:save_eleventh_grade_abm_afternoon_end,
+      save_eleventh_grade_css_morning_start:save_eleventh_grade_css_morning_start,
+      save_eleventh_grade_css_morning_end:save_eleventh_grade_css_morning_end,
+      save_eleventh_grade_css_afternoon_start:save_eleventh_grade_css_afternoon_start,
+      save_eleventh_grade_css_afternoon_end:save_eleventh_grade_css_afternoon_end,
+      save_eleventh_grade_gas_morning_start:save_eleventh_grade_gas_morning_start,
+      save_eleventh_grade_gas_morning_end:save_eleventh_grade_gas_morning_end,
+      save_eleventh_grade_gas_afternoon_start:save_eleventh_grade_gas_afternoon_start,
+      save_eleventh_grade_gas_afternoon_end:save_eleventh_grade_gas_afternoon_end,
+      save_eleventh_grade_humss_morning_start:save_eleventh_grade_humss_morning_start,
+      save_eleventh_grade_humss_morning_end:save_eleventh_grade_humss_morning_end,
+      save_eleventh_grade_humss_afternoon_start:save_eleventh_grade_humss_afternoon_start,
+      save_eleventh_grade_humss_afternoon_end:save_eleventh_grade_humss_afternoon_end,
+      save_eleventh_grade_stem_morning_start:save_eleventh_grade_stem_morning_start,
+      save_eleventh_grade_stem_morning_end:save_eleventh_grade_stem_morning_end,
+      save_eleventh_grade_stem_afternoon_start:save_eleventh_grade_stem_afternoon_start,
+      save_eleventh_grade_stem_afternoon_end:save_eleventh_grade_stem_afternoon_end,
+      save_eleventh_grade_welding_morning_start:save_eleventh_grade_welding_morning_start,
+      save_eleventh_grade_welding_morning_end:save_eleventh_grade_welding_morning_end,
+      save_eleventh_grade_welding_afternoon_start:save_eleventh_grade_welding_afternoon_start,
+      save_eleventh_grade_welding_afternoon_end:save_eleventh_grade_welding_afternoon_end,
+      save_eleventh_grade_cookery_morning_start:save_eleventh_grade_cookery_morning_start,
+      save_eleventh_grade_cookery_morning_end:save_eleventh_grade_cookery_morning_end,
+      save_eleventh_grade_cookery_afternoon_start:save_eleventh_grade_cookery_afternoon_start,
+      save_eleventh_grade_cookery_afternoon_end:save_eleventh_grade_cookery_afternoon_end,
+
+      save_twelfth_grade_abm_morning_start:save_twelfth_grade_abm_morning_start,
+      save_twelfth_grade_abm_morning_end:save_twelfth_grade_abm_morning_end,
+      save_twelfth_grade_abm_afternoon_start:save_twelfth_grade_abm_afternoon_start,
+      save_twelfth_grade_abm_afternoon_end:save_twelfth_grade_abm_afternoon_end,
+      save_twelfth_grade_css_morning_start:save_twelfth_grade_css_morning_start,
+      save_twelfth_grade_css_morning_end:save_twelfth_grade_css_morning_end,
+      save_twelfth_grade_css_afternoon_start:save_twelfth_grade_css_afternoon_start,
+      save_twelfth_grade_css_afternoon_end:save_twelfth_grade_css_afternoon_end,
+      save_twelfth_grade_gas_morning_start:save_twelfth_grade_gas_morning_start,
+      save_twelfth_grade_gas_morning_end:save_twelfth_grade_gas_morning_end,
+      save_twelfth_grade_gas_afternoon_start:save_twelfth_grade_gas_afternoon_start,
+      save_twelfth_grade_gas_afternoon_end:save_twelfth_grade_gas_afternoon_end,
+      save_twelfth_grade_humss_morning_start:save_twelfth_grade_humss_morning_start,
+      save_twelfth_grade_humss_morning_end:save_twelfth_grade_humss_morning_end,
+      save_twelfth_grade_humss_afternoon_start:save_twelfth_grade_humss_afternoon_start,
+      save_twelfth_grade_humss_afternoon_end:save_twelfth_grade_humss_afternoon_end,
+      save_twelfth_grade_stem_morning_start:save_twelfth_grade_stem_morning_start,
+      save_twelfth_grade_stem_morning_end:save_twelfth_grade_stem_morning_end,
+      save_twelfth_grade_stem_afternoon_start:save_twelfth_grade_stem_afternoon_start,
+      save_twelfth_grade_stem_afternoon_end:save_twelfth_grade_stem_afternoon_end,
+      save_twelfth_grade_welding_morning_start:save_twelfth_grade_welding_morning_start,
+      save_twelfth_grade_welding_morning_end:save_twelfth_grade_welding_morning_end,
+      save_twelfth_grade_welding_afternoon_start:save_twelfth_grade_welding_afternoon_start,
+      save_twelfth_grade_welding_afternoon_end:save_twelfth_grade_welding_afternoon_end,
+      save_twelfth_grade_cookery_morning_start:save_twelfth_grade_cookery_morning_start,
+      save_twelfth_grade_cookery_morning_end:save_twelfth_grade_cookery_morning_end,
+      save_twelfth_grade_cookery_afternoon_start:save_twelfth_grade_cookery_afternoon_start,
+      save_twelfth_grade_cookery_afternoon_end:save_twelfth_grade_cookery_afternoon_end,
     },
     function(data){
         $('#save-calendar-sched').button('complete');
@@ -1928,15 +2266,63 @@ function populate_regular_schedule(date,month,day,year){
     $('#tenth_grade_afternoon_start').val(data['tenth_grade_afternoon_start']);
     $('#tenth_grade_afternoon_end').val(data['tenth_grade_afternoon_end']);
 
-    $('#eleventh_grade_morning_start').val(data['eleventh_grade_morning_start']);
-    $('#eleventh_grade_morning_end').val(data['eleventh_grade_morning_end']);
-    $('#eleventh_grade_afternoon_start').val(data['eleventh_grade_afternoon_start']);
-    $('#eleventh_grade_afternoon_end').val(data['eleventh_grade_afternoon_end']);
+    $('#eleventh_grade_abm_morning_start').val(data['eleventh_grade_abm_morning_start']);
+    $('#eleventh_grade_abm_morning_end').val(data['eleventh_grade_abm_morning_end']);
+    $('#eleventh_grade_abm_afternoon_start').val(data['eleventh_grade_abm_afternoon_start']);
+    $('#eleventh_grade_abm_afternoon_end').val(data['eleventh_grade_abm_afternoon_end']);
+    $('#eleventh_grade_css_morning_start').val(data['eleventh_grade_css_morning_start']);
+    $('#eleventh_grade_css_morning_end').val(data['eleventh_grade_css_morning_end']);
+    $('#eleventh_grade_css_afternoon_start').val(data['eleventh_grade_css_afternoon_start']);
+    $('#eleventh_grade_css_afternoon_end').val(data['eleventh_grade_css_afternoon_end']);
+    $('#eleventh_grade_gas_morning_start').val(data['eleventh_grade_gas_morning_start']);
+    $('#eleventh_grade_gas_morning_end').val(data['eleventh_grade_gas_morning_end']);
+    $('#eleventh_grade_gas_afternoon_start').val(data['eleventh_grade_gas_afternoon_start']);
+    $('#eleventh_grade_gas_afternoon_end').val(data['eleventh_grade_gas_afternoon_end']);
+    $('#eleventh_grade_humss_morning_start').val(data['eleventh_grade_humss_morning_start']);
+    $('#eleventh_grade_humss_morning_end').val(data['eleventh_grade_humss_morning_end']);
+    $('#eleventh_grade_humss_afternoon_start').val(data['eleventh_grade_humss_afternoon_start']);
+    $('#eleventh_grade_humss_afternoon_end').val(data['eleventh_grade_humss_afternoon_end']);
+    $('#eleventh_grade_stem_morning_start').val(data['eleventh_grade_stem_morning_start']);
+    $('#eleventh_grade_stem_morning_end').val(data['eleventh_grade_stem_morning_end']);
+    $('#eleventh_grade_stem_afternoon_start').val(data['eleventh_grade_stem_afternoon_start']);
+    $('#eleventh_grade_stem_afternoon_end').val(data['eleventh_grade_stem_afternoon_end']);
+    $('#eleventh_grade_welding_morning_start').val(data['eleventh_grade_welding_morning_start']);
+    $('#eleventh_grade_welding_morning_end').val(data['eleventh_grade_welding_morning_end']);
+    $('#eleventh_grade_welding_afternoon_start').val(data['eleventh_grade_welding_afternoon_start']);
+    $('#eleventh_grade_welding_afternoon_end').val(data['eleventh_grade_welding_afternoon_end']);
+    $('#eleventh_grade_cookery_morning_start').val(data['eleventh_grade_cookery_morning_start']);
+    $('#eleventh_grade_cookery_morning_end').val(data['eleventh_grade_cookery_morning_end']);
+    $('#eleventh_grade_cookery_afternoon_start').val(data['eleventh_grade_cookery_afternoon_start']);
+    $('#eleventh_grade_cookery_afternoon_end').val(data['eleventh_grade_cookery_afternoon_end']);
 
-    $('#twelfth_grade_morning_start').val(data['twelfth_grade_morning_start']);
-    $('#twelfth_grade_morning_end').val(data['twelfth_grade_morning_end']);
-    $('#twelfth_grade_afternoon_start').val(data['twelfth_grade_afternoon_start']);
-    $('#twelfth_grade_afternoon_end').val(data['twelfth_grade_afternoon_end']);
+    $('#twelfth_grade_abm_morning_start').val(data['twelfth_grade_abm_morning_start']);
+    $('#twelfth_grade_abm_morning_end').val(data['twelfth_grade_abm_morning_end']);
+    $('#twelfth_grade_abm_afternoon_start').val(data['twelfth_grade_abm_afternoon_start']);
+    $('#twelfth_grade_abm_afternoon_end').val(data['twelfth_grade_abm_afternoon_end']);
+    $('#twelfth_grade_css_morning_start').val(data['twelfth_grade_css_morning_start']);
+    $('#twelfth_grade_css_morning_end').val(data['twelfth_grade_css_morning_end']);
+    $('#twelfth_grade_css_afternoon_start').val(data['twelfth_grade_css_afternoon_start']);
+    $('#twelfth_grade_css_afternoon_end').val(data['twelfth_grade_css_afternoon_end']);
+    $('#twelfth_grade_gas_morning_start').val(data['twelfth_grade_gas_morning_start']);
+    $('#twelfth_grade_gas_morning_end').val(data['twelfth_grade_gas_morning_end']);
+    $('#twelfth_grade_gas_afternoon_start').val(data['twelfth_grade_gas_afternoon_start']);
+    $('#twelfth_grade_gas_afternoon_end').val(data['twelfth_grade_gas_afternoon_end']);
+    $('#twelfth_grade_humss_morning_start').val(data['twelfth_grade_humss_morning_start']);
+    $('#twelfth_grade_humss_morning_end').val(data['twelfth_grade_humss_morning_end']);
+    $('#twelfth_grade_humss_afternoon_start').val(data['twelfth_grade_humss_afternoon_start']);
+    $('#twelfth_grade_humss_afternoon_end').val(data['twelfth_grade_humss_afternoon_end']);
+    $('#twelfth_grade_stem_morning_start').val(data['twelfth_grade_stem_morning_start']);
+    $('#twelfth_grade_stem_morning_end').val(data['twelfth_grade_stem_morning_end']);
+    $('#twelfth_grade_stem_afternoon_start').val(data['twelfth_grade_stem_afternoon_start']);
+    $('#twelfth_grade_stem_afternoon_end').val(data['twelfth_grade_stem_afternoon_end']);
+    $('#twelfth_grade_welding_morning_start').val(data['twelfth_grade_welding_morning_start']);
+    $('#twelfth_grade_welding_morning_end').val(data['twelfth_grade_welding_morning_end']);
+    $('#twelfth_grade_welding_afternoon_start').val(data['twelfth_grade_welding_afternoon_start']);
+    $('#twelfth_grade_welding_afternoon_end').val(data['twelfth_grade_welding_afternoon_end']);
+    $('#twelfth_grade_cookery_morning_start').val(data['twelfth_grade_cookery_morning_start']);
+    $('#twelfth_grade_cookery_morning_end').val(data['twelfth_grade_cookery_morning_end']);
+    $('#twelfth_grade_cookery_afternoon_start').val(data['twelfth_grade_cookery_afternoon_start']);
+    $('#twelfth_grade_cookery_afternoon_end').val(data['twelfth_grade_cookery_afternoon_end']);
 
     $('#calendar-schedule-modal-header').html(data['date'])
     $('#calendar-schedule-loading').hide();
@@ -2172,39 +2558,249 @@ function populate_irregular_schedule(date,month,day,year){
         tenth_grade_afternoon_class =  false;
       }
 
-      if (data['eleventh_grade_morning_class']){
-        $('#eleventh_grade_morning_class').prop('checked', true);
-        eleventh_grade_morning_class = true;
+      if (data['eleventh_grade_abm_morning_class']){
+        $('#eleventh_grade_abm_morning_class').prop('checked', true);
+        eleventh_grade_abm_morning_class = true;
       }
       else{
-        $('#eleventh_grade_morning_class').prop('checked', false);
-        eleventh_grade_morning_class =  false;
+        $('#eleventh_grade_abm_morning_class').prop('checked', false);
+        eleventh_grade_abm_morning_class =  false;
       }
-      if (data['eleventh_grade_afternoon_class']){
-        $('#eleventh_grade_afternoon_class').prop('checked', true);
-        eleventh_grade_afternoon_class = true;
+      if (data['eleventh_grade_abm_afternoon_class']){
+        $('#eleventh_grade_abm_afternoon_class').prop('checked', true);
+        eleventh_grade_abm_afternoon_class = true;
       }
       else{
-        $('#eleventh_grade_afternoon_class').prop('checked', false);
-        eleventh_grade_afternoon_class =  false;
+        $('#eleventh_grade_abm_afternoon_class').prop('checked', false);
+        eleventh_grade_abm_afternoon_class =  false;
       }
 
-      if (data['twelfth_grade_morning_class']){
-        $('#twelfth_grade_morning_class').prop('checked', true);
-        twelfth_grade_morning_class = true;
+      if (data['eleventh_grade_css_morning_class']){
+        $('#eleventh_grade_css_morning_class').prop('checked', true);
+        eleventh_grade_css_morning_class = true;
       }
       else{
-        $('#twelfth_grade_morning_class').prop('checked', false);
-        twelfth_grade_morning_class =  false;
+        $('#eleventh_grade_css_morning_class').prop('checked', false);
+        eleventh_grade_css_morning_class =  false;
       }
-      if (data['twelfth_grade_afternoon_class']){
-        $('#twelfth_grade_afternoon_class').prop('checked', true);
-        twelfth_grade_afternoon_class = true;
+      if (data['eleventh_grade_css_afternoon_class']){
+        $('#eleventh_grade_css_afternoon_class').prop('checked', true);
+        eleventh_grade_css_afternoon_class = true;
       }
       else{
-        $('#twelfth_grade_afternoon_class').prop('checked', false);
-        twelfth_grade_afternoon_class =  false;
-      } 
+        $('#eleventh_grade_css_afternoon_class').prop('checked', false);
+        eleventh_grade_css_afternoon_class =  false;
+      }
+
+      if (data['eleventh_grade_gas_morning_class']){
+        $('#eleventh_grade_gas_morning_class').prop('checked', true);
+        eleventh_grade_gas_morning_class = true;
+      }
+      else{
+        $('#eleventh_grade_gas_morning_class').prop('checked', false);
+        eleventh_grade_gas_morning_class =  false;
+      }
+      if (data['eleventh_grade_gas_afternoon_class']){
+        $('#eleventh_grade_gas_afternoon_class').prop('checked', true);
+        eleventh_grade_gas_afternoon_class = true;
+      }
+      else{
+        $('#eleventh_grade_gas_afternoon_class').prop('checked', false);
+        eleventh_grade_gas_afternoon_class =  false;
+      }
+
+      if (data['eleventh_grade_humss_morning_class']){
+        $('#eleventh_grade_humss_morning_class').prop('checked', true);
+        eleventh_grade_humss_morning_class = true;
+      }
+      else{
+        $('#eleventh_grade_humss_morning_class').prop('checked', false);
+        eleventh_grade_humss_morning_class =  false;
+      }
+      if (data['eleventh_grade_humss_afternoon_class']){
+        $('#eleventh_grade_humss_afternoon_class').prop('checked', true);
+        eleventh_grade_humss_afternoon_class = true;
+      }
+      else{
+        $('#eleventh_grade_humss_afternoon_class').prop('checked', false);
+        eleventh_grade_humss_afternoon_class =  false;
+      }
+
+      if (data['eleventh_grade_stem_morning_class']){
+        $('#eleventh_grade_stem_morning_class').prop('checked', true);
+        eleventh_grade_stem_morning_class = true;
+      }
+      else{
+        $('#eleventh_grade_stem_morning_class').prop('checked', false);
+        eleventh_grade_stem_morning_class =  false;
+      }
+      if (data['eleventh_grade_stem_afternoon_class']){
+        $('#eleventh_grade_stem_afternoon_class').prop('checked', true);
+        eleventh_grade_stem_afternoon_class = true;
+      }
+      else{
+        $('#eleventh_grade_stem_afternoon_class').prop('checked', false);
+        eleventh_grade_stem_afternoon_class =  false;
+      }
+
+      if (data['eleventh_grade_welding_morning_class']){
+        $('#eleventh_grade_welding_morning_class').prop('checked', true);
+        eleventh_grade_welding_morning_class = true;
+      }
+      else{
+        $('#eleventh_grade_welding_morning_class').prop('checked', false);
+        eleventh_grade_welding_morning_class =  false;
+      }
+      if (data['eleventh_grade_welding_afternoon_class']){
+        $('#eleventh_grade_welding_afternoon_class').prop('checked', true);
+        eleventh_grade_welding_afternoon_class = true;
+      }
+      else{
+        $('#eleventh_grade_welding_afternoon_class').prop('checked', false);
+        eleventh_grade_welding_afternoon_class =  false;
+      }
+
+      if (data['eleventh_grade_cookery_morning_class']){
+        $('#eleventh_grade_cookery_morning_class').prop('checked', true);
+        eleventh_grade_cookery_morning_class = true;
+      }
+      else{
+        $('#eleventh_grade_cookery_morning_class').prop('checked', false);
+        eleventh_grade_cookery_morning_class =  false;
+      }
+      if (data['eleventh_grade_cookery_afternoon_class']){
+        $('#eleventh_grade_cookery_afternoon_class').prop('checked', true);
+        eleventh_grade_cookery_afternoon_class = true;
+      }
+      else{
+        $('#eleventh_grade_cookery_afternoon_class').prop('checked', false);
+        eleventh_grade_cookery_afternoon_class =  false;
+      }
+
+
+
+
+
+      if (data['twelfth_grade_abm_morning_class']){
+        $('#twelfth_grade_abm_morning_class').prop('checked', true);
+        twelfth_grade_abm_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_abm_morning_class').prop('checked', false);
+        twelfth_grade_abm_morning_class =  false;
+      }
+      if (data['twelfth_grade_abm_afternoon_class']){
+        $('#twelfth_grade_abm_afternoon_class').prop('checked', true);
+        twelfth_grade_abm_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_abm_afternoon_class').prop('checked', false);
+        twelfth_grade_abm_afternoon_class =  false;
+      }
+
+      if (data['twelfth_grade_css_morning_class']){
+        $('#twelfth_grade_css_morning_class').prop('checked', true);
+        twelfth_grade_css_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_css_morning_class').prop('checked', false);
+        twelfth_grade_css_morning_class =  false;
+      }
+      if (data['twelfth_grade_css_afternoon_class']){
+        $('#twelfth_grade_css_afternoon_class').prop('checked', true);
+        twelfth_grade_css_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_css_afternoon_class').prop('checked', false);
+        twelfth_grade_css_afternoon_class =  false;
+      }
+
+      if (data['twelfth_grade_gas_morning_class']){
+        $('#twelfth_grade_gas_morning_class').prop('checked', true);
+        twelfth_grade_gas_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_gas_morning_class').prop('checked', false);
+        twelfth_grade_gas_morning_class =  false;
+      }
+      if (data['twelfth_grade_gas_afternoon_class']){
+        $('#twelfth_grade_gas_afternoon_class').prop('checked', true);
+        twelfth_grade_gas_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_gas_afternoon_class').prop('checked', false);
+        twelfth_grade_gas_afternoon_class =  false;
+      }
+
+      if (data['twelfth_grade_humss_morning_class']){
+        $('#twelfth_grade_humss_morning_class').prop('checked', true);
+        twelfth_grade_humss_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_humss_morning_class').prop('checked', false);
+        twelfth_grade_humss_morning_class =  false;
+      }
+      if (data['twelfth_grade_humss_afternoon_class']){
+        $('#twelfth_grade_humss_afternoon_class').prop('checked', true);
+        twelfth_grade_humss_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_humss_afternoon_class').prop('checked', false);
+        twelfth_grade_humss_afternoon_class =  false;
+      }
+
+      if (data['twelfth_grade_stem_morning_class']){
+        $('#twelfth_grade_stem_morning_class').prop('checked', true);
+        twelfth_grade_stem_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_stem_morning_class').prop('checked', false);
+        twelfth_grade_stem_morning_class =  false;
+      }
+      if (data['twelfth_grade_stem_afternoon_class']){
+        $('#twelfth_grade_stem_afternoon_class').prop('checked', true);
+        twelfth_grade_stem_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_stem_afternoon_class').prop('checked', false);
+        twelfth_grade_stem_afternoon_class =  false;
+      }
+
+      if (data['twelfth_grade_welding_morning_class']){
+        $('#twelfth_grade_welding_morning_class').prop('checked', true);
+        twelfth_grade_welding_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_welding_morning_class').prop('checked', false);
+        twelfth_grade_welding_morning_class =  false;
+      }
+      if (data['twelfth_grade_welding_afternoon_class']){
+        $('#twelfth_grade_welding_afternoon_class').prop('checked', true);
+        twelfth_grade_welding_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_welding_afternoon_class').prop('checked', false);
+        twelfth_grade_welding_afternoon_class =  false;
+      }
+
+      if (data['twelfth_grade_cookery_morning_class']){
+        $('#twelfth_grade_cookery_morning_class').prop('checked', true);
+        twelfth_grade_cookery_morning_class = true;
+      }
+      else{
+        $('#twelfth_grade_cookery_morning_class').prop('checked', false);
+        twelfth_grade_cookery_morning_class =  false;
+      }
+      if (data['twelfth_grade_cookery_afternoon_class']){
+        $('#twelfth_grade_cookery_afternoon_class').prop('checked', true);
+        twelfth_grade_cookery_afternoon_class = true;
+      }
+      else{
+        $('#twelfth_grade_cookery_afternoon_class').prop('checked', false);
+        twelfth_grade_cookery_afternoon_class =  false;
+      }
+
+
 
       $('.no-class-checkbox').change();
 
@@ -2273,15 +2869,63 @@ function populate_irregular_schedule(date,month,day,year){
       $('#tenth_grade_afternoon_start').val(data['tenth_grade_afternoon_start']);
       $('#tenth_grade_afternoon_end').val(data['tenth_grade_afternoon_end']);
 
-      $('#eleventh_grade_morning_start').val(data['eleventh_grade_morning_start']);
-      $('#eleventh_grade_morning_end').val(data['eleventh_grade_morning_end']);
-      $('#eleventh_grade_afternoon_start').val(data['eleventh_grade_afternoon_start']);
-      $('#eleventh_grade_afternoon_end').val(data['eleventh_grade_afternoon_end']);
+      $('#eleventh_grade_abm_morning_start').val(data['eleventh_grade_abm_morning_start']);
+      $('#eleventh_grade_abm_morning_end').val(data['eleventh_grade_abm_morning_end']);
+      $('#eleventh_grade_abm_afternoon_start').val(data['eleventh_grade_abm_afternoon_start']);
+      $('#eleventh_grade_abm_afternoon_end').val(data['eleventh_grade_abm_afternoon_end']);
+      $('#eleventh_grade_css_morning_start').val(data['eleventh_grade_css_morning_start']);
+      $('#eleventh_grade_css_morning_end').val(data['eleventh_grade_css_morning_end']);
+      $('#eleventh_grade_css_afternoon_start').val(data['eleventh_grade_css_afternoon_start']);
+      $('#eleventh_grade_css_afternoon_end').val(data['eleventh_grade_css_afternoon_end']);
+      $('#eleventh_grade_gas_morning_start').val(data['eleventh_grade_gas_morning_start']);
+      $('#eleventh_grade_gas_morning_end').val(data['eleventh_grade_gas_morning_end']);
+      $('#eleventh_grade_gas_afternoon_start').val(data['eleventh_grade_gas_afternoon_start']);
+      $('#eleventh_grade_gas_afternoon_end').val(data['eleventh_grade_gas_afternoon_end']);
+      $('#eleventh_grade_humss_morning_start').val(data['eleventh_grade_humss_morning_start']);
+      $('#eleventh_grade_humss_morning_end').val(data['eleventh_grade_humss_morning_end']);
+      $('#eleventh_grade_humss_afternoon_start').val(data['eleventh_grade_humss_afternoon_start']);
+      $('#eleventh_grade_humss_afternoon_end').val(data['eleventh_grade_humss_afternoon_end']);
+      $('#eleventh_grade_stem_morning_start').val(data['eleventh_grade_stem_morning_start']);
+      $('#eleventh_grade_stem_morning_end').val(data['eleventh_grade_stem_morning_end']);
+      $('#eleventh_grade_stem_afternoon_start').val(data['eleventh_grade_stem_afternoon_start']);
+      $('#eleventh_grade_stem_afternoon_end').val(data['eleventh_grade_stem_afternoon_end']);
+      $('#eleventh_grade_welding_morning_start').val(data['eleventh_grade_welding_morning_start']);
+      $('#eleventh_grade_welding_morning_end').val(data['eleventh_grade_welding_morning_end']);
+      $('#eleventh_grade_welding_afternoon_start').val(data['eleventh_grade_welding_afternoon_start']);
+      $('#eleventh_grade_welding_afternoon_end').val(data['eleventh_grade_welding_afternoon_end']);
+      $('#eleventh_grade_cookery_morning_start').val(data['eleventh_grade_cookery_morning_start']);
+      $('#eleventh_grade_cookery_morning_end').val(data['eleventh_grade_cookery_morning_end']);
+      $('#eleventh_grade_cookery_afternoon_start').val(data['eleventh_grade_cookery_afternoon_start']);
+      $('#eleventh_grade_cookery_afternoon_end').val(data['eleventh_grade_cookery_afternoon_end']);
 
-      $('#twelfth_grade_morning_start').val(data['twelfth_grade_morning_start']);
-      $('#twelfth_grade_morning_end').val(data['twelfth_grade_morning_end']);
-      $('#twelfth_grade_afternoon_start').val(data['twelfth_grade_afternoon_start']);
-      $('#twelfth_grade_afternoon_end').val(data['twelfth_grade_afternoon_end']);
+      $('#twelfth_grade_abm_morning_start').val(data['twelfth_grade_abm_morning_start']);
+      $('#twelfth_grade_abm_morning_end').val(data['twelfth_grade_abm_morning_end']);
+      $('#twelfth_grade_abm_afternoon_start').val(data['twelfth_grade_abm_afternoon_start']);
+      $('#twelfth_grade_abm_afternoon_end').val(data['twelfth_grade_abm_afternoon_end']);
+      $('#twelfth_grade_css_morning_start').val(data['twelfth_grade_css_morning_start']);
+      $('#twelfth_grade_css_morning_end').val(data['twelfth_grade_css_morning_end']);
+      $('#twelfth_grade_css_afternoon_start').val(data['twelfth_grade_css_afternoon_start']);
+      $('#twelfth_grade_css_afternoon_end').val(data['twelfth_grade_css_afternoon_end']);
+      $('#twelfth_grade_gas_morning_start').val(data['twelfth_grade_gas_morning_start']);
+      $('#twelfth_grade_gas_morning_end').val(data['twelfth_grade_gas_morning_end']);
+      $('#twelfth_grade_gas_afternoon_start').val(data['twelfth_grade_gas_afternoon_start']);
+      $('#twelfth_grade_gas_afternoon_end').val(data['twelfth_grade_gas_afternoon_end']);
+      $('#twelfth_grade_humss_morning_start').val(data['twelfth_grade_humss_morning_start']);
+      $('#twelfth_grade_humss_morning_end').val(data['twelfth_grade_humss_morning_end']);
+      $('#twelfth_grade_humss_afternoon_start').val(data['twelfth_grade_humss_afternoon_start']);
+      $('#twelfth_grade_humss_afternoon_end').val(data['twelfth_grade_humss_afternoon_end']);
+      $('#twelfth_grade_stem_morning_start').val(data['twelfth_grade_stem_morning_start']);
+      $('#twelfth_grade_stem_morning_end').val(data['twelfth_grade_stem_morning_end']);
+      $('#twelfth_grade_stem_afternoon_start').val(data['twelfth_grade_stem_afternoon_start']);
+      $('#twelfth_grade_stem_afternoon_end').val(data['twelfth_grade_stem_afternoon_end']);
+      $('#twelfth_grade_welding_morning_start').val(data['twelfth_grade_welding_morning_start']);
+      $('#twelfth_grade_welding_morning_end').val(data['twelfth_grade_welding_morning_end']);
+      $('#twelfth_grade_welding_afternoon_start').val(data['twelfth_grade_welding_afternoon_start']);
+      $('#twelfth_grade_welding_afternoon_end').val(data['twelfth_grade_welding_afternoon_end']);
+      $('#twelfth_grade_cookery_morning_start').val(data['twelfth_grade_cookery_morning_start']);
+      $('#twelfth_grade_cookery_morning_end').val(data['twelfth_grade_cookery_morning_end']);
+      $('#twelfth_grade_cookery_afternoon_start').val(data['twelfth_grade_cookery_afternoon_start']);
+      $('#twelfth_grade_cookery_afternoon_end').val(data['twelfth_grade_cookery_afternoon_end']);
 
       $('#calendar-schedule-modal-header').html(data['date'])
       $('#calendar-schedule-loading').hide();
@@ -2315,10 +2959,34 @@ function listen_to_checkbox(){
      ($('#ninth_grade_afternoon_class').prop('checked') == ninth_grade_afternoon_class) &&
      ($('#tenth_grade_morning_class').prop('checked') == tenth_grade_morning_class) &&
      ($('#tenth_grade_afternoon_class').prop('checked') == tenth_grade_afternoon_class) &&
-     ($('#eleventh_grade_morning_class').prop('checked') == eleventh_grade_morning_class) &&
-     ($('#eleventh_grade_afternoon_class').prop('checked') == eleventh_grade_afternoon_class) &&
-     ($('#twelfth_grade_morning_class').prop('checked') == twelfth_grade_morning_class) &&
-     ($('#twelfth_grade_afternoon_class').prop('checked') == twelfth_grade_afternoon_class)) {
+     ($('#eleventh_grade_abm_morning_class').prop('checked') == eleventh_grade_abm_morning_class) &&
+     ($('#eleventh_grade_abm_afternoon_class').prop('checked') == eleventh_grade_abm_afternoon_class) &&
+     ($('#eleventh_grade_css_morning_class').prop('checked') == eleventh_grade_css_morning_class) &&
+     ($('#eleventh_grade_css_afternoon_class').prop('checked') == eleventh_grade_css_afternoon_class) &&
+     ($('#eleventh_grade_gas_morning_class').prop('checked') == eleventh_grade_gas_morning_class) &&
+     ($('#eleventh_grade_gas_afternoon_class').prop('checked') == eleventh_grade_gas_afternoon_class) &&
+     ($('#eleventh_grade_humss_morning_class').prop('checked') == eleventh_grade_humss_morning_class) &&
+     ($('#eleventh_grade_humss_afternoon_class').prop('checked') == eleventh_grade_humss_afternoon_class) &&
+     ($('#eleventh_grade_stem_morning_class').prop('checked') == eleventh_grade_stem_morning_class) &&
+     ($('#eleventh_grade_stem_afternoon_class').prop('checked') == eleventh_grade_stem_afternoon_class) &&
+     ($('#eleventh_grade_welding_morning_class').prop('checked') == eleventh_grade_welding_morning_class) &&
+     ($('#eleventh_grade_welding_afternoon_class').prop('checked') == eleventh_grade_welding_afternoon_class) &&
+     ($('#eleventh_grade_cookery_morning_class').prop('checked') == eleventh_grade_cookery_morning_class) &&
+     ($('#eleventh_grade_cookery_afternoon_class').prop('checked') == eleventh_grade_cookery_afternoon_class) &&
+     ($('#twelfth_grade_abm_morning_class').prop('checked') == twelfth_grade_abm_morning_class) &&
+     ($('#twelfth_grade_abm_afternoon_class').prop('checked') == twelfth_grade_abm_afternoon_class) &&
+     ($('#twelfth_grade_css_morning_class').prop('checked') == twelfth_grade_css_morning_class) &&
+     ($('#twelfth_grade_css_afternoon_class').prop('checked') == twelfth_grade_css_afternoon_class) &&
+     ($('#twelfth_grade_gas_morning_class').prop('checked') == twelfth_grade_gas_morning_class) &&
+     ($('#twelfth_grade_gas_afternoon_class').prop('checked') == twelfth_grade_gas_afternoon_class) &&
+     ($('#twelfth_grade_humss_morning_class').prop('checked') == twelfth_grade_humss_morning_class) &&
+     ($('#twelfth_grade_humss_afternoon_class').prop('checked') == twelfth_grade_humss_afternoon_class) &&
+     ($('#twelfth_grade_stem_morning_class').prop('checked') == twelfth_grade_stem_morning_class) &&
+     ($('#twelfth_grade_stem_afternoon_class').prop('checked') == twelfth_grade_stem_afternoon_class) &&
+     ($('#twelfth_grade_welding_morning_class').prop('checked') == twelfth_grade_welding_morning_class) &&
+     ($('#twelfth_grade_welding_afternoon_class').prop('checked') == twelfth_grade_welding_afternoon_class) &&
+     ($('#twelfth_grade_cookery_morning_class').prop('checked') == twelfth_grade_cookery_morning_class) &&
+     ($('#twelfth_grade_cookery_afternoon_class').prop('checked') == twelfth_grade_cookery_afternoon_class)) {
 
         $('#save-calendar-sched').attr('disabled',true);
 
@@ -2405,15 +3073,63 @@ function populate_schedule(){
         $('#'+days[i]+'_tenth_grade_afternoon_start').val(data[days[i]]['tenth_grade_afternoon_start']);
         $('#'+days[i]+'_tenth_grade_afternoon_end').val(data[days[i]]['tenth_grade_afternoon_end']);
 
-        $('#'+days[i]+'_eleventh_grade_morning_start').val(data[days[i]]['eleventh_grade_morning_start']);
-        $('#'+days[i]+'_eleventh_grade_morning_end').val(data[days[i]]['eleventh_grade_morning_end']);
-        $('#'+days[i]+'_eleventh_grade_afternoon_start').val(data[days[i]]['eleventh_grade_afternoon_start']);
-        $('#'+days[i]+'_eleventh_grade_afternoon_end').val(data[days[i]]['eleventh_grade_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_abm_morning_start').val(data[days[i]]['eleventh_grade_abm_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_abm_morning_end').val(data[days[i]]['eleventh_grade_abm_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_abm_afternoon_start').val(data[days[i]]['eleventh_grade_abm_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_abm_afternoon_end').val(data[days[i]]['eleventh_grade_abm_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_css_morning_start').val(data[days[i]]['eleventh_grade_css_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_css_morning_end').val(data[days[i]]['eleventh_grade_css_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_css_afternoon_start').val(data[days[i]]['eleventh_grade_css_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_css_afternoon_end').val(data[days[i]]['eleventh_grade_css_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_gas_morning_start').val(data[days[i]]['eleventh_grade_gas_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_gas_morning_end').val(data[days[i]]['eleventh_grade_gas_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_gas_afternoon_start').val(data[days[i]]['eleventh_grade_gas_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_gas_afternoon_end').val(data[days[i]]['eleventh_grade_gas_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_humss_morning_start').val(data[days[i]]['eleventh_grade_humss_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_humss_morning_end').val(data[days[i]]['eleventh_grade_humss_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_humss_afternoon_start').val(data[days[i]]['eleventh_grade_humss_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_humss_afternoon_end').val(data[days[i]]['eleventh_grade_humss_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_stem_morning_start').val(data[days[i]]['eleventh_grade_stem_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_stem_morning_end').val(data[days[i]]['eleventh_grade_stem_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_stem_afternoon_start').val(data[days[i]]['eleventh_grade_stem_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_stem_afternoon_end').val(data[days[i]]['eleventh_grade_stem_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_welding_morning_start').val(data[days[i]]['eleventh_grade_welding_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_welding_morning_end').val(data[days[i]]['eleventh_grade_welding_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_welding_afternoon_start').val(data[days[i]]['eleventh_grade_welding_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_welding_afternoon_end').val(data[days[i]]['eleventh_grade_welding_afternoon_end']);
+        $('#'+days[i]+'_eleventh_grade_cookery_morning_start').val(data[days[i]]['eleventh_grade_cookery_morning_start']);
+        $('#'+days[i]+'_eleventh_grade_cookery_morning_end').val(data[days[i]]['eleventh_grade_cookery_morning_end']);
+        $('#'+days[i]+'_eleventh_grade_cookery_afternoon_start').val(data[days[i]]['eleventh_grade_cookery_afternoon_start']);
+        $('#'+days[i]+'_eleventh_grade_cookery_afternoon_end').val(data[days[i]]['eleventh_grade_cookery_afternoon_end']);
 
-        $('#'+days[i]+'_twelfth_grade_morning_start').val(data[days[i]]['twelfth_grade_morning_start']);
-        $('#'+days[i]+'_twelfth_grade_morning_end').val(data[days[i]]['twelfth_grade_morning_end']);
-        $('#'+days[i]+'_twelfth_grade_afternoon_start').val(data[days[i]]['twelfth_grade_afternoon_start']);
-        $('#'+days[i]+'_twelfth_grade_afternoon_end').val(data[days[i]]['twelfth_grade_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_abm_morning_start').val(data[days[i]]['twelfth_grade_abm_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_abm_morning_end').val(data[days[i]]['twelfth_grade_abm_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_abm_afternoon_start').val(data[days[i]]['twelfth_grade_abm_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_abm_afternoon_end').val(data[days[i]]['twelfth_grade_abm_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_css_morning_start').val(data[days[i]]['twelfth_grade_css_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_css_morning_end').val(data[days[i]]['twelfth_grade_css_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_css_afternoon_start').val(data[days[i]]['twelfth_grade_css_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_css_afternoon_end').val(data[days[i]]['twelfth_grade_css_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_gas_morning_start').val(data[days[i]]['twelfth_grade_gas_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_gas_morning_end').val(data[days[i]]['twelfth_grade_gas_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_gas_afternoon_start').val(data[days[i]]['twelfth_grade_gas_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_gas_afternoon_end').val(data[days[i]]['twelfth_grade_gas_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_humss_morning_start').val(data[days[i]]['twelfth_grade_humss_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_humss_morning_end').val(data[days[i]]['twelfth_grade_humss_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_humss_afternoon_start').val(data[days[i]]['twelfth_grade_humss_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_humss_afternoon_end').val(data[days[i]]['twelfth_grade_humss_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_stem_morning_start').val(data[days[i]]['twelfth_grade_stem_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_stem_morning_end').val(data[days[i]]['twelfth_grade_stem_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_stem_afternoon_start').val(data[days[i]]['twelfth_grade_stem_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_stem_afternoon_end').val(data[days[i]]['twelfth_grade_stem_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_welding_morning_start').val(data[days[i]]['twelfth_grade_welding_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_welding_morning_end').val(data[days[i]]['twelfth_grade_welding_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_welding_afternoon_start').val(data[days[i]]['twelfth_grade_welding_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_welding_afternoon_end').val(data[days[i]]['twelfth_grade_welding_afternoon_end']);
+        $('#'+days[i]+'_twelfth_grade_cookery_morning_start').val(data[days[i]]['twelfth_grade_cookery_morning_start']);
+        $('#'+days[i]+'_twelfth_grade_cookery_morning_end').val(data[days[i]]['twelfth_grade_cookery_morning_end']);
+        $('#'+days[i]+'_twelfth_grade_cookery_afternoon_start').val(data[days[i]]['twelfth_grade_cookery_afternoon_start']);
+        $('#'+days[i]+'_twelfth_grade_cookery_afternoon_end').val(data[days[i]]['twelfth_grade_cookery_afternoon_end']);
       };
 
       $('#schedule-loading').hide();

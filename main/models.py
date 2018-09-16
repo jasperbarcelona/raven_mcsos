@@ -112,10 +112,38 @@ class Schedule(db.Model):
     ninth_grade_afternoon_class = db.Column(Boolean, unique=False)
     tenth_grade_morning_class = db.Column(Boolean, unique=False)
     tenth_grade_afternoon_class = db.Column(Boolean, unique=False)
-    eleventh_grade_morning_class = db.Column(Boolean, unique=False)
-    eleventh_grade_afternoon_class = db.Column(Boolean, unique=False)
-    twelfth_grade_morning_class = db.Column(Boolean, unique=False)
-    twelfth_grade_afternoon_class = db.Column(Boolean, unique=False)
+
+
+    eleventh_grade_abm_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_abm_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_css_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_css_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_gas_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_gas_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_humss_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_humss_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_stem_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_stem_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_welding_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_welding_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_cookery_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_cookery_afternoon_class = db.Column(Boolean, unique=False)
+    
+
+    twelfth_grade_abm_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_abm_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_css_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_css_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_gas_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_gas_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_humss_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_humss_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_stem_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_stem_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_welding_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_welding_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_cookery_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_cookery_afternoon_class = db.Column(Boolean, unique=False)
 
     nursery_morning_start = db.Column(db.String(30))
     nursery_morning_end = db.Column(db.String(30))
@@ -178,15 +206,75 @@ class Schedule(db.Model):
     tenth_grade_afternoon_start = db.Column(db.String(30))
     tenth_grade_afternoon_end = db.Column(db.String(30))
 
-    eleventh_grade_morning_start = db.Column(db.String(30))
-    eleventh_grade_morning_end = db.Column(db.String(30))
-    eleventh_grade_afternoon_start = db.Column(db.String(30))
-    eleventh_grade_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_abm_morning_start = db.Column(db.String(30))
+    eleventh_grade_abm_morning_end = db.Column(db.String(30))
+    eleventh_grade_abm_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_abm_afternoon_end = db.Column(db.String(30))
 
-    twelfth_grade_morning_start = db.Column(db.String(30))
-    twelfth_grade_morning_end = db.Column(db.String(30))
-    twelfth_grade_afternoon_start = db.Column(db.String(30))
-    twelfth_grade_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_css_morning_start = db.Column(db.String(30))
+    eleventh_grade_css_morning_end = db.Column(db.String(30))
+    eleventh_grade_css_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_css_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_gas_morning_start = db.Column(db.String(30))
+    eleventh_grade_gas_morning_end = db.Column(db.String(30))
+    eleventh_grade_gas_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_gas_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_humss_morning_start = db.Column(db.String(30))
+    eleventh_grade_humss_morning_end = db.Column(db.String(30))
+    eleventh_grade_humss_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_humss_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_stem_morning_start = db.Column(db.String(30))
+    eleventh_grade_stem_morning_end = db.Column(db.String(30))
+    eleventh_grade_stem_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_stem_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_welding_morning_start = db.Column(db.String(30))
+    eleventh_grade_welding_morning_end = db.Column(db.String(30))
+    eleventh_grade_welding_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_welding_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_cookery_morning_start = db.Column(db.String(30))
+    eleventh_grade_cookery_morning_end = db.Column(db.String(30))
+    eleventh_grade_cookery_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_cookery_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_abm_morning_start = db.Column(db.String(30))
+    twelfth_grade_abm_morning_end = db.Column(db.String(30))
+    twelfth_grade_abm_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_abm_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_css_morning_start = db.Column(db.String(30))
+    twelfth_grade_css_morning_end = db.Column(db.String(30))
+    twelfth_grade_css_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_css_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_gas_morning_start = db.Column(db.String(30))
+    twelfth_grade_gas_morning_end = db.Column(db.String(30))
+    twelfth_grade_gas_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_gas_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_humss_morning_start = db.Column(db.String(30))
+    twelfth_grade_humss_morning_end = db.Column(db.String(30))
+    twelfth_grade_humss_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_humss_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_stem_morning_start = db.Column(db.String(30))
+    twelfth_grade_stem_morning_end = db.Column(db.String(30))
+    twelfth_grade_stem_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_stem_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_welding_morning_start = db.Column(db.String(30))
+    twelfth_grade_welding_morning_end = db.Column(db.String(30))
+    twelfth_grade_welding_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_welding_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_cookery_morning_start = db.Column(db.String(30))
+    twelfth_grade_cookery_morning_end = db.Column(db.String(30))
+    twelfth_grade_cookery_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_cookery_afternoon_end = db.Column(db.String(30))
 
 class Section(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -487,10 +575,36 @@ class Irregular(db.Model):
     ninth_grade_afternoon_class = db.Column(Boolean, unique=False)
     tenth_grade_morning_class = db.Column(Boolean, unique=False)
     tenth_grade_afternoon_class = db.Column(Boolean, unique=False)
-    eleventh_grade_morning_class = db.Column(Boolean, unique=False)
-    eleventh_grade_afternoon_class = db.Column(Boolean, unique=False)
-    twelfth_grade_morning_class = db.Column(Boolean, unique=False)
-    twelfth_grade_afternoon_class = db.Column(Boolean, unique=False)
+    
+    eleventh_grade_abm_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_abm_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_css_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_css_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_gas_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_gas_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_humss_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_humss_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_stem_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_stem_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_welding_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_welding_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_cookery_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_cookery_afternoon_class = db.Column(Boolean, unique=False)
+
+    twelfth_grade_abm_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_abm_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_css_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_css_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_gas_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_gas_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_humss_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_humss_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_stem_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_stem_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_welding_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_welding_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_cookery_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_cookery_afternoon_class = db.Column(Boolean, unique=False)
 
     junior_kinder_morning_start = db.Column(db.String(30))
     junior_kinder_morning_end = db.Column(db.String(30))
@@ -549,15 +663,69 @@ class Irregular(db.Model):
     tenth_grade_afternoon_start = db.Column(db.String(30))
     tenth_grade_afternoon_end = db.Column(db.String(30))
 
-    eleventh_grade_morning_start = db.Column(db.String(30))
-    eleventh_grade_morning_end = db.Column(db.String(30))
-    eleventh_grade_afternoon_start = db.Column(db.String(30))
-    eleventh_grade_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_abm_morning_start = db.Column(db.String(30))
+    eleventh_grade_abm_morning_end = db.Column(db.String(30))
+    eleventh_grade_abm_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_abm_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_css_morning_start = db.Column(db.String(30))
+    eleventh_grade_css_morning_end = db.Column(db.String(30))
+    eleventh_grade_css_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_css_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_gas_morning_start = db.Column(db.String(30))
+    eleventh_grade_gas_morning_end = db.Column(db.String(30))
+    eleventh_grade_gas_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_gas_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_humss_morning_start = db.Column(db.String(30))
+    eleventh_grade_humss_morning_end = db.Column(db.String(30))
+    eleventh_grade_humss_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_humss_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_stem_morning_start = db.Column(db.String(30))
+    eleventh_grade_stem_morning_end = db.Column(db.String(30))
+    eleventh_grade_stem_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_stem_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_welding_morning_start = db.Column(db.String(30))
+    eleventh_grade_welding_morning_end = db.Column(db.String(30))
+    eleventh_grade_welding_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_welding_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_cookery_morning_start = db.Column(db.String(30))
+    eleventh_grade_cookery_morning_end = db.Column(db.String(30))
+    eleventh_grade_cookery_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_cookery_afternoon_end = db.Column(db.String(30))
 
-    twelfth_grade_morning_start = db.Column(db.String(30))
-    twelfth_grade_morning_end = db.Column(db.String(30))
-    twelfth_grade_afternoon_start = db.Column(db.String(30))
-    twelfth_grade_afternoon_end = db.Column(db.String(30))
+    twelfth_grade_abm_morning_start = db.Column(db.String(30))
+    twelfth_grade_abm_morning_end = db.Column(db.String(30))
+    twelfth_grade_abm_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_abm_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_css_morning_start = db.Column(db.String(30))
+    twelfth_grade_css_morning_end = db.Column(db.String(30))
+    twelfth_grade_css_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_css_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_gas_morning_start = db.Column(db.String(30))
+    twelfth_grade_gas_morning_end = db.Column(db.String(30))
+    twelfth_grade_gas_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_gas_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_humss_morning_start = db.Column(db.String(30))
+    twelfth_grade_humss_morning_end = db.Column(db.String(30))
+    twelfth_grade_humss_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_humss_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_stem_morning_start = db.Column(db.String(30))
+    twelfth_grade_stem_morning_end = db.Column(db.String(30))
+    twelfth_grade_stem_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_stem_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_welding_morning_start = db.Column(db.String(30))
+    twelfth_grade_welding_morning_end = db.Column(db.String(30))
+    twelfth_grade_welding_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_welding_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_cookery_morning_start = db.Column(db.String(30))
+    twelfth_grade_cookery_morning_end = db.Column(db.String(30))
+    twelfth_grade_cookery_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_cookery_afternoon_end = db.Column(db.String(30))
 
 class Regular(db.Model, Serializer):
     __public__= [
@@ -589,10 +757,34 @@ class Regular(db.Model, Serializer):
         'ninth_grade_afternoon_class',
         'tenth_grade_morning_class',
         'tenth_grade_afternoon_class',
-        'eleventh_grade_morning_class',
-        'eleventh_grade_afternoon_class',
-        'twelfth_grade_morning_class',
-        'twelfth_grade_afternoon_class',
+        'eleventh_grade_abm_morning_class',
+        'eleventh_grade_abm_afternoon_class',
+        'eleventh_grade_css_morning_class',
+        'eleventh_grade_css_afternoon_class',
+        'eleventh_grade_gas_morning_class',
+        'eleventh_grade_gas_afternoon_class',
+        'eleventh_grade_humss_morning_class',
+        'eleventh_grade_humss_afternoon_class',
+        'eleventh_grade_stem_morning_class',
+        'eleventh_grade_stem_afternoon_class',
+        'eleventh_grade_welding_morning_class',
+        'eleventh_grade_welding_afternoon_class',
+        'eleventh_grade_cookery_morning_class',
+        'eleventh_grade_cookery_afternoon_class',
+        'twelfth_grade_abm_morning_class',
+        'twelfth_grade_abm_afternoon_class',
+        'twelfth_grade_css_morning_class',
+        'twelfth_grade_css_afternoon_class',
+        'twelfth_grade_gas_morning_class',
+        'twelfth_grade_gas_afternoon_class',
+        'twelfth_grade_humss_morning_class',
+        'twelfth_grade_humss_afternoon_class',
+        'twelfth_grade_stem_morning_class',
+        'twelfth_grade_stem_afternoon_class',
+        'twelfth_grade_welding_morning_class',
+        'twelfth_grade_welding_afternoon_class',
+        'twelfth_grade_cookery_morning_class',
+        'twelfth_grade_cookery_afternoon_class',
         'nursery_morning_start',
         'nursery_morning_end',
         'nursery_afternoon_start',
@@ -645,14 +837,62 @@ class Regular(db.Model, Serializer):
         'tenth_grade_morning_end',
         'tenth_grade_afternoon_start',
         'tenth_grade_afternoon_end',
-        'eleventh_grade_morning_start',
-        'eleventh_grade_morning_end',
-        'eleventh_grade_afternoon_start',
-        'eleventh_grade_afternoon_end',
-        'twelfth_grade_morning_start',
-        'twelfth_grade_morning_end',
-        'twelfth_grade_afternoon_start',
-        'twelfth_grade_afternoon_end',
+        'eleventh_grade_abm_morning_start',
+        'eleventh_grade_abm_morning_end',
+        'eleventh_grade_abm_afternoon_start',
+        'eleventh_grade_abm_afternoon_end',
+        'eleventh_grade_css_morning_start',
+        'eleventh_grade_css_morning_end',
+        'eleventh_grade_css_afternoon_start',
+        'eleventh_grade_css_afternoon_end',
+        'eleventh_grade_gas_morning_start',
+        'eleventh_grade_gas_morning_end',
+        'eleventh_grade_gas_afternoon_start',
+        'eleventh_grade_gas_afternoon_end',
+        'eleventh_grade_humss_morning_start',
+        'eleventh_grade_humss_morning_end',
+        'eleventh_grade_humss_afternoon_start',
+        'eleventh_grade_humss_afternoon_end',
+        'eleventh_grade_stem_morning_start',
+        'eleventh_grade_stem_morning_end',
+        'eleventh_grade_stem_afternoon_start',
+        'eleventh_grade_stem_afternoon_end',
+        'eleventh_grade_welding_morning_start',
+        'eleventh_grade_welding_morning_end',
+        'eleventh_grade_welding_afternoon_start',
+        'eleventh_grade_welding_afternoon_end',
+        'eleventh_grade_cookery_morning_start',
+        'eleventh_grade_cookery_morning_end',
+        'eleventh_grade_cookery_afternoon_start',
+        'eleventh_grade_cookery_afternoon_end',
+        'twelfth_grade_abm_morning_start',
+        'twelfth_grade_abm_morning_end',
+        'twelfth_grade_abm_afternoon_start',
+        'twelfth_grade_abm_afternoon_end',
+        'twelfth_grade_css_morning_start',
+        'twelfth_grade_css_morning_end',
+        'twelfth_grade_css_afternoon_start',
+        'twelfth_grade_css_afternoon_end',
+        'twelfth_grade_gas_morning_start',
+        'twelfth_grade_gas_morning_end',
+        'twelfth_grade_gas_afternoon_start',
+        'twelfth_grade_gas_afternoon_end',
+        'twelfth_grade_humss_morning_start',
+        'twelfth_grade_humss_morning_end',
+        'twelfth_grade_humss_afternoon_start',
+        'twelfth_grade_humss_afternoon_end',
+        'twelfth_grade_stem_morning_start',
+        'twelfth_grade_stem_morning_end',
+        'twelfth_grade_stem_afternoon_start',
+        'twelfth_grade_stem_afternoon_end',
+        'twelfth_grade_welding_morning_start',
+        'twelfth_grade_welding_morning_end',
+        'twelfth_grade_welding_afternoon_start',
+        'twelfth_grade_welding_afternoon_end',
+        'twelfth_grade_cookery_morning_start',
+        'twelfth_grade_cookery_morning_end',
+        'twelfth_grade_cookery_afternoon_start',
+        'twelfth_grade_cookery_afternoon_end',
     ]
     id = db.Column(db.Integer, primary_key=True)
     school_no = db.Column(db.String(32))
@@ -683,10 +923,37 @@ class Regular(db.Model, Serializer):
     ninth_grade_afternoon_class = db.Column(Boolean, unique=False)
     tenth_grade_morning_class = db.Column(Boolean, unique=False)
     tenth_grade_afternoon_class = db.Column(Boolean, unique=False)
-    eleventh_grade_morning_class = db.Column(Boolean, unique=False)
-    eleventh_grade_afternoon_class = db.Column(Boolean, unique=False)
-    twelfth_grade_morning_class = db.Column(Boolean, unique=False)
-    twelfth_grade_afternoon_class = db.Column(Boolean, unique=False)
+
+    eleventh_grade_abm_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_abm_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_css_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_css_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_gas_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_gas_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_humss_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_humss_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_stem_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_stem_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_welding_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_welding_afternoon_class = db.Column(Boolean, unique=False)
+    eleventh_grade_cookery_morning_class = db.Column(Boolean, unique=False)
+    eleventh_grade_cookery_afternoon_class = db.Column(Boolean, unique=False)
+    
+
+    twelfth_grade_abm_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_abm_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_css_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_css_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_gas_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_gas_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_humss_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_humss_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_stem_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_stem_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_welding_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_welding_afternoon_class = db.Column(Boolean, unique=False)
+    twelfth_grade_cookery_morning_class = db.Column(Boolean, unique=False)
+    twelfth_grade_cookery_afternoon_class = db.Column(Boolean, unique=False)
 
     nursery_morning_start = db.Column(db.String(30))
     nursery_morning_end = db.Column(db.String(30))
@@ -749,12 +1016,72 @@ class Regular(db.Model, Serializer):
     tenth_grade_afternoon_start = db.Column(db.String(30))
     tenth_grade_afternoon_end = db.Column(db.String(30))
 
-    eleventh_grade_morning_start = db.Column(db.String(30))
-    eleventh_grade_morning_end = db.Column(db.String(30))
-    eleventh_grade_afternoon_start = db.Column(db.String(30))
-    eleventh_grade_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_abm_morning_start = db.Column(db.String(30))
+    eleventh_grade_abm_morning_end = db.Column(db.String(30))
+    eleventh_grade_abm_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_abm_afternoon_end = db.Column(db.String(30))
 
-    twelfth_grade_morning_start = db.Column(db.String(30))
-    twelfth_grade_morning_end = db.Column(db.String(30))
-    twelfth_grade_afternoon_start = db.Column(db.String(30))
-    twelfth_grade_afternoon_end = db.Column(db.String(30))
+    eleventh_grade_css_morning_start = db.Column(db.String(30))
+    eleventh_grade_css_morning_end = db.Column(db.String(30))
+    eleventh_grade_css_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_css_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_gas_morning_start = db.Column(db.String(30))
+    eleventh_grade_gas_morning_end = db.Column(db.String(30))
+    eleventh_grade_gas_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_gas_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_humss_morning_start = db.Column(db.String(30))
+    eleventh_grade_humss_morning_end = db.Column(db.String(30))
+    eleventh_grade_humss_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_humss_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_stem_morning_start = db.Column(db.String(30))
+    eleventh_grade_stem_morning_end = db.Column(db.String(30))
+    eleventh_grade_stem_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_stem_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_welding_morning_start = db.Column(db.String(30))
+    eleventh_grade_welding_morning_end = db.Column(db.String(30))
+    eleventh_grade_welding_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_welding_afternoon_end = db.Column(db.String(30))
+
+    eleventh_grade_cookery_morning_start = db.Column(db.String(30))
+    eleventh_grade_cookery_morning_end = db.Column(db.String(30))
+    eleventh_grade_cookery_afternoon_start = db.Column(db.String(30))
+    eleventh_grade_cookery_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_abm_morning_start = db.Column(db.String(30))
+    twelfth_grade_abm_morning_end = db.Column(db.String(30))
+    twelfth_grade_abm_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_abm_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_css_morning_start = db.Column(db.String(30))
+    twelfth_grade_css_morning_end = db.Column(db.String(30))
+    twelfth_grade_css_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_css_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_gas_morning_start = db.Column(db.String(30))
+    twelfth_grade_gas_morning_end = db.Column(db.String(30))
+    twelfth_grade_gas_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_gas_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_humss_morning_start = db.Column(db.String(30))
+    twelfth_grade_humss_morning_end = db.Column(db.String(30))
+    twelfth_grade_humss_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_humss_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_stem_morning_start = db.Column(db.String(30))
+    twelfth_grade_stem_morning_end = db.Column(db.String(30))
+    twelfth_grade_stem_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_stem_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_welding_morning_start = db.Column(db.String(30))
+    twelfth_grade_welding_morning_end = db.Column(db.String(30))
+    twelfth_grade_welding_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_welding_afternoon_end = db.Column(db.String(30))
+
+    twelfth_grade_cookery_morning_start = db.Column(db.String(30))
+    twelfth_grade_cookery_morning_end = db.Column(db.String(30))
+    twelfth_grade_cookery_afternoon_start = db.Column(db.String(30))
+    twelfth_grade_cookery_afternoon_end = db.Column(db.String(30))

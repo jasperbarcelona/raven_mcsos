@@ -251,10 +251,36 @@ def time_out(log_id, id_no, log_time, school_no, group):
             educ = 'ninth_grade'
         elif level == '10th Grade':
             educ = 'tenth_grade'
-        elif level == '11th Grade':
-            educ = 'eleventh_grade'
-        elif level == '12th Grade':
-            educ = 'twelfth_grade'
+        elif level == '11th Grade - ABM':
+            educ = 'eleventh_grade_abm'
+        elif level == '11th Grade - CSS':
+            educ = 'eleventh_grade_css'
+        elif level == '11th Grade - GAS':
+            educ = 'eleventh_grade_gas'
+        elif level == '11th Grade - HUMSS':
+            educ = 'eleventh_grade_humss'
+        elif level == '11th Grade - STEM':
+            educ = 'eleventh_grade_stem'
+        elif level == '11th Grade - Welding':
+            educ = 'eleventh_grade_welding'
+        elif level == '11th Grade - Cookery':
+            educ = 'eleventh_grade_cookery'
+
+
+        elif level == '12th Grade - ABM':
+            educ = 'twelfth_grade_abm'
+        elif level == '12th Grade - CSS':
+            educ = 'twelfth_grade_css'
+        elif level == '12th Grade - GAS':
+            educ = 'twelfth_grade_gas'
+        elif level == '12th Grade - HUMSS':
+            educ = 'twelfth_grade_humss'
+        elif level == '12th Grade - STEM':
+            educ = 'twelfth_grade_stem'
+        elif level == '12th Grade - Welding':
+            educ = 'twelfth_grade_welding'
+        elif level == '12th Grade - Cookery':
+            educ = 'twelfth_grade_cookery'
 
         query = 'schedule.%s' %educ
 
@@ -581,8 +607,22 @@ def initialize_morning_absent(school_no,api_key):
     eight_grade_morning_start = time_format.format(parse_date(class_schedule.eight_grade_morning_start) + timedelta(minutes=5))
     ninth_grade_morning_start = time_format.format(parse_date(class_schedule.ninth_grade_morning_start) + timedelta(minutes=5))
     tenth_grade_morning_start = time_format.format(parse_date(class_schedule.tenth_grade_morning_start) + timedelta(minutes=5))
-    eleventh_grade_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_morning_start) + timedelta(minutes=5))
-    twelfth_grade_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_morning_start) + timedelta(minutes=5))
+
+    eleventh_grade_abm_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_abm_morning_start) + timedelta(minutes=5))
+    eleventh_grade_css_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_css_morning_start) + timedelta(minutes=5))
+    eleventh_grade_gas_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_gas_morning_start) + timedelta(minutes=5))
+    eleventh_grade_humss_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_humss_morning_start) + timedelta(minutes=5))
+    eleventh_grade_stem_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_stem_morning_start) + timedelta(minutes=5))
+    eleventh_grade_welding_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_welding_morning_start) + timedelta(minutes=5))
+    eleventh_grade_cookery_morning_start = time_format.format(parse_date(class_schedule.eleventh_grade_cookery_morning_start) + timedelta(minutes=5))
+
+    twelfth_grade_abm_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_abm_morning_start) + timedelta(minutes=5))
+    twelfth_grade_css_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_css_morning_start) + timedelta(minutes=5))
+    twelfth_grade_gas_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_gas_morning_start) + timedelta(minutes=5))
+    twelfth_grade_humss_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_humss_morning_start) + timedelta(minutes=5))
+    twelfth_grade_stem_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_stem_morning_start) + timedelta(minutes=5))
+    twelfth_grade_welding_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_welding_morning_start) + timedelta(minutes=5))
+    twelfth_grade_cookery_morning_start = time_format.format(parse_date(class_schedule.twelfth_grade_cookery_morning_start) + timedelta(minutes=5))
 
     schedule.every().day.at(nursery_morning_start).do(mark_morning_absent,school_no,api_key,'Nursery')
     schedule.every().day.at(preparatory_morning_start).do(mark_morning_absent,school_no,api_key,'Preparatory')
@@ -597,12 +637,26 @@ def initialize_morning_absent(school_no,api_key):
     schedule.every().day.at(eight_grade_morning_start).do(mark_morning_absent,school_no,api_key,'8th Grade')
     schedule.every().day.at(ninth_grade_morning_start).do(mark_morning_absent,school_no,api_key,'9th Grade')
     schedule.every().day.at(tenth_grade_morning_start).do(mark_morning_absent,school_no,api_key,'10th Grade')
-    schedule.every().day.at(eleventh_grade_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade')
-    schedule.every().day.at(twelfth_grade_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade')
+
+    schedule.every().day.at(eleventh_grade_abm_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - ABM')
+    schedule.every().day.at(eleventh_grade_css_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - CSS')
+    schedule.every().day.at(eleventh_grade_gas_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - GAS')
+    schedule.every().day.at(eleventh_grade_humss_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - HUMSS')
+    schedule.every().day.at(eleventh_grade_stem_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - STEM')
+    schedule.every().day.at(eleventh_grade_welding_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - Welding')
+    schedule.every().day.at(eleventh_grade_cookery_morning_start).do(mark_morning_absent,school_no,api_key,'11th Grade - Cookery')
+
+    schedule.every().day.at(twelfth_grade_abm_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - ABM')
+    schedule.every().day.at(twelfth_grade_css_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - CSS')
+    schedule.every().day.at(twelfth_grade_gas_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - GAS')
+    schedule.every().day.at(twelfth_grade_humss_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - HUMSS')
+    schedule.every().day.at(twelfth_grade_stem_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - STEM')
+    schedule.every().day.at(twelfth_grade_welding_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - Welding')
+    schedule.every().day.at(twelfth_grade_cookery_morning_start).do(mark_morning_absent,school_no,api_key,'12th Grade - Cookery')
 
     while True:
         schedule.run_pending()
-        time.sleep(1)
+        time.sleep(10)
     return
 
 def initialize_afternoon_absent(school_no,api_key):
@@ -629,8 +683,22 @@ def initialize_afternoon_absent(school_no,api_key):
     eight_grade_afternoon_start = time_format.format(parse_date(class_schedule.eight_grade_afternoon_start) + timedelta(minutes=5))
     ninth_grade_afternoon_start = time_format.format(parse_date(class_schedule.ninth_grade_afternoon_start) + timedelta(minutes=5))
     tenth_grade_afternoon_start = time_format.format(parse_date(class_schedule.tenth_grade_afternoon_start) + timedelta(minutes=5))
-    eleventh_grade_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_afternoon_start) + timedelta(minutes=5))
-    twelfth_grade_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_afternoon_start) + timedelta(minutes=5))
+
+    eleventh_grade_abm_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_abm_afternoon_start) + timedelta(minutes=5))
+    eleventh_grade_css_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_css_afternoon_start) + timedelta(minutes=5))
+    eleventh_grade_gas_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_gas_afternoon_start) + timedelta(minutes=5))
+    eleventh_grade_humss_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_humss_afternoon_start) + timedelta(minutes=5))
+    eleventh_grade_stem_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_stem_afternoon_start) + timedelta(minutes=5))
+    eleventh_grade_welding_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_welding_afternoon_start) + timedelta(minutes=5))
+    eleventh_grade_cookery_afternoon_start = time_format.format(parse_date(class_schedule.eleventh_grade_cookery_afternoon_start) + timedelta(minutes=5))
+
+    twelfth_grade_abm_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_abm_afternoon_start) + timedelta(minutes=5))
+    twelfth_grade_css_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_css_afternoon_start) + timedelta(minutes=5))
+    twelfth_grade_gas_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_gas_afternoon_start) + timedelta(minutes=5))
+    twelfth_grade_humss_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_humss_afternoon_start) + timedelta(minutes=5))
+    twelfth_grade_stem_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_stem_afternoon_start) + timedelta(minutes=5))
+    twelfth_grade_welding_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_welding_afternoon_start) + timedelta(minutes=5))
+    twelfth_grade_cookery_afternoon_start = time_format.format(parse_date(class_schedule.twelfth_grade_cookery_afternoon_start) + timedelta(minutes=5))
 
     schedule.every().day.at(nursery_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'Nursery')
     schedule.every().day.at(preparatory_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'Preparatory')
@@ -645,8 +713,22 @@ def initialize_afternoon_absent(school_no,api_key):
     schedule.every().day.at(eight_grade_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'8th Grade')
     schedule.every().day.at(ninth_grade_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'9th Grade')
     schedule.every().day.at(tenth_grade_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'10th Grade')
-    schedule.every().day.at(eleventh_grade_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade')
-    schedule.every().day.at(twelfth_grade_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade')
+
+    schedule.every().day.at(eleventh_grade_abm_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - ABM')
+    schedule.every().day.at(eleventh_grade_css_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - CSS')
+    schedule.every().day.at(eleventh_grade_gas_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - GAS')
+    schedule.every().day.at(eleventh_grade_humss_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - HUMSS')
+    schedule.every().day.at(eleventh_grade_stem_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - STEM')
+    schedule.every().day.at(eleventh_grade_welding_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - Welding')
+    schedule.every().day.at(eleventh_grade_cookery_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'11th Grade - Cookery')
+
+    schedule.every().day.at(twelfth_grade_abm_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - ABM')
+    schedule.every().day.at(twelfth_grade_css_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - CSS')
+    schedule.every().day.at(twelfth_grade_gas_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - GAS')
+    schedule.every().day.at(twelfth_grade_humss_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - HUMSS')
+    schedule.every().day.at(twelfth_grade_stem_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - STEM')
+    schedule.every().day.at(twelfth_grade_welding_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - Welding')
+    schedule.every().day.at(twelfth_grade_cookery_afternoon_start).do(mark_afternoon_absent,school_no,api_key,'12th Grade - Cookery')
 
     while True:
         schedule.run_pending()
@@ -2928,10 +3010,38 @@ def get_irregular_schedule():
         ninth_grade_afternoon_class=schedule.ninth_grade_afternoon_class,
         tenth_grade_morning_class=schedule.tenth_grade_morning_class,
         tenth_grade_afternoon_class=schedule.tenth_grade_afternoon_class,
-        eleventh_grade_morning_class=schedule.eleventh_grade_morning_class,
-        eleventh_grade_afternoon_class=schedule.eleventh_grade_afternoon_class,
-        twelfth_grade_morning_class=schedule.twelfth_grade_morning_class,
-        twelfth_grade_afternoon_class=schedule.twelfth_grade_afternoon_class,
+
+
+        eleventh_grade_abm_morning_class=schedule.eleventh_grade_abm_morning_class,
+        eleventh_grade_abm_afternoon_class=schedule.eleventh_grade_abm_afternoon_class,
+        eleventh_grade_css_morning_class=schedule.eleventh_grade_css_morning_class,
+        eleventh_grade_css_afternoon_class=schedule.eleventh_grade_css_afternoon_class,
+        eleventh_grade_gas_morning_class=schedule.eleventh_grade_gas_morning_class,
+        eleventh_grade_gas_afternoon_class=schedule.eleventh_grade_gas_afternoon_class,
+        eleventh_grade_humss_morning_class=schedule.eleventh_grade_humss_morning_class,
+        eleventh_grade_humss_afternoon_class=schedule.eleventh_grade_humss_afternoon_class,
+        eleventh_grade_stem_morning_class=schedule.eleventh_grade_stem_morning_class,
+        eleventh_grade_stem_afternoon_class=schedule.eleventh_grade_stem_afternoon_class,
+        eleventh_grade_welding_morning_class=schedule.eleventh_grade_welding_morning_class,
+        eleventh_grade_welding_afternoon_class=schedule.eleventh_grade_welding_afternoon_class,
+        eleventh_grade_cookery_morning_class=schedule.eleventh_grade_cookery_morning_class,
+        eleventh_grade_cookery_afternoon_class=schedule.eleventh_grade_cookery_afternoon_class,
+
+        twelfth_grade_abm_morning_class=schedule.twelfth_grade_abm_morning_class,
+        twelfth_grade_abm_afternoon_class=schedule.twelfth_grade_abm_afternoon_class,
+        twelfth_grade_css_morning_class=schedule.twelfth_grade_css_morning_class,
+        twelfth_grade_css_afternoon_class=schedule.twelfth_grade_css_afternoon_class,
+        twelfth_grade_gas_morning_class=schedule.twelfth_grade_gas_morning_class,
+        twelfth_grade_gas_afternoon_class=schedule.twelfth_grade_gas_afternoon_class,
+        twelfth_grade_humss_morning_class=schedule.twelfth_grade_humss_morning_class,
+        twelfth_grade_humss_afternoon_class=schedule.twelfth_grade_humss_afternoon_class,
+        twelfth_grade_stem_morning_class=schedule.twelfth_grade_stem_morning_class,
+        twelfth_grade_stem_afternoon_class=schedule.twelfth_grade_stem_afternoon_class,
+        twelfth_grade_welding_morning_class=schedule.twelfth_grade_welding_morning_class,
+        twelfth_grade_welding_afternoon_class=schedule.twelfth_grade_welding_afternoon_class,
+        twelfth_grade_cookery_morning_class=schedule.twelfth_grade_cookery_morning_class,
+        twelfth_grade_cookery_afternoon_class=schedule.twelfth_grade_cookery_afternoon_class,
+
         nursery_morning_start=schedule.nursery_morning_start,
         nursery_morning_end=schedule.nursery_morning_end,
         nursery_afternoon_start=schedule.nursery_afternoon_start,
@@ -2984,14 +3094,78 @@ def get_irregular_schedule():
         tenth_grade_morning_end=schedule.tenth_grade_morning_end,
         tenth_grade_afternoon_start=schedule.tenth_grade_afternoon_start,
         tenth_grade_afternoon_end=schedule.tenth_grade_afternoon_end,
-        eleventh_grade_morning_start=schedule.eleventh_grade_morning_start,
-        eleventh_grade_morning_end=schedule.eleventh_grade_morning_end,
-        eleventh_grade_afternoon_start=schedule.eleventh_grade_afternoon_start,
-        eleventh_grade_afternoon_end=schedule.eleventh_grade_afternoon_end,
-        twelfth_grade_morning_start=schedule.twelfth_grade_morning_start,
-        twelfth_grade_morning_end=schedule.twelfth_grade_morning_end,
-        twelfth_grade_afternoon_start=schedule.twelfth_grade_afternoon_start,
-        twelfth_grade_afternoon_end=schedule.twelfth_grade_afternoon_end
+
+        eleventh_grade_abm_morning_start=schedule.eleventh_grade_abm_morning_start,
+        eleventh_grade_abm_morning_end=schedule.eleventh_grade_abm_morning_end,
+        eleventh_grade_abm_afternoon_start=schedule.eleventh_grade_abm_afternoon_start,
+        eleventh_grade_abm_afternoon_end=schedule.eleventh_grade_abm_afternoon_end,
+
+        eleventh_grade_css_morning_start=schedule.eleventh_grade_css_morning_start,
+        eleventh_grade_css_morning_end=schedule.eleventh_grade_css_morning_end,
+        eleventh_grade_css_afternoon_start=schedule.eleventh_grade_css_afternoon_start,
+        eleventh_grade_css_afternoon_end=schedule.eleventh_grade_css_afternoon_end,
+
+        eleventh_grade_gas_morning_start=schedule.eleventh_grade_gas_morning_start,
+        eleventh_grade_gas_morning_end=schedule.eleventh_grade_gas_morning_end,
+        eleventh_grade_gas_afternoon_start=schedule.eleventh_grade_gas_afternoon_start,
+        eleventh_grade_gas_afternoon_end=schedule.eleventh_grade_gas_afternoon_end,
+
+        eleventh_grade_humss_morning_start=schedule.eleventh_grade_humss_morning_start,
+        eleventh_grade_humss_morning_end=schedule.eleventh_grade_humss_morning_end,
+        eleventh_grade_humss_afternoon_start=schedule.eleventh_grade_humss_afternoon_start,
+        eleventh_grade_humss_afternoon_end=schedule.eleventh_grade_humss_afternoon_end,
+
+        eleventh_grade_stem_morning_start=schedule.eleventh_grade_stem_morning_start,
+        eleventh_grade_stem_morning_end=schedule.eleventh_grade_stem_morning_end,
+        eleventh_grade_stem_afternoon_start=schedule.eleventh_grade_stem_afternoon_start,
+        eleventh_grade_stem_afternoon_end=schedule.eleventh_grade_stem_afternoon_end,
+
+        eleventh_grade_welding_morning_start=schedule.eleventh_grade_welding_morning_start,
+        eleventh_grade_welding_morning_end=schedule.eleventh_grade_welding_morning_end,
+        eleventh_grade_welding_afternoon_start=schedule.eleventh_grade_welding_afternoon_start,
+        eleventh_grade_welding_afternoon_end=schedule.eleventh_grade_welding_afternoon_end,
+
+        eleventh_grade_cookery_morning_start=schedule.eleventh_grade_cookery_morning_start,
+        eleventh_grade_cookery_morning_end=schedule.eleventh_grade_cookery_morning_end,
+        eleventh_grade_cookery_afternoon_start=schedule.eleventh_grade_cookery_afternoon_start,
+        eleventh_grade_cookery_afternoon_end=schedule.eleventh_grade_cookery_afternoon_end,
+
+
+        twelfth_grade_abm_morning_start=schedule.twelfth_grade_abm_morning_start,
+        twelfth_grade_abm_morning_end=schedule.twelfth_grade_abm_morning_end,
+        twelfth_grade_abm_afternoon_start=schedule.twelfth_grade_abm_afternoon_start,
+        twelfth_grade_abm_afternoon_end=schedule.twelfth_grade_abm_afternoon_end,
+
+        twelfth_grade_css_morning_start=schedule.twelfth_grade_css_morning_start,
+        twelfth_grade_css_morning_end=schedule.twelfth_grade_css_morning_end,
+        twelfth_grade_css_afternoon_start=schedule.twelfth_grade_css_afternoon_start,
+        twelfth_grade_css_afternoon_end=schedule.twelfth_grade_css_afternoon_end,
+
+        twelfth_grade_gas_morning_start=schedule.twelfth_grade_gas_morning_start,
+        twelfth_grade_gas_morning_end=schedule.twelfth_grade_gas_morning_end,
+        twelfth_grade_gas_afternoon_start=schedule.twelfth_grade_gas_afternoon_start,
+        twelfth_grade_gas_afternoon_end=schedule.twelfth_grade_gas_afternoon_end,
+
+        twelfth_grade_humss_morning_start=schedule.twelfth_grade_humss_morning_start,
+        twelfth_grade_humss_morning_end=schedule.twelfth_grade_humss_morning_end,
+        twelfth_grade_humss_afternoon_start=schedule.twelfth_grade_humss_afternoon_start,
+        twelfth_grade_humss_afternoon_end=schedule.twelfth_grade_humss_afternoon_end,
+
+        twelfth_grade_stem_morning_start=schedule.twelfth_grade_stem_morning_start,
+        twelfth_grade_stem_morning_end=schedule.twelfth_grade_stem_morning_end,
+        twelfth_grade_stem_afternoon_start=schedule.twelfth_grade_stem_afternoon_start,
+        twelfth_grade_stem_afternoon_end=schedule.twelfth_grade_stem_afternoon_end,
+
+        twelfth_grade_welding_morning_start=schedule.twelfth_grade_welding_morning_start,
+        twelfth_grade_welding_morning_end=schedule.twelfth_grade_welding_morning_end,
+        twelfth_grade_welding_afternoon_start=schedule.twelfth_grade_welding_afternoon_start,
+        twelfth_grade_welding_afternoon_end=schedule.twelfth_grade_welding_afternoon_end,
+
+        twelfth_grade_cookery_morning_start=schedule.twelfth_grade_cookery_morning_start,
+        twelfth_grade_cookery_morning_end=schedule.twelfth_grade_cookery_morning_end,
+        twelfth_grade_cookery_afternoon_start=schedule.twelfth_grade_cookery_afternoon_start,
+        twelfth_grade_cookery_afternoon_end=schedule.twelfth_grade_cookery_afternoon_end,
+
         ),201
 
 
@@ -3818,262 +3992,494 @@ def change_sched():
     monday_sched.tenth_grade_morning_end = schedule[49]
     monday_sched.tenth_grade_afternoon_start = schedule[50]
     monday_sched.tenth_grade_afternoon_end = schedule[51]
-    monday_sched.eleventh_grade_morning_start = schedule[52]
-    monday_sched.eleventh_grade_morning_end = schedule[53]
-    monday_sched.eleventh_grade_afternoon_start = schedule[54]
-    monday_sched.eleventh_grade_afternoon_end = schedule[55]
-    monday_sched.twelfth_grade_morning_start = schedule[56]
-    monday_sched.twelfth_grade_morning_end = schedule[57]
-    monday_sched.twelfth_grade_afternoon_start = schedule[58]
-    monday_sched.twelfth_grade_afternoon_end = schedule[59]
-
-
-    tuesday_sched.nursery_morning_start = schedule[60]
-    tuesday_sched.nursery_morning_end = schedule[61]
-    tuesday_sched.nursery_afternoon_start = schedule[62]
-    tuesday_sched.nursery_afternoon_end = schedule[63]
-    tuesday_sched.preparatory_morning_start = schedule[64]
-    tuesday_sched.preparatory_morning_end = schedule[65]
-    tuesday_sched.preparatory_afternoon_start = schedule[66]
-    tuesday_sched.preparatory_afternoon_end = schedule[67]
-    tuesday_sched.kinder_morning_start = schedule[68]
-    tuesday_sched.kinder_morning_end = schedule[69]
-    tuesday_sched.kinder_afternoon_start = schedule[70]
-    tuesday_sched.kinder_afternoon_end = schedule[71]
-    tuesday_sched.first_grade_morning_start = schedule[72]
-    tuesday_sched.first_grade_morning_end = schedule[73]
-    tuesday_sched.first_grade_afternoon_start = schedule[74]
-    tuesday_sched.first_grade_afternoon_end = schedule[75]
-    tuesday_sched.second_grade_morning_start = schedule[76]
-    tuesday_sched.second_grade_morning_end = schedule[77]
-    tuesday_sched.second_grade_afternoon_start = schedule[78]
-    tuesday_sched.second_grade_afternoon_end = schedule[79]
-    tuesday_sched.third_grade_morning_start = schedule[80]
-    tuesday_sched.third_grade_morning_end = schedule[81]
-    tuesday_sched.third_grade_afternoon_start = schedule[82]
-    tuesday_sched.third_grade_afternoon_end = schedule[83]
-    tuesday_sched.fourth_grade_morning_start = schedule[84]
-    tuesday_sched.fourth_grade_morning_end = schedule[85]
-    tuesday_sched.fourth_grade_afternoon_start = schedule[86]
-    tuesday_sched.fourth_grade_afternoon_end = schedule[87]
-    tuesday_sched.fifth_grade_morning_start = schedule[88]
-    tuesday_sched.fifth_grade_morning_end = schedule[89]
-    tuesday_sched.fifth_grade_afternoon_start = schedule[90]
-    tuesday_sched.fifth_grade_afternoon_end = schedule[91]
-    tuesday_sched.sixth_grade_morning_start = schedule[92]
-    tuesday_sched.sixth_grade_morning_end = schedule[93]
-    tuesday_sched.sixth_grade_afternoon_start = schedule[94]
-    tuesday_sched.sixth_grade_afternoon_end = schedule[95]
-    tuesday_sched.seventh_grade_morning_start = schedule[96]
-    tuesday_sched.seventh_grade_morning_end = schedule[97]
-    tuesday_sched.seventh_grade_afternoon_start = schedule[98]
-    tuesday_sched.seventh_grade_afternoon_end = schedule[99]
-    tuesday_sched.eight_grade_morning_start = schedule[100]
-    tuesday_sched.eight_grade_morning_end = schedule[101]
-    tuesday_sched.eight_grade_afternoon_start = schedule[102]
-    tuesday_sched.eight_grade_afternoon_end = schedule[103]
-    tuesday_sched.ninth_grade_morning_start = schedule[104]
-    tuesday_sched.ninth_grade_morning_end = schedule[105]
-    tuesday_sched.ninth_grade_afternoon_start = schedule[106]
-    tuesday_sched.ninth_grade_afternoon_end = schedule[107]
-    tuesday_sched.tenth_grade_morning_start = schedule[108]
-    tuesday_sched.tenth_grade_morning_end = schedule[109]
-    tuesday_sched.tenth_grade_afternoon_start = schedule[110]
-    tuesday_sched.tenth_grade_afternoon_end = schedule[111]
-    tuesday_sched.eleventh_grade_morning_start = schedule[112]
-    tuesday_sched.eleventh_grade_morning_end = schedule[113]
-    tuesday_sched.eleventh_grade_afternoon_start = schedule[114]
-    tuesday_sched.eleventh_grade_afternoon_end = schedule[115]
-    tuesday_sched.twelfth_grade_morning_start = schedule[116]
-    tuesday_sched.twelfth_grade_morning_end = schedule[117]
-    tuesday_sched.twelfth_grade_afternoon_start = schedule[118]
-    tuesday_sched.twelfth_grade_afternoon_end = schedule[119]
-
-
-    wednesday_sched.nursery_morning_start = schedule[120]
-    wednesday_sched.nursery_morning_end = schedule[121]
-    wednesday_sched.nursery_afternoon_start = schedule[122]
-    wednesday_sched.nursery_afternoon_end = schedule[123]
-    wednesday_sched.preparatory_morning_start = schedule[124]
-    wednesday_sched.preparatory_morning_end = schedule[125]
-    wednesday_sched.preparatory_afternoon_start = schedule[126]
-    wednesday_sched.preparatory_afternoon_end = schedule[127]
-    wednesday_sched.kinder_morning_start = schedule[128]
-    wednesday_sched.kinder_morning_end = schedule[129]
-    wednesday_sched.kinder_afternoon_start = schedule[130]
-    wednesday_sched.kinder_afternoon_end = schedule[131]
-    wednesday_sched.first_grade_morning_start = schedule[132]
-    wednesday_sched.first_grade_morning_end = schedule[133]
-    wednesday_sched.first_grade_afternoon_start = schedule[134]
-    wednesday_sched.first_grade_afternoon_end = schedule[135]
-    wednesday_sched.second_grade_morning_start = schedule[136]
-    wednesday_sched.second_grade_morning_end = schedule[137]
-    wednesday_sched.second_grade_afternoon_start = schedule[138]
-    wednesday_sched.second_grade_afternoon_end = schedule[139]
-    wednesday_sched.third_grade_morning_start = schedule[140]
-    wednesday_sched.third_grade_morning_end = schedule[141]
-    wednesday_sched.third_grade_afternoon_start = schedule[142]
-    wednesday_sched.third_grade_afternoon_end = schedule[143]
-    wednesday_sched.fourth_grade_morning_start = schedule[144]
-    wednesday_sched.fourth_grade_morning_end = schedule[145]
-    wednesday_sched.fourth_grade_afternoon_start = schedule[146]
-    wednesday_sched.fourth_grade_afternoon_end = schedule[147]
-    wednesday_sched.fifth_grade_morning_start = schedule[148]
-    wednesday_sched.fifth_grade_morning_end = schedule[149]
-    wednesday_sched.fifth_grade_afternoon_start = schedule[150]
-    wednesday_sched.fifth_grade_afternoon_end = schedule[151]
-    wednesday_sched.sixth_grade_morning_start = schedule[152]
-    wednesday_sched.sixth_grade_morning_end = schedule[153]
-    wednesday_sched.sixth_grade_afternoon_start = schedule[154]
-    wednesday_sched.sixth_grade_afternoon_end = schedule[155]
-    wednesday_sched.seventh_grade_morning_start = schedule[156]
-    wednesday_sched.seventh_grade_morning_end = schedule[157]
-    wednesday_sched.seventh_grade_afternoon_start = schedule[158]
-    wednesday_sched.seventh_grade_afternoon_end = schedule[159]
-    wednesday_sched.eight_grade_morning_start = schedule[160]
-    wednesday_sched.eight_grade_morning_end = schedule[161]
-    wednesday_sched.eight_grade_afternoon_start = schedule[162]
-    wednesday_sched.eight_grade_afternoon_end = schedule[163]
-    wednesday_sched.ninth_grade_morning_start = schedule[164]
-    wednesday_sched.ninth_grade_morning_end = schedule[165]
-    wednesday_sched.ninth_grade_afternoon_start = schedule[166]
-    wednesday_sched.ninth_grade_afternoon_end = schedule[167]
-    wednesday_sched.tenth_grade_morning_start = schedule[168]
-    wednesday_sched.tenth_grade_morning_end = schedule[169]
-    wednesday_sched.tenth_grade_afternoon_start = schedule[170]
-    wednesday_sched.tenth_grade_afternoon_end = schedule[171]
-    wednesday_sched.eleventh_grade_morning_start = schedule[172]
-    wednesday_sched.eleventh_grade_morning_end = schedule[173]
-    wednesday_sched.eleventh_grade_afternoon_start = schedule[174]
-    wednesday_sched.eleventh_grade_afternoon_end = schedule[175]
-    wednesday_sched.twelfth_grade_morning_start = schedule[176]
-    wednesday_sched.twelfth_grade_morning_end = schedule[177]
-    wednesday_sched.twelfth_grade_afternoon_start = schedule[178]
-    wednesday_sched.twelfth_grade_afternoon_end = schedule[179]
-
-
-    thursday_sched.nursery_morning_start = schedule[180]
-    thursday_sched.nursery_morning_end = schedule[181]
-    thursday_sched.nursery_afternoon_start = schedule[182]
-    thursday_sched.nursery_afternoon_end = schedule[183]
-    thursday_sched.preparatory_morning_start = schedule[184]
-    thursday_sched.preparatory_morning_end = schedule[185]
-    thursday_sched.preparatory_afternoon_start = schedule[186]
-    thursday_sched.preparatory_afternoon_end = schedule[187]
-    thursday_sched.kinder_morning_start = schedule[188]
-    thursday_sched.kinder_morning_end = schedule[189]
-    thursday_sched.kinder_afternoon_start = schedule[190]
-    thursday_sched.kinder_afternoon_end = schedule[191]
-    thursday_sched.first_grade_morning_start = schedule[192]
-    thursday_sched.first_grade_morning_end = schedule[193]
-    thursday_sched.first_grade_afternoon_start = schedule[194]
-    thursday_sched.first_grade_afternoon_end = schedule[195]
-    thursday_sched.second_grade_morning_start = schedule[196]
-    thursday_sched.second_grade_morning_end = schedule[197]
-    thursday_sched.second_grade_afternoon_start = schedule[198]
-    thursday_sched.second_grade_afternoon_end = schedule[199]
-    thursday_sched.third_grade_morning_start = schedule[200]
-    thursday_sched.third_grade_morning_end = schedule[201]
-    thursday_sched.third_grade_afternoon_start = schedule[202]
-    thursday_sched.third_grade_afternoon_end = schedule[203]
-    thursday_sched.fourth_grade_morning_start = schedule[204]
-    thursday_sched.fourth_grade_morning_end = schedule[205]
-    thursday_sched.fourth_grade_afternoon_start = schedule[206]
-    thursday_sched.fourth_grade_afternoon_end = schedule[207]
-    thursday_sched.fifth_grade_morning_start = schedule[208]
-    thursday_sched.fifth_grade_morning_end = schedule[209]
-    thursday_sched.fifth_grade_afternoon_start = schedule[210]
-    thursday_sched.fifth_grade_afternoon_end = schedule[211]
-    thursday_sched.sixth_grade_morning_start = schedule[212]
-    thursday_sched.sixth_grade_morning_end = schedule[213]
-    thursday_sched.sixth_grade_afternoon_start = schedule[214]
-    thursday_sched.sixth_grade_afternoon_end = schedule[215]
-    thursday_sched.seventh_grade_morning_start = schedule[216]
-    thursday_sched.seventh_grade_morning_end = schedule[217]
-    thursday_sched.seventh_grade_afternoon_start = schedule[218]
-    thursday_sched.seventh_grade_afternoon_end = schedule[219]
-    thursday_sched.eight_grade_morning_start = schedule[220]
-    thursday_sched.eight_grade_morning_end = schedule[221]
-    thursday_sched.eight_grade_afternoon_start = schedule[222]
-    thursday_sched.eight_grade_afternoon_end = schedule[223]
-    thursday_sched.ninth_grade_morning_start = schedule[224]
-    thursday_sched.ninth_grade_morning_end = schedule[225]
-    thursday_sched.ninth_grade_afternoon_start = schedule[226]
-    thursday_sched.ninth_grade_afternoon_end = schedule[227]
-    thursday_sched.tenth_grade_morning_start = schedule[228]
-    thursday_sched.tenth_grade_morning_end = schedule[229]
-    thursday_sched.tenth_grade_afternoon_start = schedule[230]
-    thursday_sched.tenth_grade_afternoon_end = schedule[231]
-    thursday_sched.eleventh_grade_morning_start = schedule[232]
-    thursday_sched.eleventh_grade_morning_end = schedule[233]
-    thursday_sched.eleventh_grade_afternoon_start = schedule[234]
-    thursday_sched.eleventh_grade_afternoon_end = schedule[235]
-    thursday_sched.twelfth_grade_morning_start = schedule[236]
-    thursday_sched.twelfth_grade_morning_end = schedule[237]
-    thursday_sched.twelfth_grade_afternoon_start = schedule[238]
-    thursday_sched.twelfth_grade_afternoon_end = schedule[239]
-
-
-    friday_sched.nursery_morning_start = schedule[240]
-    friday_sched.nursery_morning_end = schedule[241]
-    friday_sched.nursery_afternoon_start = schedule[242]
-    friday_sched.nursery_afternoon_end = schedule[243]
-    friday_sched.preparatory_morning_start = schedule[244]
-    friday_sched.preparatory_morning_end = schedule[245]
-    friday_sched.preparatory_afternoon_start = schedule[246]
-    friday_sched.preparatory_afternoon_end = schedule[247]
-    friday_sched.kinder_morning_start = schedule[248]
-    friday_sched.kinder_morning_end = schedule[249]
-    friday_sched.kinder_afternoon_start = schedule[250]
-    friday_sched.kinder_afternoon_end = schedule[251]
-    friday_sched.first_grade_morning_start = schedule[252]
-    friday_sched.first_grade_morning_end = schedule[253]
-    friday_sched.first_grade_afternoon_start = schedule[254]
-    friday_sched.first_grade_afternoon_end = schedule[255]
-    friday_sched.second_grade_morning_start = schedule[256]
-    friday_sched.second_grade_morning_end = schedule[257]
-    friday_sched.second_grade_afternoon_start = schedule[258]
-    friday_sched.second_grade_afternoon_end = schedule[259]
-    friday_sched.third_grade_morning_start = schedule[260]
-    friday_sched.third_grade_morning_end = schedule[261]
-    friday_sched.third_grade_afternoon_start = schedule[262]
-    friday_sched.third_grade_afternoon_end = schedule[263]
-    friday_sched.fourth_grade_morning_start = schedule[264]
-    friday_sched.fourth_grade_morning_end = schedule[265]
-    friday_sched.fourth_grade_afternoon_start = schedule[266]
-    friday_sched.fourth_grade_afternoon_end = schedule[267]
-    friday_sched.fifth_grade_morning_start = schedule[268]
-    friday_sched.fifth_grade_morning_end = schedule[269]
-    friday_sched.fifth_grade_afternoon_start = schedule[270]
-    friday_sched.fifth_grade_afternoon_end = schedule[271]
-    friday_sched.sixth_grade_morning_start = schedule[272]
-    friday_sched.sixth_grade_morning_end = schedule[273]
-    friday_sched.sixth_grade_afternoon_start = schedule[274]
-    friday_sched.sixth_grade_afternoon_end = schedule[275]
-    friday_sched.seventh_grade_morning_start = schedule[276]
-    friday_sched.seventh_grade_morning_end = schedule[277]
-    friday_sched.seventh_grade_afternoon_start = schedule[278]
-    friday_sched.seventh_grade_afternoon_end = schedule[279]
-    friday_sched.eight_grade_morning_start = schedule[280]
-    friday_sched.eight_grade_morning_end = schedule[281]
-    friday_sched.eight_grade_afternoon_start = schedule[282]
-    friday_sched.eight_grade_afternoon_end = schedule[283]
-    friday_sched.ninth_grade_morning_start = schedule[284]
-    friday_sched.ninth_grade_morning_end = schedule[285]
-    friday_sched.ninth_grade_afternoon_start = schedule[286]
-    friday_sched.ninth_grade_afternoon_end = schedule[287]
-    friday_sched.tenth_grade_morning_start = schedule[288]
-    friday_sched.tenth_grade_morning_end = schedule[289]
-    friday_sched.tenth_grade_afternoon_start = schedule[290]
-    friday_sched.tenth_grade_afternoon_end = schedule[291]
-    friday_sched.eleventh_grade_morning_start = schedule[292]
-    friday_sched.eleventh_grade_morning_end = schedule[293]
-    friday_sched.eleventh_grade_afternoon_start = schedule[294]
-    friday_sched.eleventh_grade_afternoon_end = schedule[295]
-    friday_sched.twelfth_grade_morning_start = schedule[296]
-    friday_sched.twelfth_grade_morning_end = schedule[297]
-    friday_sched.twelfth_grade_afternoon_start = schedule[298]
-    friday_sched.twelfth_grade_afternoon_end = schedule[299]
+    monday_sched.eleventh_grade_abm_morning_start = schedule[52]
+    monday_sched.eleventh_grade_abm_morning_end = schedule[53]
+    monday_sched.eleventh_grade_abm_afternoon_start = schedule[54]
+    monday_sched.eleventh_grade_abm_afternoon_end = schedule[55]
+    monday_sched.eleventh_grade_css_morning_start = schedule[56]
+    monday_sched.eleventh_grade_css_morning_end = schedule[57]
+    monday_sched.eleventh_grade_css_afternoon_start = schedule[58]
+    monday_sched.eleventh_grade_css_afternoon_end = schedule[59]
+    monday_sched.eleventh_grade_gas_morning_start = schedule[60]
+    monday_sched.eleventh_grade_gas_morning_end = schedule[61]
+    monday_sched.eleventh_grade_gas_afternoon_start = schedule[62]
+    monday_sched.eleventh_grade_gas_afternoon_end = schedule[63]
+    monday_sched.eleventh_grade_humss_morning_start = schedule[64]
+    monday_sched.eleventh_grade_humss_morning_end = schedule[65]
+    monday_sched.eleventh_grade_humss_afternoon_start = schedule[66]
+    monday_sched.eleventh_grade_humss_afternoon_end = schedule[67]
+    monday_sched.eleventh_grade_stem_morning_start = schedule[68]
+    monday_sched.eleventh_grade_stem_morning_end = schedule[69]
+    monday_sched.eleventh_grade_stem_afternoon_start = schedule[70]
+    monday_sched.eleventh_grade_stem_afternoon_end = schedule[71]
+    monday_sched.eleventh_grade_welding_morning_start = schedule[72]
+    monday_sched.eleventh_grade_welding_morning_end = schedule[73]
+    monday_sched.eleventh_grade_welding_afternoon_start = schedule[74]
+    monday_sched.eleventh_grade_welding_afternoon_end = schedule[75]
+    monday_sched.eleventh_grade_cookery_morning_start = schedule[76]
+    monday_sched.eleventh_grade_cookery_morning_end = schedule[77]
+    monday_sched.eleventh_grade_cookery_afternoon_start = schedule[78]
+    monday_sched.eleventh_grade_cookery_afternoon_end = schedule[79]
+    monday_sched.twelfth_grade_abm_morning_start = schedule[80]
+    monday_sched.twelfth_grade_abm_morning_end = schedule[81]
+    monday_sched.twelfth_grade_abm_afternoon_start = schedule[82]
+    monday_sched.twelfth_grade_abm_afternoon_end = schedule[83]
+    monday_sched.twelfth_grade_css_morning_start = schedule[84]
+    monday_sched.twelfth_grade_css_morning_end = schedule[85]
+    monday_sched.twelfth_grade_css_afternoon_start = schedule[86]
+    monday_sched.twelfth_grade_css_afternoon_end = schedule[87]
+    monday_sched.twelfth_grade_gas_morning_start = schedule[88]
+    monday_sched.twelfth_grade_gas_morning_end = schedule[89]
+    monday_sched.twelfth_grade_gas_afternoon_start = schedule[90]
+    monday_sched.twelfth_grade_gas_afternoon_end = schedule[91]
+    monday_sched.twelfth_grade_humss_morning_start = schedule[92]
+    monday_sched.twelfth_grade_humss_morning_end = schedule[93]
+    monday_sched.twelfth_grade_humss_afternoon_start = schedule[94]
+    monday_sched.twelfth_grade_humss_afternoon_end = schedule[95]
+    monday_sched.twelfth_grade_stem_morning_start = schedule[96]
+    monday_sched.twelfth_grade_stem_morning_end = schedule[97]
+    monday_sched.twelfth_grade_stem_afternoon_start = schedule[98]
+    monday_sched.twelfth_grade_stem_afternoon_end = schedule[99]
+    monday_sched.twelfth_grade_welding_morning_start = schedule[100]
+    monday_sched.twelfth_grade_welding_morning_end = schedule[101]
+    monday_sched.twelfth_grade_welding_afternoon_start = schedule[102]
+    monday_sched.twelfth_grade_welding_afternoon_end = schedule[103]
+    monday_sched.twelfth_grade_cookery_morning_start = schedule[104]
+    monday_sched.twelfth_grade_cookery_morning_end = schedule[105]
+    monday_sched.twelfth_grade_cookery_afternoon_start = schedule[106]
+    monday_sched.twelfth_grade_cookery_afternoon_end = schedule[107]
+    tuesday_sched.nursery_morning_start = schedule[108]
+    tuesday_sched.nursery_morning_end = schedule[109]
+    tuesday_sched.nursery_afternoon_start = schedule[110]
+    tuesday_sched.nursery_afternoon_end = schedule[111]
+    tuesday_sched.preparatory_morning_start = schedule[112]
+    tuesday_sched.preparatory_morning_end = schedule[113]
+    tuesday_sched.preparatory_afternoon_start = schedule[114]
+    tuesday_sched.preparatory_afternoon_end = schedule[115]
+    tuesday_sched.kinder_morning_start = schedule[116]
+    tuesday_sched.kinder_morning_end = schedule[117]
+    tuesday_sched.kinder_afternoon_start = schedule[118]
+    tuesday_sched.kinder_afternoon_end = schedule[119]
+    tuesday_sched.first_grade_morning_start = schedule[120]
+    tuesday_sched.first_grade_morning_end = schedule[121]
+    tuesday_sched.first_grade_afternoon_start = schedule[122]
+    tuesday_sched.first_grade_afternoon_end = schedule[123]
+    tuesday_sched.second_grade_morning_start = schedule[124]
+    tuesday_sched.second_grade_morning_end = schedule[125]
+    tuesday_sched.second_grade_afternoon_start = schedule[126]
+    tuesday_sched.second_grade_afternoon_end = schedule[127]
+    tuesday_sched.third_grade_morning_start = schedule[128]
+    tuesday_sched.third_grade_morning_end = schedule[129]
+    tuesday_sched.third_grade_afternoon_start = schedule[130]
+    tuesday_sched.third_grade_afternoon_end = schedule[131]
+    tuesday_sched.fourth_grade_morning_start = schedule[132]
+    tuesday_sched.fourth_grade_morning_end = schedule[133]
+    tuesday_sched.fourth_grade_afternoon_start = schedule[134]
+    tuesday_sched.fourth_grade_afternoon_end = schedule[135]
+    tuesday_sched.fifth_grade_morning_start = schedule[136]
+    tuesday_sched.fifth_grade_morning_end = schedule[137]
+    tuesday_sched.fifth_grade_afternoon_start = schedule[138]
+    tuesday_sched.fifth_grade_afternoon_end = schedule[139]
+    tuesday_sched.sixth_grade_morning_start = schedule[140]
+    tuesday_sched.sixth_grade_morning_end = schedule[141]
+    tuesday_sched.sixth_grade_afternoon_start = schedule[142]
+    tuesday_sched.sixth_grade_afternoon_end = schedule[143]
+    tuesday_sched.seventh_grade_morning_start = schedule[144]
+    tuesday_sched.seventh_grade_morning_end = schedule[145]
+    tuesday_sched.seventh_grade_afternoon_start = schedule[146]
+    tuesday_sched.seventh_grade_afternoon_end = schedule[147]
+    tuesday_sched.eight_grade_morning_start = schedule[148]
+    tuesday_sched.eight_grade_morning_end = schedule[149]
+    tuesday_sched.eight_grade_afternoon_start = schedule[150]
+    tuesday_sched.eight_grade_afternoon_end = schedule[151]
+    tuesday_sched.ninth_grade_morning_start = schedule[152]
+    tuesday_sched.ninth_grade_morning_end = schedule[153]
+    tuesday_sched.ninth_grade_afternoon_start = schedule[154]
+    tuesday_sched.ninth_grade_afternoon_end = schedule[155]
+    tuesday_sched.tenth_grade_morning_start = schedule[156]
+    tuesday_sched.tenth_grade_morning_end = schedule[157]
+    tuesday_sched.tenth_grade_afternoon_start = schedule[158]
+    tuesday_sched.tenth_grade_afternoon_end = schedule[159]
+    tuesday_sched.eleventh_grade_abm_morning_start = schedule[160]
+    tuesday_sched.eleventh_grade_abm_morning_end = schedule[161]
+    tuesday_sched.eleventh_grade_abm_afternoon_start = schedule[162]
+    tuesday_sched.eleventh_grade_abm_afternoon_end = schedule[163]
+    tuesday_sched.eleventh_grade_css_morning_start = schedule[164]
+    tuesday_sched.eleventh_grade_css_morning_end = schedule[165]
+    tuesday_sched.eleventh_grade_css_afternoon_start = schedule[166]
+    tuesday_sched.eleventh_grade_css_afternoon_end = schedule[167]
+    tuesday_sched.eleventh_grade_gas_morning_start = schedule[168]
+    tuesday_sched.eleventh_grade_gas_morning_end = schedule[169]
+    tuesday_sched.eleventh_grade_gas_afternoon_start = schedule[170]
+    tuesday_sched.eleventh_grade_gas_afternoon_end = schedule[171]
+    tuesday_sched.eleventh_grade_humss_morning_start = schedule[172]
+    tuesday_sched.eleventh_grade_humss_morning_end = schedule[173]
+    tuesday_sched.eleventh_grade_humss_afternoon_start = schedule[174]
+    tuesday_sched.eleventh_grade_humss_afternoon_end = schedule[175]
+    tuesday_sched.eleventh_grade_stem_morning_start = schedule[176]
+    tuesday_sched.eleventh_grade_stem_morning_end = schedule[177]
+    tuesday_sched.eleventh_grade_stem_afternoon_start = schedule[178]
+    tuesday_sched.eleventh_grade_stem_afternoon_end = schedule[179]
+    tuesday_sched.eleventh_grade_welding_morning_start = schedule[180]
+    tuesday_sched.eleventh_grade_welding_morning_end = schedule[181]
+    tuesday_sched.eleventh_grade_welding_afternoon_start = schedule[182]
+    tuesday_sched.eleventh_grade_welding_afternoon_end = schedule[183]
+    tuesday_sched.eleventh_grade_cookery_morning_start = schedule[184]
+    tuesday_sched.eleventh_grade_cookery_morning_end = schedule[185]
+    tuesday_sched.eleventh_grade_cookery_afternoon_start = schedule[186]
+    tuesday_sched.eleventh_grade_cookery_afternoon_end = schedule[187]
+    tuesday_sched.twelfth_grade_abm_morning_start = schedule[188]
+    tuesday_sched.twelfth_grade_abm_morning_end = schedule[189]
+    tuesday_sched.twelfth_grade_abm_afternoon_start = schedule[190]
+    tuesday_sched.twelfth_grade_abm_afternoon_end = schedule[191]
+    tuesday_sched.twelfth_grade_css_morning_start = schedule[192]
+    tuesday_sched.twelfth_grade_css_morning_end = schedule[193]
+    tuesday_sched.twelfth_grade_css_afternoon_start = schedule[194]
+    tuesday_sched.twelfth_grade_css_afternoon_end = schedule[195]
+    tuesday_sched.twelfth_grade_gas_morning_start = schedule[196]
+    tuesday_sched.twelfth_grade_gas_morning_end = schedule[197]
+    tuesday_sched.twelfth_grade_gas_afternoon_start = schedule[198]
+    tuesday_sched.twelfth_grade_gas_afternoon_end = schedule[199]
+    tuesday_sched.twelfth_grade_humss_morning_start = schedule[200]
+    tuesday_sched.twelfth_grade_humss_morning_end = schedule[201]
+    tuesday_sched.twelfth_grade_humss_afternoon_start = schedule[202]
+    tuesday_sched.twelfth_grade_humss_afternoon_end = schedule[203]
+    tuesday_sched.twelfth_grade_stem_morning_start = schedule[204]
+    tuesday_sched.twelfth_grade_stem_morning_end = schedule[205]
+    tuesday_sched.twelfth_grade_stem_afternoon_start = schedule[206]
+    tuesday_sched.twelfth_grade_stem_afternoon_end = schedule[207]
+    tuesday_sched.twelfth_grade_welding_morning_start = schedule[208]
+    tuesday_sched.twelfth_grade_welding_morning_end = schedule[209]
+    tuesday_sched.twelfth_grade_welding_afternoon_start = schedule[210]
+    tuesday_sched.twelfth_grade_welding_afternoon_end = schedule[211]
+    tuesday_sched.twelfth_grade_cookery_morning_start = schedule[212]
+    tuesday_sched.twelfth_grade_cookery_morning_end = schedule[213]
+    tuesday_sched.twelfth_grade_cookery_afternoon_start = schedule[214]
+    tuesday_sched.twelfth_grade_cookery_afternoon_end = schedule[215]
+    wednesday_sched.nursery_morning_start = schedule[216]
+    wednesday_sched.nursery_morning_end = schedule[217]
+    wednesday_sched.nursery_afternoon_start = schedule[218]
+    wednesday_sched.nursery_afternoon_end = schedule[219]
+    wednesday_sched.preparatory_morning_start = schedule[220]
+    wednesday_sched.preparatory_morning_end = schedule[221]
+    wednesday_sched.preparatory_afternoon_start = schedule[222]
+    wednesday_sched.preparatory_afternoon_end = schedule[223]
+    wednesday_sched.kinder_morning_start = schedule[224]
+    wednesday_sched.kinder_morning_end = schedule[225]
+    wednesday_sched.kinder_afternoon_start = schedule[226]
+    wednesday_sched.kinder_afternoon_end = schedule[227]
+    wednesday_sched.first_grade_morning_start = schedule[228]
+    wednesday_sched.first_grade_morning_end = schedule[229]
+    wednesday_sched.first_grade_afternoon_start = schedule[230]
+    wednesday_sched.first_grade_afternoon_end = schedule[231]
+    wednesday_sched.second_grade_morning_start = schedule[232]
+    wednesday_sched.second_grade_morning_end = schedule[233]
+    wednesday_sched.second_grade_afternoon_start = schedule[234]
+    wednesday_sched.second_grade_afternoon_end = schedule[235]
+    wednesday_sched.third_grade_morning_start = schedule[236]
+    wednesday_sched.third_grade_morning_end = schedule[237]
+    wednesday_sched.third_grade_afternoon_start = schedule[238]
+    wednesday_sched.third_grade_afternoon_end = schedule[239]
+    wednesday_sched.fourth_grade_morning_start = schedule[240]
+    wednesday_sched.fourth_grade_morning_end = schedule[241]
+    wednesday_sched.fourth_grade_afternoon_start = schedule[242]
+    wednesday_sched.fourth_grade_afternoon_end = schedule[243]
+    wednesday_sched.fifth_grade_morning_start = schedule[244]
+    wednesday_sched.fifth_grade_morning_end = schedule[245]
+    wednesday_sched.fifth_grade_afternoon_start = schedule[246]
+    wednesday_sched.fifth_grade_afternoon_end = schedule[247]
+    wednesday_sched.sixth_grade_morning_start = schedule[248]
+    wednesday_sched.sixth_grade_morning_end = schedule[249]
+    wednesday_sched.sixth_grade_afternoon_start = schedule[250]
+    wednesday_sched.sixth_grade_afternoon_end = schedule[251]
+    wednesday_sched.seventh_grade_morning_start = schedule[252]
+    wednesday_sched.seventh_grade_morning_end = schedule[253]
+    wednesday_sched.seventh_grade_afternoon_start = schedule[254]
+    wednesday_sched.seventh_grade_afternoon_end = schedule[255]
+    wednesday_sched.eight_grade_morning_start = schedule[256]
+    wednesday_sched.eight_grade_morning_end = schedule[257]
+    wednesday_sched.eight_grade_afternoon_start = schedule[258]
+    wednesday_sched.eight_grade_afternoon_end = schedule[259]
+    wednesday_sched.ninth_grade_morning_start = schedule[260]
+    wednesday_sched.ninth_grade_morning_end = schedule[261]
+    wednesday_sched.ninth_grade_afternoon_start = schedule[262]
+    wednesday_sched.ninth_grade_afternoon_end = schedule[263]
+    wednesday_sched.tenth_grade_morning_start = schedule[264]
+    wednesday_sched.tenth_grade_morning_end = schedule[265]
+    wednesday_sched.tenth_grade_afternoon_start = schedule[266]
+    wednesday_sched.tenth_grade_afternoon_end = schedule[267]
+    wednesday_sched.eleventh_grade_abm_morning_start = schedule[268]
+    wednesday_sched.eleventh_grade_abm_morning_end = schedule[269]
+    wednesday_sched.eleventh_grade_abm_afternoon_start = schedule[270]
+    wednesday_sched.eleventh_grade_abm_afternoon_end = schedule[271]
+    wednesday_sched.eleventh_grade_css_morning_start = schedule[272]
+    wednesday_sched.eleventh_grade_css_morning_end = schedule[273]
+    wednesday_sched.eleventh_grade_css_afternoon_start = schedule[274]
+    wednesday_sched.eleventh_grade_css_afternoon_end = schedule[275]
+    wednesday_sched.eleventh_grade_gas_morning_start = schedule[276]
+    wednesday_sched.eleventh_grade_gas_morning_end = schedule[277]
+    wednesday_sched.eleventh_grade_gas_afternoon_start = schedule[278]
+    wednesday_sched.eleventh_grade_gas_afternoon_end = schedule[279]
+    wednesday_sched.eleventh_grade_humss_morning_start = schedule[280]
+    wednesday_sched.eleventh_grade_humss_morning_end = schedule[281]
+    wednesday_sched.eleventh_grade_humss_afternoon_start = schedule[282]
+    wednesday_sched.eleventh_grade_humss_afternoon_end = schedule[283]
+    wednesday_sched.eleventh_grade_stem_morning_start = schedule[284]
+    wednesday_sched.eleventh_grade_stem_morning_end = schedule[285]
+    wednesday_sched.eleventh_grade_stem_afternoon_start = schedule[286]
+    wednesday_sched.eleventh_grade_stem_afternoon_end = schedule[287]
+    wednesday_sched.eleventh_grade_welding_morning_start = schedule[288]
+    wednesday_sched.eleventh_grade_welding_morning_end = schedule[289]
+    wednesday_sched.eleventh_grade_welding_afternoon_start = schedule[290]
+    wednesday_sched.eleventh_grade_welding_afternoon_end = schedule[291]
+    wednesday_sched.eleventh_grade_cookery_morning_start = schedule[292]
+    wednesday_sched.eleventh_grade_cookery_morning_end = schedule[293]
+    wednesday_sched.eleventh_grade_cookery_afternoon_start = schedule[294]
+    wednesday_sched.eleventh_grade_cookery_afternoon_end = schedule[295]
+    wednesday_sched.twelfth_grade_abm_morning_start = schedule[296]
+    wednesday_sched.twelfth_grade_abm_morning_end = schedule[297]
+    wednesday_sched.twelfth_grade_abm_afternoon_start = schedule[298]
+    wednesday_sched.twelfth_grade_abm_afternoon_end = schedule[299]
+    wednesday_sched.twelfth_grade_css_morning_start = schedule[300]
+    wednesday_sched.twelfth_grade_css_morning_end = schedule[301]
+    wednesday_sched.twelfth_grade_css_afternoon_start = schedule[302]
+    wednesday_sched.twelfth_grade_css_afternoon_end = schedule[303]
+    wednesday_sched.twelfth_grade_gas_morning_start = schedule[304]
+    wednesday_sched.twelfth_grade_gas_morning_end = schedule[305]
+    wednesday_sched.twelfth_grade_gas_afternoon_start = schedule[306]
+    wednesday_sched.twelfth_grade_gas_afternoon_end = schedule[307]
+    wednesday_sched.twelfth_grade_humss_morning_start = schedule[308]
+    wednesday_sched.twelfth_grade_humss_morning_end = schedule[309]
+    wednesday_sched.twelfth_grade_humss_afternoon_start = schedule[310]
+    wednesday_sched.twelfth_grade_humss_afternoon_end = schedule[311]
+    wednesday_sched.twelfth_grade_stem_morning_start = schedule[312]
+    wednesday_sched.twelfth_grade_stem_morning_end = schedule[313]
+    wednesday_sched.twelfth_grade_stem_afternoon_start = schedule[314]
+    wednesday_sched.twelfth_grade_stem_afternoon_end = schedule[315]
+    wednesday_sched.twelfth_grade_welding_morning_start = schedule[316]
+    wednesday_sched.twelfth_grade_welding_morning_end = schedule[317]
+    wednesday_sched.twelfth_grade_welding_afternoon_start = schedule[318]
+    wednesday_sched.twelfth_grade_welding_afternoon_end = schedule[319]
+    wednesday_sched.twelfth_grade_cookery_morning_start = schedule[320]
+    wednesday_sched.twelfth_grade_cookery_morning_end = schedule[321]
+    wednesday_sched.twelfth_grade_cookery_afternoon_start = schedule[322]
+    wednesday_sched.twelfth_grade_cookery_afternoon_end = schedule[323]
+    thursday_sched.nursery_morning_start = schedule[324]
+    thursday_sched.nursery_morning_end = schedule[325]
+    thursday_sched.nursery_afternoon_start = schedule[326]
+    thursday_sched.nursery_afternoon_end = schedule[327]
+    thursday_sched.preparatory_morning_start = schedule[328]
+    thursday_sched.preparatory_morning_end = schedule[329]
+    thursday_sched.preparatory_afternoon_start = schedule[330]
+    thursday_sched.preparatory_afternoon_end = schedule[331]
+    thursday_sched.kinder_morning_start = schedule[332]
+    thursday_sched.kinder_morning_end = schedule[333]
+    thursday_sched.kinder_afternoon_start = schedule[334]
+    thursday_sched.kinder_afternoon_end = schedule[335]
+    thursday_sched.first_grade_morning_start = schedule[336]
+    thursday_sched.first_grade_morning_end = schedule[337]
+    thursday_sched.first_grade_afternoon_start = schedule[338]
+    thursday_sched.first_grade_afternoon_end = schedule[339]
+    thursday_sched.second_grade_morning_start = schedule[340]
+    thursday_sched.second_grade_morning_end = schedule[341]
+    thursday_sched.second_grade_afternoon_start = schedule[342]
+    thursday_sched.second_grade_afternoon_end = schedule[343]
+    thursday_sched.third_grade_morning_start = schedule[344]
+    thursday_sched.third_grade_morning_end = schedule[345]
+    thursday_sched.third_grade_afternoon_start = schedule[346]
+    thursday_sched.third_grade_afternoon_end = schedule[347]
+    thursday_sched.fourth_grade_morning_start = schedule[348]
+    thursday_sched.fourth_grade_morning_end = schedule[349]
+    thursday_sched.fourth_grade_afternoon_start = schedule[350]
+    thursday_sched.fourth_grade_afternoon_end = schedule[351]
+    thursday_sched.fifth_grade_morning_start = schedule[352]
+    thursday_sched.fifth_grade_morning_end = schedule[353]
+    thursday_sched.fifth_grade_afternoon_start = schedule[354]
+    thursday_sched.fifth_grade_afternoon_end = schedule[355]
+    thursday_sched.sixth_grade_morning_start = schedule[356]
+    thursday_sched.sixth_grade_morning_end = schedule[357]
+    thursday_sched.sixth_grade_afternoon_start = schedule[358]
+    thursday_sched.sixth_grade_afternoon_end = schedule[359]
+    thursday_sched.seventh_grade_morning_start = schedule[360]
+    thursday_sched.seventh_grade_morning_end = schedule[361]
+    thursday_sched.seventh_grade_afternoon_start = schedule[362]
+    thursday_sched.seventh_grade_afternoon_end = schedule[363]
+    thursday_sched.eight_grade_morning_start = schedule[364]
+    thursday_sched.eight_grade_morning_end = schedule[365]
+    thursday_sched.eight_grade_afternoon_start = schedule[366]
+    thursday_sched.eight_grade_afternoon_end = schedule[367]
+    thursday_sched.ninth_grade_morning_start = schedule[368]
+    thursday_sched.ninth_grade_morning_end = schedule[369]
+    thursday_sched.ninth_grade_afternoon_start = schedule[370]
+    thursday_sched.ninth_grade_afternoon_end = schedule[371]
+    thursday_sched.tenth_grade_morning_start = schedule[372]
+    thursday_sched.tenth_grade_morning_end = schedule[373]
+    thursday_sched.tenth_grade_afternoon_start = schedule[374]
+    thursday_sched.tenth_grade_afternoon_end = schedule[375]
+    thursday_sched.eleventh_grade_abm_morning_start = schedule[376]
+    thursday_sched.eleventh_grade_abm_morning_end = schedule[377]
+    thursday_sched.eleventh_grade_abm_afternoon_start = schedule[378]
+    thursday_sched.eleventh_grade_abm_afternoon_end = schedule[379]
+    thursday_sched.eleventh_grade_css_morning_start = schedule[380]
+    thursday_sched.eleventh_grade_css_morning_end = schedule[381]
+    thursday_sched.eleventh_grade_css_afternoon_start = schedule[382]
+    thursday_sched.eleventh_grade_css_afternoon_end = schedule[383]
+    thursday_sched.eleventh_grade_gas_morning_start = schedule[384]
+    thursday_sched.eleventh_grade_gas_morning_end = schedule[385]
+    thursday_sched.eleventh_grade_gas_afternoon_start = schedule[386]
+    thursday_sched.eleventh_grade_gas_afternoon_end = schedule[387]
+    thursday_sched.eleventh_grade_humss_morning_start = schedule[388]
+    thursday_sched.eleventh_grade_humss_morning_end = schedule[389]
+    thursday_sched.eleventh_grade_humss_afternoon_start = schedule[390]
+    thursday_sched.eleventh_grade_humss_afternoon_end = schedule[391]
+    thursday_sched.eleventh_grade_stem_morning_start = schedule[392]
+    thursday_sched.eleventh_grade_stem_morning_end = schedule[393]
+    thursday_sched.eleventh_grade_stem_afternoon_start = schedule[394]
+    thursday_sched.eleventh_grade_stem_afternoon_end = schedule[395]
+    thursday_sched.eleventh_grade_welding_morning_start = schedule[396]
+    thursday_sched.eleventh_grade_welding_morning_end = schedule[397]
+    thursday_sched.eleventh_grade_welding_afternoon_start = schedule[398]
+    thursday_sched.eleventh_grade_welding_afternoon_end = schedule[399]
+    thursday_sched.eleventh_grade_cookery_morning_start = schedule[400]
+    thursday_sched.eleventh_grade_cookery_morning_end = schedule[401]
+    thursday_sched.eleventh_grade_cookery_afternoon_start = schedule[402]
+    thursday_sched.eleventh_grade_cookery_afternoon_end = schedule[403]
+    thursday_sched.twelfth_grade_abm_morning_start = schedule[404]
+    thursday_sched.twelfth_grade_abm_morning_end = schedule[405]
+    thursday_sched.twelfth_grade_abm_afternoon_start = schedule[406]
+    thursday_sched.twelfth_grade_abm_afternoon_end = schedule[407]
+    thursday_sched.twelfth_grade_css_morning_start = schedule[408]
+    thursday_sched.twelfth_grade_css_morning_end = schedule[409]
+    thursday_sched.twelfth_grade_css_afternoon_start = schedule[410]
+    thursday_sched.twelfth_grade_css_afternoon_end = schedule[411]
+    thursday_sched.twelfth_grade_gas_morning_start = schedule[412]
+    thursday_sched.twelfth_grade_gas_morning_end = schedule[413]
+    thursday_sched.twelfth_grade_gas_afternoon_start = schedule[414]
+    thursday_sched.twelfth_grade_gas_afternoon_end = schedule[415]
+    thursday_sched.twelfth_grade_humss_morning_start = schedule[416]
+    thursday_sched.twelfth_grade_humss_morning_end = schedule[417]
+    thursday_sched.twelfth_grade_humss_afternoon_start = schedule[418]
+    thursday_sched.twelfth_grade_humss_afternoon_end = schedule[419]
+    thursday_sched.twelfth_grade_stem_morning_start = schedule[420]
+    thursday_sched.twelfth_grade_stem_morning_end = schedule[421]
+    thursday_sched.twelfth_grade_stem_afternoon_start = schedule[422]
+    thursday_sched.twelfth_grade_stem_afternoon_end = schedule[423]
+    thursday_sched.twelfth_grade_welding_morning_start = schedule[424]
+    thursday_sched.twelfth_grade_welding_morning_end = schedule[425]
+    thursday_sched.twelfth_grade_welding_afternoon_start = schedule[426]
+    thursday_sched.twelfth_grade_welding_afternoon_end = schedule[427]
+    thursday_sched.twelfth_grade_cookery_morning_start = schedule[428]
+    thursday_sched.twelfth_grade_cookery_morning_end = schedule[429]
+    thursday_sched.twelfth_grade_cookery_afternoon_start = schedule[430]
+    thursday_sched.twelfth_grade_cookery_afternoon_end = schedule[431]
+    friday_sched.nursery_morning_start = schedule[432]
+    friday_sched.nursery_morning_end = schedule[433]
+    friday_sched.nursery_afternoon_start = schedule[434]
+    friday_sched.nursery_afternoon_end = schedule[435]
+    friday_sched.preparatory_morning_start = schedule[436]
+    friday_sched.preparatory_morning_end = schedule[437]
+    friday_sched.preparatory_afternoon_start = schedule[438]
+    friday_sched.preparatory_afternoon_end = schedule[439]
+    friday_sched.kinder_morning_start = schedule[440]
+    friday_sched.kinder_morning_end = schedule[441]
+    friday_sched.kinder_afternoon_start = schedule[442]
+    friday_sched.kinder_afternoon_end = schedule[443]
+    friday_sched.first_grade_morning_start = schedule[444]
+    friday_sched.first_grade_morning_end = schedule[445]
+    friday_sched.first_grade_afternoon_start = schedule[446]
+    friday_sched.first_grade_afternoon_end = schedule[447]
+    friday_sched.second_grade_morning_start = schedule[448]
+    friday_sched.second_grade_morning_end = schedule[449]
+    friday_sched.second_grade_afternoon_start = schedule[450]
+    friday_sched.second_grade_afternoon_end = schedule[451]
+    friday_sched.third_grade_morning_start = schedule[452]
+    friday_sched.third_grade_morning_end = schedule[453]
+    friday_sched.third_grade_afternoon_start = schedule[454]
+    friday_sched.third_grade_afternoon_end = schedule[455]
+    friday_sched.fourth_grade_morning_start = schedule[456]
+    friday_sched.fourth_grade_morning_end = schedule[457]
+    friday_sched.fourth_grade_afternoon_start = schedule[458]
+    friday_sched.fourth_grade_afternoon_end = schedule[459]
+    friday_sched.fifth_grade_morning_start = schedule[460]
+    friday_sched.fifth_grade_morning_end = schedule[461]
+    friday_sched.fifth_grade_afternoon_start = schedule[462]
+    friday_sched.fifth_grade_afternoon_end = schedule[463]
+    friday_sched.sixth_grade_morning_start = schedule[464]
+    friday_sched.sixth_grade_morning_end = schedule[465]
+    friday_sched.sixth_grade_afternoon_start = schedule[466]
+    friday_sched.sixth_grade_afternoon_end = schedule[467]
+    friday_sched.seventh_grade_morning_start = schedule[468]
+    friday_sched.seventh_grade_morning_end = schedule[469]
+    friday_sched.seventh_grade_afternoon_start = schedule[470]
+    friday_sched.seventh_grade_afternoon_end = schedule[471]
+    friday_sched.eight_grade_morning_start = schedule[472]
+    friday_sched.eight_grade_morning_end = schedule[473]
+    friday_sched.eight_grade_afternoon_start = schedule[474]
+    friday_sched.eight_grade_afternoon_end = schedule[475]
+    friday_sched.ninth_grade_morning_start = schedule[476]
+    friday_sched.ninth_grade_morning_end = schedule[477]
+    friday_sched.ninth_grade_afternoon_start = schedule[478]
+    friday_sched.ninth_grade_afternoon_end = schedule[479]
+    friday_sched.tenth_grade_morning_start = schedule[480]
+    friday_sched.tenth_grade_morning_end = schedule[481]
+    friday_sched.tenth_grade_afternoon_start = schedule[482]
+    friday_sched.tenth_grade_afternoon_end = schedule[483]
+    friday_sched.eleventh_grade_abm_morning_start = schedule[484]
+    friday_sched.eleventh_grade_abm_morning_end = schedule[485]
+    friday_sched.eleventh_grade_abm_afternoon_start = schedule[486]
+    friday_sched.eleventh_grade_abm_afternoon_end = schedule[487]
+    friday_sched.eleventh_grade_css_morning_start = schedule[488]
+    friday_sched.eleventh_grade_css_morning_end = schedule[489]
+    friday_sched.eleventh_grade_css_afternoon_start = schedule[490]
+    friday_sched.eleventh_grade_css_afternoon_end = schedule[491]
+    friday_sched.eleventh_grade_gas_morning_start = schedule[492]
+    friday_sched.eleventh_grade_gas_morning_end = schedule[493]
+    friday_sched.eleventh_grade_gas_afternoon_start = schedule[494]
+    friday_sched.eleventh_grade_gas_afternoon_end = schedule[495]
+    friday_sched.eleventh_grade_humss_morning_start = schedule[496]
+    friday_sched.eleventh_grade_humss_morning_end = schedule[497]
+    friday_sched.eleventh_grade_humss_afternoon_start = schedule[498]
+    friday_sched.eleventh_grade_humss_afternoon_end = schedule[499]
+    friday_sched.eleventh_grade_stem_morning_start = schedule[500]
+    friday_sched.eleventh_grade_stem_morning_end = schedule[501]
+    friday_sched.eleventh_grade_stem_afternoon_start = schedule[502]
+    friday_sched.eleventh_grade_stem_afternoon_end = schedule[503]
+    friday_sched.eleventh_grade_welding_morning_start = schedule[504]
+    friday_sched.eleventh_grade_welding_morning_end = schedule[505]
+    friday_sched.eleventh_grade_welding_afternoon_start = schedule[506]
+    friday_sched.eleventh_grade_welding_afternoon_end = schedule[507]
+    friday_sched.eleventh_grade_cookery_morning_start = schedule[508]
+    friday_sched.eleventh_grade_cookery_morning_end = schedule[509]
+    friday_sched.eleventh_grade_cookery_afternoon_start = schedule[510]
+    friday_sched.eleventh_grade_cookery_afternoon_end = schedule[511]
+    friday_sched.twelfth_grade_abm_morning_start = schedule[512]
+    friday_sched.twelfth_grade_abm_morning_end = schedule[513]
+    friday_sched.twelfth_grade_abm_afternoon_start = schedule[514]
+    friday_sched.twelfth_grade_abm_afternoon_end = schedule[515]
+    friday_sched.twelfth_grade_css_morning_start = schedule[516]
+    friday_sched.twelfth_grade_css_morning_end = schedule[517]
+    friday_sched.twelfth_grade_css_afternoon_start = schedule[518]
+    friday_sched.twelfth_grade_css_afternoon_end = schedule[519]
+    friday_sched.twelfth_grade_gas_morning_start = schedule[520]
+    friday_sched.twelfth_grade_gas_morning_end = schedule[521]
+    friday_sched.twelfth_grade_gas_afternoon_start = schedule[522]
+    friday_sched.twelfth_grade_gas_afternoon_end = schedule[523]
+    friday_sched.twelfth_grade_humss_morning_start = schedule[524]
+    friday_sched.twelfth_grade_humss_morning_end = schedule[525]
+    friday_sched.twelfth_grade_humss_afternoon_start = schedule[526]
+    friday_sched.twelfth_grade_humss_afternoon_end = schedule[527]
+    friday_sched.twelfth_grade_stem_morning_start = schedule[528]
+    friday_sched.twelfth_grade_stem_morning_end = schedule[529]
+    friday_sched.twelfth_grade_stem_afternoon_start = schedule[530]
+    friday_sched.twelfth_grade_stem_afternoon_end = schedule[531]
+    friday_sched.twelfth_grade_welding_morning_start = schedule[532]
+    friday_sched.twelfth_grade_welding_morning_end = schedule[533]
+    friday_sched.twelfth_grade_welding_afternoon_start = schedule[534]
+    friday_sched.twelfth_grade_welding_afternoon_end = schedule[535]
+    friday_sched.twelfth_grade_cookery_morning_start = schedule[536]
+    friday_sched.twelfth_grade_cookery_morning_end = schedule[537]
+    friday_sched.twelfth_grade_cookery_afternoon_start = schedule[538]
+    friday_sched.twelfth_grade_cookery_afternoon_end = schedule[539]
 
     db.session.commit()
 
@@ -4120,10 +4526,48 @@ def change_irregular_sched():
         ninth_grade_afternoon_class=True if schedule['save_ninth_grade_afternoon_class'] == 'true' else False,
         tenth_grade_morning_class=True if schedule['save_tenth_grade_morning_class'] == 'true' else False,
         tenth_grade_afternoon_class=True if schedule['save_tenth_grade_afternoon_class'] == 'true' else False,
-        eleventh_grade_morning_class=True if schedule['save_eleventh_grade_morning_class'] == 'true' else False,
-        eleventh_grade_afternoon_class=True if schedule['save_eleventh_grade_afternoon_class'] == 'true' else False,
-        twelfth_grade_morning_class=True if schedule['save_twelfth_grade_morning_class'] == 'true' else False,
-        twelfth_grade_afternoon_class=True if schedule['save_twelfth_grade_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_abm_morning_class=True if schedule['save_eleventh_grade_abm_morning_class'] == 'true' else False,
+        eleventh_grade_abm_afternoon_class=True if schedule['save_eleventh_grade_abm_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_css_morning_class=True if schedule['save_eleventh_grade_css_morning_class'] == 'true' else False,
+        eleventh_grade_css_afternoon_class=True if schedule['save_eleventh_grade_css_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_gas_morning_class=True if schedule['save_eleventh_grade_gas_morning_class'] == 'true' else False,
+        eleventh_grade_gas_afternoon_class=True if schedule['save_eleventh_grade_gas_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_humss_morning_class=True if schedule['save_eleventh_grade_humss_morning_class'] == 'true' else False,
+        eleventh_grade_humss_afternoon_class=True if schedule['save_eleventh_grade_humss_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_stem_morning_class=True if schedule['save_eleventh_grade_stem_morning_class'] == 'true' else False,
+        eleventh_grade_stem_afternoon_class=True if schedule['save_eleventh_grade_stem_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_welding_morning_class=True if schedule['save_eleventh_grade_welding_morning_class'] == 'true' else False,
+        eleventh_grade_welding_afternoon_class=True if schedule['save_eleventh_grade_welding_afternoon_class'] == 'true' else False,
+
+        eleventh_grade_cookery_morning_class=True if schedule['save_eleventh_grade_cookery_morning_class'] == 'true' else False,
+        eleventh_grade_cookery_afternoon_class=True if schedule['save_eleventh_grade_cookery_afternoon_class'] == 'true' else False,
+        
+        twelfth_grade_abm_morning_class=True if schedule['save_twelfth_grade_abm_morning_class'] == 'true' else False,
+        twelfth_grade_abm_afternoon_class=True if schedule['save_twelfth_grade_abm_afternoon_class'] == 'true' else False,
+
+        twelfth_grade_css_morning_class=True if schedule['save_twelfth_grade_css_morning_class'] == 'true' else False,
+        twelfth_grade_css_afternoon_class=True if schedule['save_twelfth_grade_css_afternoon_class'] == 'true' else False,
+
+        twelfth_grade_gas_morning_class=True if schedule['save_twelfth_grade_gas_morning_class'] == 'true' else False,
+        twelfth_grade_gas_afternoon_class=True if schedule['save_twelfth_grade_gas_afternoon_class'] == 'true' else False,
+
+        twelfth_grade_humss_morning_class=True if schedule['save_twelfth_grade_humss_morning_class'] == 'true' else False,
+        twelfth_grade_humss_afternoon_class=True if schedule['save_twelfth_grade_humss_afternoon_class'] == 'true' else False,
+
+        twelfth_grade_stem_morning_class=True if schedule['save_twelfth_grade_stem_morning_class'] == 'true' else False,
+        twelfth_grade_stem_afternoon_class=True if schedule['save_twelfth_grade_stem_afternoon_class'] == 'true' else False,
+
+        twelfth_grade_welding_morning_class=True if schedule['save_twelfth_grade_welding_morning_class'] == 'true' else False,
+        twelfth_grade_welding_afternoon_class=True if schedule['save_twelfth_grade_welding_afternoon_class'] == 'true' else False,
+
+        twelfth_grade_cookery_morning_class=True if schedule['save_twelfth_grade_cookery_morning_class'] == 'true' else False,
+        twelfth_grade_cookery_afternoon_class=True if schedule['save_twelfth_grade_cookery_afternoon_class'] == 'true' else False,
 
         nursery_morning_start=schedule['save_nursery_morning_start'],
         nursery_morning_end=schedule['save_nursery_morning_end'],
@@ -4177,14 +4621,80 @@ def change_irregular_sched():
         tenth_grade_morning_end=schedule['save_tenth_grade_morning_end'],
         tenth_grade_afternoon_start=schedule['save_tenth_grade_afternoon_start'],
         tenth_grade_afternoon_end=schedule['save_tenth_grade_afternoon_end'],
-        eleventh_grade_morning_start=schedule['save_eleventh_grade_morning_start'],
-        eleventh_grade_morning_end=schedule['save_eleventh_grade_morning_end'],
-        eleventh_grade_afternoon_start=schedule['save_eleventh_grade_afternoon_start'],
-        eleventh_grade_afternoon_end=schedule['save_eleventh_grade_afternoon_end'],
-        twelfth_grade_morning_start=schedule['save_twelfth_grade_morning_start'],
-        twelfth_grade_morning_end=schedule['save_twelfth_grade_morning_end'],
-        twelfth_grade_afternoon_start=schedule['save_twelfth_grade_afternoon_start'],
-        twelfth_grade_afternoon_end=schedule['save_twelfth_grade_afternoon_end']
+
+        eleventh_grade_abm_morning_start=schedule['save_eleventh_grade_abm_morning_start'],
+        eleventh_grade_abm_morning_end=schedule['save_eleventh_grade_abm_morning_end'],
+        eleventh_grade_abm_afternoon_start=schedule['save_eleventh_grade_abm_afternoon_start'],
+        eleventh_grade_abm_afternoon_end=schedule['save_eleventh_grade_abm_afternoon_end'],
+
+        eleventh_grade_css_morning_start=schedule['save_eleventh_grade_css_morning_start'],
+        eleventh_grade_css_morning_end=schedule['save_eleventh_grade_css_morning_end'],
+        eleventh_grade_css_afternoon_start=schedule['save_eleventh_grade_css_afternoon_start'],
+        eleventh_grade_css_afternoon_end=schedule['save_eleventh_grade_css_afternoon_end'],
+
+        eleventh_grade_gas_morning_start=schedule['save_eleventh_grade_gas_morning_start'],
+        eleventh_grade_gas_morning_end=schedule['save_eleventh_grade_gas_morning_end'],
+        eleventh_grade_gas_afternoon_start=schedule['save_eleventh_grade_gas_afternoon_start'],
+        eleventh_grade_gas_afternoon_end=schedule['save_eleventh_grade_gas_afternoon_end'],
+
+        eleventh_grade_humss_morning_start=schedule['save_eleventh_grade_humss_morning_start'],
+        eleventh_grade_humss_morning_end=schedule['save_eleventh_grade_humss_morning_end'],
+        eleventh_grade_humss_afternoon_start=schedule['save_eleventh_grade_humss_afternoon_start'],
+        eleventh_grade_humss_afternoon_end=schedule['save_eleventh_grade_humss_afternoon_end'],
+
+        eleventh_grade_stem_morning_start=schedule['save_eleventh_grade_stem_morning_start'],
+        eleventh_grade_stem_morning_end=schedule['save_eleventh_grade_stem_morning_end'],
+        eleventh_grade_stem_afternoon_start=schedule['save_eleventh_grade_stem_afternoon_start'],
+        eleventh_grade_stem_afternoon_end=schedule['save_eleventh_grade_stem_afternoon_end'],
+
+        eleventh_grade_welding_morning_start=schedule['save_eleventh_grade_welding_morning_start'],
+        eleventh_grade_welding_morning_end=schedule['save_eleventh_grade_welding_morning_end'],
+        eleventh_grade_welding_afternoon_start=schedule['save_eleventh_grade_welding_afternoon_start'],
+        eleventh_grade_welding_afternoon_end=schedule['save_eleventh_grade_welding_afternoon_end'],
+
+        eleventh_grade_cookery_morning_start=schedule['save_eleventh_grade_cookery_morning_start'],
+        eleventh_grade_cookery_morning_end=schedule['save_eleventh_grade_cookery_morning_end'],
+        eleventh_grade_cookery_afternoon_start=schedule['save_eleventh_grade_cookery_afternoon_start'],
+        eleventh_grade_cookery_afternoon_end=schedule['save_eleventh_grade_cookery_afternoon_end'],
+
+
+
+
+        twelfth_grade_abm_morning_start=schedule['save_twelfth_grade_abm_morning_start'],
+        twelfth_grade_abm_morning_end=schedule['save_twelfth_grade_abm_morning_end'],
+        twelfth_grade_abm_afternoon_start=schedule['save_twelfth_grade_abm_afternoon_start'],
+        twelfth_grade_abm_afternoon_end=schedule['save_twelfth_grade_abm_afternoon_end'],
+
+        twelfth_grade_css_morning_start=schedule['save_twelfth_grade_css_morning_start'],
+        twelfth_grade_css_morning_end=schedule['save_twelfth_grade_css_morning_end'],
+        twelfth_grade_css_afternoon_start=schedule['save_twelfth_grade_css_afternoon_start'],
+        twelfth_grade_css_afternoon_end=schedule['save_twelfth_grade_css_afternoon_end'],
+
+        twelfth_grade_gas_morning_start=schedule['save_twelfth_grade_gas_morning_start'],
+        twelfth_grade_gas_morning_end=schedule['save_twelfth_grade_gas_morning_end'],
+        twelfth_grade_gas_afternoon_start=schedule['save_twelfth_grade_gas_afternoon_start'],
+        twelfth_grade_gas_afternoon_end=schedule['save_twelfth_grade_gas_afternoon_end'],
+
+        twelfth_grade_humss_morning_start=schedule['save_twelfth_grade_humss_morning_start'],
+        twelfth_grade_humss_morning_end=schedule['save_twelfth_grade_humss_morning_end'],
+        twelfth_grade_humss_afternoon_start=schedule['save_twelfth_grade_humss_afternoon_start'],
+        twelfth_grade_humss_afternoon_end=schedule['save_twelfth_grade_humss_afternoon_end'],
+
+        twelfth_grade_stem_morning_start=schedule['save_twelfth_grade_stem_morning_start'],
+        twelfth_grade_stem_morning_end=schedule['save_twelfth_grade_stem_morning_end'],
+        twelfth_grade_stem_afternoon_start=schedule['save_twelfth_grade_stem_afternoon_start'],
+        twelfth_grade_stem_afternoon_end=schedule['save_twelfth_grade_stem_afternoon_end'],
+
+        twelfth_grade_welding_morning_start=schedule['save_twelfth_grade_welding_morning_start'],
+        twelfth_grade_welding_morning_end=schedule['save_twelfth_grade_welding_morning_end'],
+        twelfth_grade_welding_afternoon_start=schedule['save_twelfth_grade_welding_afternoon_start'],
+        twelfth_grade_welding_afternoon_end=schedule['save_twelfth_grade_welding_afternoon_end'],
+
+        twelfth_grade_cookery_morning_start=schedule['save_twelfth_grade_cookery_morning_start'],
+        twelfth_grade_cookery_morning_end=schedule['save_twelfth_grade_cookery_morning_end'],
+        twelfth_grade_cookery_afternoon_start=schedule['save_twelfth_grade_cookery_afternoon_start'],
+        twelfth_grade_cookery_afternoon_end=schedule['save_twelfth_grade_cookery_afternoon_end'],
+
         )
     db.session.add(irregular_schedule)
     db.session.commit()
@@ -4386,10 +4896,36 @@ def populate_specific_regular_schedule():
         ninth_grade_afternoon_class=schedule.ninth_grade_afternoon_class,
         tenth_grade_morning_class=schedule.tenth_grade_morning_class,
         tenth_grade_afternoon_class=schedule.tenth_grade_afternoon_class,
-        eleventh_grade_morning_class=schedule.eleventh_grade_morning_class,
-        eleventh_grade_afternoon_class=schedule.eleventh_grade_afternoon_class,
-        twelfth_grade_morning_class=schedule.twelfth_grade_morning_class,
-        twelfth_grade_afternoon_class=schedule.twelfth_grade_afternoon_class,
+
+        eleventh_grade_abm_morning_class=schedule.eleventh_grade_abm_morning_class,
+        eleventh_grade_abm_afternoon_class=schedule.eleventh_grade_abm_afternoon_class,
+        eleventh_grade_css_morning_class=schedule.eleventh_grade_css_morning_class,
+        eleventh_grade_css_afternoon_class=schedule.eleventh_grade_css_afternoon_class,
+        eleventh_grade_gas_morning_class=schedule.eleventh_grade_gas_morning_class,
+        eleventh_grade_gas_afternoon_class=schedule.eleventh_grade_gas_afternoon_class,
+        eleventh_grade_humss_morning_class=schedule.eleventh_grade_humss_morning_class,
+        eleventh_grade_humss_afternoon_class=schedule.eleventh_grade_humss_afternoon_class,
+        eleventh_grade_stem_morning_class=schedule.eleventh_grade_stem_morning_class,
+        eleventh_grade_stem_afternoon_class=schedule.eleventh_grade_stem_afternoon_class,
+        eleventh_grade_welding_morning_class=schedule.eleventh_grade_welding_morning_class,
+        eleventh_grade_welding_afternoon_class=schedule.eleventh_grade_welding_afternoon_class,
+        eleventh_grade_cookery_morning_class=schedule.eleventh_grade_cookery_morning_class,
+        eleventh_grade_cookery_afternoon_class=schedule.eleventh_grade_cookery_afternoon_class,
+
+        twelfth_grade_abm_morning_class=schedule.twelfth_grade_abm_morning_class,
+        twelfth_grade_abm_afternoon_class=schedule.twelfth_grade_abm_afternoon_class,
+        twelfth_grade_css_morning_class=schedule.twelfth_grade_css_morning_class,
+        twelfth_grade_css_afternoon_class=schedule.twelfth_grade_css_afternoon_class,
+        twelfth_grade_gas_morning_class=schedule.twelfth_grade_gas_morning_class,
+        twelfth_grade_gas_afternoon_class=schedule.twelfth_grade_gas_afternoon_class,
+        twelfth_grade_humss_morning_class=schedule.twelfth_grade_humss_morning_class,
+        twelfth_grade_humss_afternoon_class=schedule.twelfth_grade_humss_afternoon_class,
+        twelfth_grade_stem_morning_class=schedule.twelfth_grade_stem_morning_class,
+        twelfth_grade_stem_afternoon_class=schedule.twelfth_grade_stem_afternoon_class,
+        twelfth_grade_welding_morning_class=schedule.twelfth_grade_welding_morning_class,
+        twelfth_grade_welding_afternoon_class=schedule.twelfth_grade_welding_afternoon_class,
+        twelfth_grade_cookery_morning_class=schedule.twelfth_grade_cookery_morning_class,
+        twelfth_grade_cookery_afternoon_class=schedule.twelfth_grade_cookery_afternoon_class,
         
         nursery_morning_start=schedule.nursery_morning_start,
         nursery_morning_end=schedule.nursery_morning_end,
@@ -4443,14 +4979,64 @@ def populate_specific_regular_schedule():
         tenth_grade_morning_end=schedule.tenth_grade_morning_end,
         tenth_grade_afternoon_start=schedule.tenth_grade_afternoon_start,
         tenth_grade_afternoon_end=schedule.tenth_grade_afternoon_end,
-        eleventh_grade_morning_start=schedule.eleventh_grade_morning_start,
-        eleventh_grade_morning_end=schedule.eleventh_grade_morning_end,
-        eleventh_grade_afternoon_start=schedule.eleventh_grade_afternoon_start,
-        eleventh_grade_afternoon_end=schedule.eleventh_grade_afternoon_end,
-        twelfth_grade_morning_start=schedule.twelfth_grade_morning_start,
-        twelfth_grade_morning_end=schedule.twelfth_grade_morning_end,
-        twelfth_grade_afternoon_start=schedule.twelfth_grade_afternoon_start,
-        twelfth_grade_afternoon_end=schedule.twelfth_grade_afternoon_end
+        
+        eleventh_grade_abm_morning_start=schedule.eleventh_grade_abm_morning_start,
+        eleventh_grade_abm_morning_end=schedule.eleventh_grade_abm_morning_end,
+        eleventh_grade_abm_afternoon_start=schedule.eleventh_grade_abm_afternoon_start,
+        eleventh_grade_abm_afternoon_end=schedule.eleventh_grade_abm_afternoon_end,
+        eleventh_grade_css_morning_start=schedule.eleventh_grade_css_morning_start,
+        eleventh_grade_css_morning_end=schedule.eleventh_grade_css_morning_end,
+        eleventh_grade_css_afternoon_start=schedule.eleventh_grade_css_afternoon_start,
+        eleventh_grade_css_afternoon_end=schedule.eleventh_grade_css_afternoon_end,
+        eleventh_grade_gas_morning_start=schedule.eleventh_grade_gas_morning_start,
+        eleventh_grade_gas_morning_end=schedule.eleventh_grade_gas_morning_end,
+        eleventh_grade_gas_afternoon_start=schedule.eleventh_grade_gas_afternoon_start,
+        eleventh_grade_gas_afternoon_end=schedule.eleventh_grade_gas_afternoon_end,
+        eleventh_grade_humss_morning_start=schedule.eleventh_grade_humss_morning_start,
+        eleventh_grade_humss_morning_end=schedule.eleventh_grade_humss_morning_end,
+        eleventh_grade_humss_afternoon_start=schedule.eleventh_grade_humss_afternoon_start,
+        eleventh_grade_humss_afternoon_end=schedule.eleventh_grade_humss_afternoon_end,
+        eleventh_grade_stem_morning_start=schedule.eleventh_grade_stem_morning_start,
+        eleventh_grade_stem_morning_end=schedule.eleventh_grade_stem_morning_end,
+        eleventh_grade_stem_afternoon_start=schedule.eleventh_grade_stem_afternoon_start,
+        eleventh_grade_stem_afternoon_end=schedule.eleventh_grade_stem_afternoon_end,
+        eleventh_grade_welding_morning_start=schedule.eleventh_grade_welding_morning_start,
+        eleventh_grade_welding_morning_end=schedule.eleventh_grade_welding_morning_end,
+        eleventh_grade_welding_afternoon_start=schedule.eleventh_grade_welding_afternoon_start,
+        eleventh_grade_welding_afternoon_end=schedule.eleventh_grade_welding_afternoon_end,
+        eleventh_grade_cookery_morning_start=schedule.eleventh_grade_cookery_morning_start,
+        eleventh_grade_cookery_morning_end=schedule.eleventh_grade_cookery_morning_end,
+        eleventh_grade_cookery_afternoon_start=schedule.eleventh_grade_cookery_afternoon_start,
+        eleventh_grade_cookery_afternoon_end=schedule.eleventh_grade_cookery_afternoon_end,
+
+        twelfth_grade_abm_morning_start=schedule.twelfth_grade_abm_morning_start,
+        twelfth_grade_abm_morning_end=schedule.twelfth_grade_abm_morning_end,
+        twelfth_grade_abm_afternoon_start=schedule.twelfth_grade_abm_afternoon_start,
+        twelfth_grade_abm_afternoon_end=schedule.twelfth_grade_abm_afternoon_end,
+        twelfth_grade_css_morning_start=schedule.twelfth_grade_css_morning_start,
+        twelfth_grade_css_morning_end=schedule.twelfth_grade_css_morning_end,
+        twelfth_grade_css_afternoon_start=schedule.twelfth_grade_css_afternoon_start,
+        twelfth_grade_css_afternoon_end=schedule.twelfth_grade_css_afternoon_end,
+        twelfth_grade_gas_morning_start=schedule.twelfth_grade_gas_morning_start,
+        twelfth_grade_gas_morning_end=schedule.twelfth_grade_gas_morning_end,
+        twelfth_grade_gas_afternoon_start=schedule.twelfth_grade_gas_afternoon_start,
+        twelfth_grade_gas_afternoon_end=schedule.twelfth_grade_gas_afternoon_end,
+        twelfth_grade_humss_morning_start=schedule.twelfth_grade_humss_morning_start,
+        twelfth_grade_humss_morning_end=schedule.twelfth_grade_humss_morning_end,
+        twelfth_grade_humss_afternoon_start=schedule.twelfth_grade_humss_afternoon_start,
+        twelfth_grade_humss_afternoon_end=schedule.twelfth_grade_humss_afternoon_end,
+        twelfth_grade_stem_morning_start=schedule.twelfth_grade_stem_morning_start,
+        twelfth_grade_stem_morning_end=schedule.twelfth_grade_stem_morning_end,
+        twelfth_grade_stem_afternoon_start=schedule.twelfth_grade_stem_afternoon_start,
+        twelfth_grade_stem_afternoon_end=schedule.twelfth_grade_stem_afternoon_end,
+        twelfth_grade_welding_morning_start=schedule.twelfth_grade_welding_morning_start,
+        twelfth_grade_welding_morning_end=schedule.twelfth_grade_welding_morning_end,
+        twelfth_grade_welding_afternoon_start=schedule.twelfth_grade_welding_afternoon_start,
+        twelfth_grade_welding_afternoon_end=schedule.twelfth_grade_welding_afternoon_end,
+        twelfth_grade_cookery_morning_start=schedule.twelfth_grade_cookery_morning_start,
+        twelfth_grade_cookery_morning_end=schedule.twelfth_grade_cookery_morning_end,
+        twelfth_grade_cookery_afternoon_start=schedule.twelfth_grade_cookery_afternoon_start,
+        twelfth_grade_cookery_afternoon_end=schedule.twelfth_grade_cookery_afternoon_end,
         ),201
 
 
@@ -4836,10 +5422,36 @@ def rebuild_database():
         ninth_grade_afternoon_class=True,
         tenth_grade_morning_class=True,
         tenth_grade_afternoon_class=True,
-        eleventh_grade_morning_class=True,
-        eleventh_grade_afternoon_class=True,
-        twelfth_grade_morning_class=True,
-        twelfth_grade_afternoon_class=True,
+
+        eleventh_grade_abm_morning_class=True,
+        eleventh_grade_abm_afternoon_class=True,
+        eleventh_grade_css_morning_class=True,
+        eleventh_grade_css_afternoon_class=True,
+        eleventh_grade_gas_morning_class=True,
+        eleventh_grade_gas_afternoon_class=True,
+        eleventh_grade_humss_morning_class=True,
+        eleventh_grade_humss_afternoon_class=True,
+        eleventh_grade_stem_morning_class=True,
+        eleventh_grade_stem_afternoon_class=True,
+        eleventh_grade_welding_morning_class=True,
+        eleventh_grade_welding_afternoon_class=True,
+        eleventh_grade_cookery_morning_class=True,
+        eleventh_grade_cookery_afternoon_class=True,
+
+        twelfth_grade_abm_morning_class=True,
+        twelfth_grade_abm_afternoon_class=True,
+        twelfth_grade_css_morning_class=True,
+        twelfth_grade_css_afternoon_class=True,
+        twelfth_grade_gas_morning_class=True,
+        twelfth_grade_gas_afternoon_class=True,
+        twelfth_grade_humss_morning_class=True,
+        twelfth_grade_humss_afternoon_class=True,
+        twelfth_grade_stem_morning_class=True,
+        twelfth_grade_stem_afternoon_class=True,
+        twelfth_grade_welding_morning_class=True,
+        twelfth_grade_welding_afternoon_class=True,
+        twelfth_grade_cookery_morning_class=True,
+        twelfth_grade_cookery_afternoon_class=True,
 
         nursery_morning_start= '08:00AM',
         nursery_morning_end= '08:00AM',
@@ -4893,14 +5505,65 @@ def rebuild_database():
         tenth_grade_morning_end= '08:00AM',
         tenth_grade_afternoon_start= '08:00AM',
         tenth_grade_afternoon_end= '08:00AM',
-        eleventh_grade_morning_start= '08:00AM',
-        eleventh_grade_morning_end= '08:00AM',
-        eleventh_grade_afternoon_start= '08:00AM',
-        eleventh_grade_afternoon_end= '08:00AM',
-        twelfth_grade_morning_start= '08:00AM',
-        twelfth_grade_morning_end= '08:00AM',
-        twelfth_grade_afternoon_start= '08:00AM',
-        twelfth_grade_afternoon_end= '08:00AM'
+
+
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
     db.session.add(school)
     db.session.add(schedule)
@@ -5061,72 +5724,147 @@ def rebuild_database():
         ninth_grade_afternoon_class=False,
         tenth_grade_morning_class=False,
         tenth_grade_afternoon_class=False,
-        eleventh_grade_morning_class=False,
-        eleventh_grade_afternoon_class=False,
-        twelfth_grade_morning_class=False,
-        twelfth_grade_afternoon_class=False,
+        eleventh_grade_abm_morning_class=False,
+        eleventh_grade_abm_afternoon_class=False,
+        eleventh_grade_css_morning_class=False,
+        eleventh_grade_css_afternoon_class=False,
+        eleventh_grade_gas_morning_class=False,
+        eleventh_grade_gas_afternoon_class=False,
+        eleventh_grade_humss_morning_class=False,
+        eleventh_grade_humss_afternoon_class=False,
+        eleventh_grade_stem_morning_class=False,
+        eleventh_grade_stem_afternoon_class=False,
+        eleventh_grade_welding_morning_class=False,
+        eleventh_grade_welding_afternoon_class=False,
+        eleventh_grade_cookery_morning_class=False,
+        eleventh_grade_cookery_afternoon_class=False,
+
+        twelfth_grade_abm_morning_class=False,
+        twelfth_grade_abm_afternoon_class=False,
+        twelfth_grade_css_morning_class=False,
+        twelfth_grade_css_afternoon_class=False,
+        twelfth_grade_gas_morning_class=False,
+        twelfth_grade_gas_afternoon_class=False,
+        twelfth_grade_humss_morning_class=False,
+        twelfth_grade_humss_afternoon_class=False,
+        twelfth_grade_stem_morning_class=False,
+        twelfth_grade_stem_afternoon_class=False,
+        twelfth_grade_welding_morning_class=False,
+        twelfth_grade_welding_afternoon_class=False,
+        twelfth_grade_cookery_morning_class=False,
+        twelfth_grade_cookery_afternoon_class=False,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM',
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     sched8 = Regular(
@@ -5158,72 +5896,147 @@ def rebuild_database():
         ninth_grade_afternoon_class=False,
         tenth_grade_morning_class=False,
         tenth_grade_afternoon_class=False,
-        eleventh_grade_morning_class=False,
-        eleventh_grade_afternoon_class=False,
-        twelfth_grade_morning_class=False,
-        twelfth_grade_afternoon_class=False,
+        eleventh_grade_abm_morning_class=False,
+        eleventh_grade_abm_afternoon_class=False,
+        eleventh_grade_css_morning_class=False,
+        eleventh_grade_css_afternoon_class=False,
+        eleventh_grade_gas_morning_class=False,
+        eleventh_grade_gas_afternoon_class=False,
+        eleventh_grade_humss_morning_class=False,
+        eleventh_grade_humss_afternoon_class=False,
+        eleventh_grade_stem_morning_class=False,
+        eleventh_grade_stem_afternoon_class=False,
+        eleventh_grade_welding_morning_class=False,
+        eleventh_grade_welding_afternoon_class=False,
+        eleventh_grade_cookery_morning_class=False,
+        eleventh_grade_cookery_afternoon_class=False,
+
+        twelfth_grade_abm_morning_class=False,
+        twelfth_grade_abm_afternoon_class=False,
+        twelfth_grade_css_morning_class=False,
+        twelfth_grade_css_afternoon_class=False,
+        twelfth_grade_gas_morning_class=False,
+        twelfth_grade_gas_afternoon_class=False,
+        twelfth_grade_humss_morning_class=False,
+        twelfth_grade_humss_afternoon_class=False,
+        twelfth_grade_stem_morning_class=False,
+        twelfth_grade_stem_afternoon_class=False,
+        twelfth_grade_welding_morning_class=False,
+        twelfth_grade_welding_afternoon_class=False,
+        twelfth_grade_cookery_morning_class=False,
+        twelfth_grade_cookery_afternoon_class=False,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM'
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     sched2 = Regular(
@@ -5255,72 +6068,148 @@ def rebuild_database():
         ninth_grade_afternoon_class=True,
         tenth_grade_morning_class=True,
         tenth_grade_afternoon_class=True,
-        eleventh_grade_morning_class=True,
-        eleventh_grade_afternoon_class=True,
-        twelfth_grade_morning_class=True,
-        twelfth_grade_afternoon_class=True,
+
+        eleventh_grade_abm_morning_class=True,
+        eleventh_grade_abm_afternoon_class=True,
+        eleventh_grade_css_morning_class=True,
+        eleventh_grade_css_afternoon_class=True,
+        eleventh_grade_gas_morning_class=True,
+        eleventh_grade_gas_afternoon_class=True,
+        eleventh_grade_humss_morning_class=True,
+        eleventh_grade_humss_afternoon_class=True,
+        eleventh_grade_stem_morning_class=True,
+        eleventh_grade_stem_afternoon_class=True,
+        eleventh_grade_welding_morning_class=True,
+        eleventh_grade_welding_afternoon_class=True,
+        eleventh_grade_cookery_morning_class=True,
+        eleventh_grade_cookery_afternoon_class=True,
+
+        twelfth_grade_abm_morning_class=True,
+        twelfth_grade_abm_afternoon_class=True,
+        twelfth_grade_css_morning_class=True,
+        twelfth_grade_css_afternoon_class=True,
+        twelfth_grade_gas_morning_class=True,
+        twelfth_grade_gas_afternoon_class=True,
+        twelfth_grade_humss_morning_class=True,
+        twelfth_grade_humss_afternoon_class=True,
+        twelfth_grade_stem_morning_class=True,
+        twelfth_grade_stem_afternoon_class=True,
+        twelfth_grade_welding_morning_class=True,
+        twelfth_grade_welding_afternoon_class=True,
+        twelfth_grade_cookery_morning_class=True,
+        twelfth_grade_cookery_afternoon_class=True,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM'
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     sched3 = Regular(
@@ -5352,72 +6241,148 @@ def rebuild_database():
         ninth_grade_afternoon_class=True,
         tenth_grade_morning_class=True,
         tenth_grade_afternoon_class=True,
-        eleventh_grade_morning_class=True,
-        eleventh_grade_afternoon_class=True,
-        twelfth_grade_morning_class=True,
-        twelfth_grade_afternoon_class=True,
+
+        eleventh_grade_abm_morning_class=True,
+        eleventh_grade_abm_afternoon_class=True,
+        eleventh_grade_css_morning_class=True,
+        eleventh_grade_css_afternoon_class=True,
+        eleventh_grade_gas_morning_class=True,
+        eleventh_grade_gas_afternoon_class=True,
+        eleventh_grade_humss_morning_class=True,
+        eleventh_grade_humss_afternoon_class=True,
+        eleventh_grade_stem_morning_class=True,
+        eleventh_grade_stem_afternoon_class=True,
+        eleventh_grade_welding_morning_class=True,
+        eleventh_grade_welding_afternoon_class=True,
+        eleventh_grade_cookery_morning_class=True,
+        eleventh_grade_cookery_afternoon_class=True,
+
+        twelfth_grade_abm_morning_class=True,
+        twelfth_grade_abm_afternoon_class=True,
+        twelfth_grade_css_morning_class=True,
+        twelfth_grade_css_afternoon_class=True,
+        twelfth_grade_gas_morning_class=True,
+        twelfth_grade_gas_afternoon_class=True,
+        twelfth_grade_humss_morning_class=True,
+        twelfth_grade_humss_afternoon_class=True,
+        twelfth_grade_stem_morning_class=True,
+        twelfth_grade_stem_afternoon_class=True,
+        twelfth_grade_welding_morning_class=True,
+        twelfth_grade_welding_afternoon_class=True,
+        twelfth_grade_cookery_morning_class=True,
+        twelfth_grade_cookery_afternoon_class=True,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM'
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     sched4 = Regular(
@@ -5449,72 +6414,148 @@ def rebuild_database():
         ninth_grade_afternoon_class=True,
         tenth_grade_morning_class=True,
         tenth_grade_afternoon_class=True,
-        eleventh_grade_morning_class=True,
-        eleventh_grade_afternoon_class=True,
-        twelfth_grade_morning_class=True,
-        twelfth_grade_afternoon_class=True,
+
+        eleventh_grade_abm_morning_class=True,
+        eleventh_grade_abm_afternoon_class=True,
+        eleventh_grade_css_morning_class=True,
+        eleventh_grade_css_afternoon_class=True,
+        eleventh_grade_gas_morning_class=True,
+        eleventh_grade_gas_afternoon_class=True,
+        eleventh_grade_humss_morning_class=True,
+        eleventh_grade_humss_afternoon_class=True,
+        eleventh_grade_stem_morning_class=True,
+        eleventh_grade_stem_afternoon_class=True,
+        eleventh_grade_welding_morning_class=True,
+        eleventh_grade_welding_afternoon_class=True,
+        eleventh_grade_cookery_morning_class=True,
+        eleventh_grade_cookery_afternoon_class=True,
+
+        twelfth_grade_abm_morning_class=True,
+        twelfth_grade_abm_afternoon_class=True,
+        twelfth_grade_css_morning_class=True,
+        twelfth_grade_css_afternoon_class=True,
+        twelfth_grade_gas_morning_class=True,
+        twelfth_grade_gas_afternoon_class=True,
+        twelfth_grade_humss_morning_class=True,
+        twelfth_grade_humss_afternoon_class=True,
+        twelfth_grade_stem_morning_class=True,
+        twelfth_grade_stem_afternoon_class=True,
+        twelfth_grade_welding_morning_class=True,
+        twelfth_grade_welding_afternoon_class=True,
+        twelfth_grade_cookery_morning_class=True,
+        twelfth_grade_cookery_afternoon_class=True,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM'
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     sched5 = Regular(
@@ -5546,72 +6587,148 @@ def rebuild_database():
         ninth_grade_afternoon_class=True,
         tenth_grade_morning_class=True,
         tenth_grade_afternoon_class=True,
-        eleventh_grade_morning_class=True,
-        eleventh_grade_afternoon_class=True,
-        twelfth_grade_morning_class=True,
-        twelfth_grade_afternoon_class=True,
+
+        eleventh_grade_abm_morning_class=True,
+        eleventh_grade_abm_afternoon_class=True,
+        eleventh_grade_css_morning_class=True,
+        eleventh_grade_css_afternoon_class=True,
+        eleventh_grade_gas_morning_class=True,
+        eleventh_grade_gas_afternoon_class=True,
+        eleventh_grade_humss_morning_class=True,
+        eleventh_grade_humss_afternoon_class=True,
+        eleventh_grade_stem_morning_class=True,
+        eleventh_grade_stem_afternoon_class=True,
+        eleventh_grade_welding_morning_class=True,
+        eleventh_grade_welding_afternoon_class=True,
+        eleventh_grade_cookery_morning_class=True,
+        eleventh_grade_cookery_afternoon_class=True,
+
+        twelfth_grade_abm_morning_class=True,
+        twelfth_grade_abm_afternoon_class=True,
+        twelfth_grade_css_morning_class=True,
+        twelfth_grade_css_afternoon_class=True,
+        twelfth_grade_gas_morning_class=True,
+        twelfth_grade_gas_afternoon_class=True,
+        twelfth_grade_humss_morning_class=True,
+        twelfth_grade_humss_afternoon_class=True,
+        twelfth_grade_stem_morning_class=True,
+        twelfth_grade_stem_afternoon_class=True,
+        twelfth_grade_welding_morning_class=True,
+        twelfth_grade_welding_afternoon_class=True,
+        twelfth_grade_cookery_morning_class=True,
+        twelfth_grade_cookery_afternoon_class=True,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM'
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     sched6 = Regular(
@@ -5643,72 +6760,148 @@ def rebuild_database():
         ninth_grade_afternoon_class=True,
         tenth_grade_morning_class=True,
         tenth_grade_afternoon_class=True,
-        eleventh_grade_morning_class=True,
-        eleventh_grade_afternoon_class=True,
-        twelfth_grade_morning_class=True,
-        twelfth_grade_afternoon_class=True,
+
+        eleventh_grade_abm_morning_class=True,
+        eleventh_grade_abm_afternoon_class=True,
+        eleventh_grade_css_morning_class=True,
+        eleventh_grade_css_afternoon_class=True,
+        eleventh_grade_gas_morning_class=True,
+        eleventh_grade_gas_afternoon_class=True,
+        eleventh_grade_humss_morning_class=True,
+        eleventh_grade_humss_afternoon_class=True,
+        eleventh_grade_stem_morning_class=True,
+        eleventh_grade_stem_afternoon_class=True,
+        eleventh_grade_welding_morning_class=True,
+        eleventh_grade_welding_afternoon_class=True,
+        eleventh_grade_cookery_morning_class=True,
+        eleventh_grade_cookery_afternoon_class=True,
+
+        twelfth_grade_abm_morning_class=True,
+        twelfth_grade_abm_afternoon_class=True,
+        twelfth_grade_css_morning_class=True,
+        twelfth_grade_css_afternoon_class=True,
+        twelfth_grade_gas_morning_class=True,
+        twelfth_grade_gas_afternoon_class=True,
+        twelfth_grade_humss_morning_class=True,
+        twelfth_grade_humss_afternoon_class=True,
+        twelfth_grade_stem_morning_class=True,
+        twelfth_grade_stem_afternoon_class=True,
+        twelfth_grade_welding_morning_class=True,
+        twelfth_grade_welding_afternoon_class=True,
+        twelfth_grade_cookery_morning_class=True,
+        twelfth_grade_cookery_afternoon_class=True,
+
+        nursery_morning_start= '08:00AM',
+        nursery_morning_end= '08:00AM',
+        nursery_afternoon_start= '08:00AM',
+        nursery_afternoon_end= '08:00AM',
+        preparatory_morning_start= '08:00AM',
+        preparatory_morning_end= '08:00AM',
+        preparatory_afternoon_start= '08:00AM',
+        preparatory_afternoon_end= '08:00AM',
+        kinder_morning_start= '08:00AM',
+        kinder_morning_end= '08:00AM',
+        kinder_afternoon_start= '08:00AM',
+        kinder_afternoon_end= '08:00AM',
+        first_grade_morning_start= '08:00AM',
+        first_grade_morning_end= '08:00AM',
+        first_grade_afternoon_start= '08:00AM',
+        first_grade_afternoon_end= '08:00AM',
+        second_grade_morning_start= '08:00AM',
+        second_grade_morning_end= '08:00AM',
+        second_grade_afternoon_start= '08:00AM',
+        second_grade_afternoon_end= '08:00AM',
+        third_grade_morning_start= '08:00AM',
+        third_grade_morning_end= '08:00AM',
+        third_grade_afternoon_start= '08:00AM',
+        third_grade_afternoon_end= '08:00AM',
+        fourth_grade_morning_start= '08:00AM',
+        fourth_grade_morning_end= '08:00AM',
+        fourth_grade_afternoon_start= '08:00AM',
+        fourth_grade_afternoon_end= '08:00AM',
+        fifth_grade_morning_start= '08:00AM',
+        fifth_grade_morning_end= '08:00AM',
+        fifth_grade_afternoon_start= '08:00AM',
+        fifth_grade_afternoon_end= '08:00AM',
+        sixth_grade_morning_start= '08:00AM',
+        sixth_grade_morning_end= '08:00AM',
+        sixth_grade_afternoon_start= '08:00AM',
+        sixth_grade_afternoon_end= '08:00AM',
+        seventh_grade_morning_start= '03:51PM',
+        seventh_grade_morning_end= '03:57PM',
+        seventh_grade_afternoon_start= '03:59PM',
+        seventh_grade_afternoon_end= '07:00PM',
+        eight_grade_morning_start= '08:00AM',
+        eight_grade_morning_end= '08:00AM',
+        eight_grade_afternoon_start= '08:00AM',
+        eight_grade_afternoon_end= '08:00AM',
+        ninth_grade_morning_start= '08:00AM',
+        ninth_grade_morning_end= '08:00AM',
+        ninth_grade_afternoon_start= '08:00AM',
+        ninth_grade_afternoon_end= '08:00AM',
+        tenth_grade_morning_start= '08:00AM',
+        tenth_grade_morning_end= '08:00AM',
+        tenth_grade_afternoon_start= '08:00AM',
+        tenth_grade_afternoon_end= '08:00AM',
 
 
-        nursery_morning_start='08:00AM',
-        nursery_morning_end='08:00AM',
-        nursery_afternoon_start='08:00AM',
-        nursery_afternoon_end='08:00AM',
-        preparatory_morning_start='08:00AM',
-        preparatory_morning_end='08:00AM',
-        preparatory_afternoon_start='08:00AM',
-        preparatory_afternoon_end='08:00AM',
-        kinder_morning_start='08:00AM',
-        kinder_morning_end='08:00AM',
-        kinder_afternoon_start='08:00AM',
-        kinder_afternoon_end='08:00AM',
-        first_grade_morning_start='06:40PM',
-        first_grade_morning_end='06:47PM',
-        first_grade_afternoon_start='06:49PM',
-        first_grade_afternoon_end='08:00PM',
-        second_grade_morning_start='08:00AM',
-        second_grade_morning_end='08:00AM',
-        second_grade_afternoon_start='08:00AM',
-        second_grade_afternoon_end='08:00AM',
-        third_grade_morning_start='08:00AM',
-        third_grade_morning_end='08:00AM',
-        third_grade_afternoon_start='08:00AM',
-        third_grade_afternoon_end='08:00AM',
-        fourth_grade_morning_start='08:00AM',
-        fourth_grade_morning_end='08:00AM',
-        fourth_grade_afternoon_start='08:00AM',
-        fourth_grade_afternoon_end='08:00AM',
-        fifth_grade_morning_start='08:00AM',
-        fifth_grade_morning_end='08:00AM',
-        fifth_grade_afternoon_start='08:00AM',
-        fifth_grade_afternoon_end='08:00AM',
-        sixth_grade_morning_start='08:00AM',
-        sixth_grade_morning_end='08:00AM',
-        sixth_grade_afternoon_start='08:00AM',
-        sixth_grade_afternoon_end='08:00AM',
-        seventh_grade_morning_start='4:10PM',
-        seventh_grade_morning_end='4:16PM',
-        seventh_grade_afternoon_start='4:18PM',
-        seventh_grade_afternoon_end='7:00PM',
-        eight_grade_morning_start='08:00AM',
-        eight_grade_morning_end='08:00AM',
-        eight_grade_afternoon_start='08:00AM',
-        eight_grade_afternoon_end='08:00AM',
-        ninth_grade_morning_start='08:00AM',
-        ninth_grade_morning_end='08:00AM',
-        ninth_grade_afternoon_start='08:00AM',
-        ninth_grade_afternoon_end='08:00AM',
-        tenth_grade_morning_start='08:00AM',
-        tenth_grade_morning_end='08:00AM',
-        tenth_grade_afternoon_start='08:00AM',
-        tenth_grade_afternoon_end='08:00AM',
-        eleventh_grade_morning_start='08:00AM',
-        eleventh_grade_morning_end='08:00AM',
-        eleventh_grade_afternoon_start='08:00AM',
-        eleventh_grade_afternoon_end='08:00AM',
-        twelfth_grade_morning_start='08:00AM',
-        twelfth_grade_morning_end='08:00AM',
-        twelfth_grade_afternoon_start='08:00AM',
-        twelfth_grade_afternoon_end='08:00AM'
+        eleventh_grade_abm_morning_start= '08:00AM',
+        eleventh_grade_abm_morning_end= '08:00AM',
+        eleventh_grade_abm_afternoon_start= '08:00AM',
+        eleventh_grade_abm_afternoon_end= '08:00AM',
+        eleventh_grade_css_morning_start= '08:00AM',
+        eleventh_grade_css_morning_end= '08:00AM',
+        eleventh_grade_css_afternoon_start= '08:00AM',
+        eleventh_grade_css_afternoon_end= '08:00AM',
+        eleventh_grade_gas_morning_start= '08:00AM',
+        eleventh_grade_gas_morning_end= '08:00AM',
+        eleventh_grade_gas_afternoon_start= '08:00AM',
+        eleventh_grade_gas_afternoon_end= '08:00AM',
+        eleventh_grade_humss_morning_start= '08:00AM',
+        eleventh_grade_humss_morning_end= '08:00AM',
+        eleventh_grade_humss_afternoon_start= '08:00AM',
+        eleventh_grade_humss_afternoon_end= '08:00AM',
+        eleventh_grade_stem_morning_start= '08:00AM',
+        eleventh_grade_stem_morning_end= '08:00AM',
+        eleventh_grade_stem_afternoon_start= '08:00AM',
+        eleventh_grade_stem_afternoon_end= '08:00AM',
+        eleventh_grade_welding_morning_start= '08:00AM',
+        eleventh_grade_welding_morning_end= '08:00AM',
+        eleventh_grade_welding_afternoon_start= '08:00AM',
+        eleventh_grade_welding_afternoon_end= '08:00AM',
+        eleventh_grade_cookery_morning_start= '08:00AM',
+        eleventh_grade_cookery_morning_end= '08:00AM',
+        eleventh_grade_cookery_afternoon_start= '08:00AM',
+        eleventh_grade_cookery_afternoon_end= '08:00AM',
+
+        twelfth_grade_abm_morning_start= '08:00AM',
+        twelfth_grade_abm_morning_end= '08:00AM',
+        twelfth_grade_abm_afternoon_start= '08:00AM',
+        twelfth_grade_abm_afternoon_end= '08:00AM',
+        twelfth_grade_css_morning_start= '08:00AM',
+        twelfth_grade_css_morning_end= '08:00AM',
+        twelfth_grade_css_afternoon_start= '08:00AM',
+        twelfth_grade_css_afternoon_end= '08:00AM',
+        twelfth_grade_gas_morning_start= '08:00AM',
+        twelfth_grade_gas_morning_end= '08:00AM',
+        twelfth_grade_gas_afternoon_start= '08:00AM',
+        twelfth_grade_gas_afternoon_end= '08:00AM',
+        twelfth_grade_humss_morning_start= '08:00AM',
+        twelfth_grade_humss_morning_end= '08:00AM',
+        twelfth_grade_humss_afternoon_start= '08:00AM',
+        twelfth_grade_humss_afternoon_end= '08:00AM',
+        twelfth_grade_stem_morning_start= '08:00AM',
+        twelfth_grade_stem_morning_end= '08:00AM',
+        twelfth_grade_stem_afternoon_start= '08:00AM',
+        twelfth_grade_stem_afternoon_end= '08:00AM',
+        twelfth_grade_welding_morning_start= '08:00AM',
+        twelfth_grade_welding_morning_end= '08:00AM',
+        twelfth_grade_welding_afternoon_start= '08:00AM',
+        twelfth_grade_welding_afternoon_end= '08:00AM',
+        twelfth_grade_cookery_morning_start= '08:00AM',
+        twelfth_grade_cookery_morning_end= '08:00AM',
+        twelfth_grade_cookery_afternoon_start= '08:00AM',
+        twelfth_grade_cookery_afternoon_end= '08:00AM',
         )
 
     db.session.add(sched2)
