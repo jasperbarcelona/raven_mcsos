@@ -210,10 +210,36 @@ def check_if_late(school_no,api_key,id_no,name,level,section,date,group,log_time
         educ = 'ninth_grade'
     elif level == '10th Grade':
         educ = 'tenth_grade'
-    elif level == '11th Grade':
-        educ = 'eleventh_grade'
-    elif level == '12th Grade':
-        educ = 'twelfth_grade'
+    elif level == '11th Grade - ABM':
+        educ = 'eleventh_grade_abm'
+    elif level == '11th Grade - CSS':
+        educ = 'eleventh_grade_css'
+    elif level == '11th Grade - GAS':
+        educ = 'eleventh_grade_gas'
+    elif level == '11th Grade - HUMSS':
+        educ = 'eleventh_grade_humss'
+    elif level == '11th Grade - STEM':
+        educ = 'eleventh_grade_stem'
+    elif level == '11th Grade - Welding':
+        educ = 'eleventh_grade_welding'
+    elif level == '11th Grade - Cookery':
+        educ = 'eleventh_grade_cookery'
+
+
+    elif level == '12th Grade - ABM':
+        educ = 'twelfth_grade_abm'
+    elif level == '12th Grade - CSS':
+        educ = 'twelfth_grade_css'
+    elif level == '12th Grade - GAS':
+        educ = 'twelfth_grade_gas'
+    elif level == '12th Grade - HUMSS':
+        educ = 'twelfth_grade_humss'
+    elif level == '12th Grade - STEM':
+        educ = 'twelfth_grade_stem'
+    elif level == '12th Grade - Welding':
+        educ = 'twelfth_grade_welding'
+    elif level == '12th Grade - Cookery':
+        educ = 'twelfth_grade_cookery'
 
 
     query = 'schedule.%s' %educ
@@ -297,7 +323,7 @@ def afternoon_absent(school_no,api_key,level):
                 db.session.add(absent)
                 db.session.commit()
                 if logged and logged != None and logged.time_out != None:
-                    message = '%s left the campus on %s at exactly %s and did not come back.' % (student_name, logged.date, logged.time_out)
+                    message = '%s left the school campus on %s at exactly %s.' % (student_name, logged.date, logged.time_out)
                     send_absent_message(absent.id,message,student.parent_contact)
                 else:
                     absent.notification_status = 'Exempted'

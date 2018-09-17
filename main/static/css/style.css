@@ -685,7 +685,7 @@ a, a:hover, a:active, a:focus{
 }
 
 .recipient-label{
-	width: 150px;
+	width: 200px;
 	font-size: 14px;
 }
 
@@ -708,13 +708,16 @@ a, a:hover, a:active, a:focus{
 	float: left;
 	position: relative;
 	width: 100%;
+	height: 200px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	border-bottom: 1px solid #e5e5e5;
 	border-top: 1px solid #e5e5e5;
 }
 
 .compose-message-lower{
 	float: left;
-	height: calc(100% - 50px);
+	height: calc(100% - 100px);
 	width: 100%;
 }
 
@@ -760,14 +763,15 @@ a, a:hover, a:active, a:focus{
 .recipient-row {
 	height: 30px;
 	width: 100%;
+	margin-bottom: 20px;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: row;
 	flex-direction: row;
 	-webkit-align-items: center;
 	align-items: center;
-	-webkit-justify-content: left;
-	justify-content: left;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
 #message-modal-body-left{

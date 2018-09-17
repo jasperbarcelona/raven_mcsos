@@ -295,10 +295,10 @@ def time_out(log_id, id_no, log_time, school_no, group):
         time_now = str(now.replace(hour=get_hour(log_time), minute=int(log_time[3:5])))[11:16]
 
         if afternoon_class:
-            if parse_date(time_now) > parse_date(afternoon_start):
-                if parse_date(log.time_in) < parse_date(afternoon_end):
-                    compose_message(log.id,id_no,log_time,'left')
-                    return jsonify(status='Success',type='exit',action='left'), 201
+            # if parse_date(time_now) > parse_date(afternoon_start):
+            if parse_date(log.time_in) < parse_date(afternoon_end):
+                compose_message(log.id,id_no,log_time,'left')
+                return jsonify(status='Success',type='exit',action='left'), 201
 
     log.time_out_notification_status = 'Exempted'
     db.session.commit()
@@ -318,7 +318,7 @@ def get_hour(time):
 def compose_message(log_id,id_no,log_time,action):
     student = get_student_data(id_no)
     message = student.first_name+' '+\
-              student.last_name+' has '+action+' the campus on '+ \
+              student.last_name+' has '+action+' the school campus on '+ \
               time.strftime("%B %d, %Y") +' at exactly '+\
               log_time+'.'
 
@@ -381,7 +381,7 @@ def fetch_next(needed):
         template = 'k12.html'
         sort_type=''
 
-    if needed == 'fees':
+    elif needed == 'fees':
         search_table = 'Fee'
         template = 'fees_result.html'
         sort_by = 'timestamp'
@@ -819,6 +819,11 @@ def fetch_batch_records():
             db.session.commit()
             parent_id = guardian.id
 
+        if vals[7] != '-':
+            level = vals[8].strip().title().replace('.','').replace(',','') + ' - ' + vals[7]
+        else:
+            level = vals[8].strip().title().replace('.','').replace(',','')
+
         if vals[3] != None:
             if vals[0]:
                 new_record = K12(
@@ -828,9 +833,9 @@ def fetch_batch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level=vals[8].strip().title().replace('.','').replace(',',''),
+                    level=level,
                     group='k12',
-                    section=vals[7].strip().title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     lates=0,
                     parent_id=parent_id,
@@ -845,9 +850,9 @@ def fetch_batch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level=vals[8].strip().title().replace('.','').replace(',',''),
+                    level=level,
                     group='k12',
-                    section=vals[7].strip().title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     lates=0,
                     parent_id=parent_id,
@@ -863,9 +868,9 @@ def fetch_batch_records():
                     student_id=vals[9],
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
-                    level=vals[8].strip().title().replace('.','').replace(',',''),
+                    level=level,
                     group='k12',
-                    section=vals[7].title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     lates=0,
                     parent_id=parent_id,
@@ -879,9 +884,9 @@ def fetch_batch_records():
                 student_id=vals[9],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
-                level=vals[8].strip().title().replace('.','').replace(',',''),
+                level=level,
                 group='k12',
-                section=vals[7].title().replace('.','').replace(',',''),
+                section='-',
                 absences=0,
                 lates=0,
                 parent_id=parent_id,
@@ -2362,9 +2367,9 @@ def fetch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='11th Grade',
+                    level='11th Grade - %s' % vals[7],
                     group='k12',
-                    section=vals[7].strip().title().replace('.','').replace(',',''),
+                    section='-',
                     student_id=vals[8],
                     absences=0,
                     lates=0,
@@ -2379,10 +2384,10 @@ def fetch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='11th Grade',
+                    level='11th Grade - %s' % vals[7],
                     student_id=vals[8],
                     group='k12',
-                    section=vals[7].strip().title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     lates=0,
                     parent_id=parent_id,
@@ -2397,9 +2402,9 @@ def fetch_records():
                     id_no='000%s' % str(int(vals[0])).replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
-                    level='11th Grade',
+                    level='11th Grade - %s' % vals[7],
                     group='k12',
-                    section=vals[7].title().replace('.','').replace(',',''),
+                    section='-',
                     student_id=vals[8],
                     absences=0,
                     lates=0,
@@ -2413,9 +2418,9 @@ def fetch_records():
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
-                level='11th Grade',
+                level='11th Grade - %s' % vals[7],
                 group='k12',
-                section=vals[7].title().replace('.','').replace(',',''),
+                section='-',
                 student_id=vals[8],
                 absences=0,
                 lates=0,
@@ -2471,9 +2476,9 @@ def fetch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='12th Grade',
+                    level='12th Grade - %s' % vals[7],
                     group='k12',
-                    section=vals[7].strip().title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     student_id=vals[8],
                     lates=0,
@@ -2489,9 +2494,9 @@ def fetch_records():
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     student_id=vals[8],
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='12th Grade',
+                    level='12th Grade - %s' % vals[7],
                     group='k12',
-                    section=vals[7].strip().title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     lates=0,
                     parent_id=parent_id,
@@ -2506,10 +2511,10 @@ def fetch_records():
                     id_no='000%s' % str(int(vals[0])).replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
-                    level='12th Grade',
+                    level='12th Grade - %s' % vals[7],
                     group='k12',
                     student_id=vals[8],
-                    section=vals[7].title().replace('.','').replace(',',''),
+                    section='-',
                     absences=0,
                     lates=0,
                     parent_id=parent_id,
@@ -2523,9 +2528,9 @@ def fetch_records():
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
                 student_id=vals[8],
-                level='12th Grade',
+                level='12th Grade - %s' % vals[7],
                 group='k12',
-                section=vals[7].title().replace('.','').replace(',',''),
+                section='-',
                 absences=0,
                 lates=0,
                 parent_id=parent_id,
@@ -5570,45 +5575,45 @@ def rebuild_database():
     db.session.add(admin)
     db.session.commit()
 
-    d = Section(
-        school_no='sgb-lc2017',
-        name='Prime'
-        )
+    # d = Section(
+    #     school_no='sgb-lc2017',
+    #     name='Prime'
+    #     )
 
-    e = Section(
-        school_no='sgb-lc2017',
-        name='Love'
-        )
+    # e = Section(
+    #     school_no='sgb-lc2017',
+    #     name='Love'
+    #     )
 
-    f = Section(
-        school_no='sgb-lc2017',
-        name='Hope'
-        )
+    # f = Section(
+    #     school_no='sgb-lc2017',
+    #     name='Hope'
+    #     )
 
-    g = Section(
-        school_no='sgb-lc2017',
-        name='Faith'
-        )
+    # g = Section(
+    #     school_no='sgb-lc2017',
+    #     name='Faith'
+    #     )
 
-    h = Section(
-        school_no='sgb-lc2017',
-        name='ICT'
-        )
+    # h = Section(
+    #     school_no='sgb-lc2017',
+    #     name='ICT'
+    #     )
 
-    i = Section(
-        school_no='sgb-lc2017',
-        name='ABM'
-        )
+    # i = Section(
+    #     school_no='sgb-lc2017',
+    #     name='ABM'
+    #     )
 
-    j = Section(
-        school_no='sgb-lc2017',
-        name='GAS'
-        )
+    # j = Section(
+    #     school_no='sgb-lc2017',
+    #     name='GAS'
+    #     )
 
-    k = Section(
-        school_no='sgb-lc2017',
-        name='HUMSS'
-        )
+    # k = Section(
+    #     school_no='sgb-lc2017',
+    #     name='HUMSS'
+    #     )
 
     module = Module(
         name = 'students'
@@ -5667,14 +5672,15 @@ def rebuild_database():
     #     added_by = 'Jasper Barcelona'
     #     )
 
-    db.session.add(d)
-    db.session.add(e)
-    db.session.add(f)
-    db.session.add(g)
-    db.session.add(h)
-    db.session.add(i)
-    db.session.add(j)
-    db.session.add(k)
+    # db.session.add(d)
+    # db.session.add(e)
+    # db.session.add(f)
+    # db.session.add(g)
+    # db.session.add(h)
+    # db.session.add(i)
+    # db.session.add(j)
+    # db.session.add(k)
+
     # db.session.add(k12)
     # db.session.add(lean)
     # db.session.add(parent)
