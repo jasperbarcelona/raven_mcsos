@@ -1373,6 +1373,10 @@ def fetch_records():
             parent_id = guardian.id
 
         if vals[3] != None:
+            if vals[7] == 'ICT':
+                strand = 'STEM'
+            else:
+                strand = vals[7]
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
@@ -1380,7 +1384,7 @@ def fetch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='11th Grade - %s' % vals[7],
+                    level='11th Grade - %s' % strand,
                     group='k12',
                     section='-',
                     student_id='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
@@ -1397,7 +1401,7 @@ def fetch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='11th Grade - %s' % vals[7],
+                    level='11th Grade - %s' % strand,
                     student_id='',
                     group='k12',
                     section='-',
@@ -1415,7 +1419,7 @@ def fetch_records():
                     id_no=str(int(vals[0])).replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
-                    level='11th Grade - %s' % vals[7],
+                    level='11th Grade - %s' % strand,
                     group='k12',
                     section='-',
                     student_id='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
@@ -1431,7 +1435,7 @@ def fetch_records():
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
-                level='11th Grade - %s' % vals[7],
+                level='11th Grade - %s' % strand,
                 group='k12',
                 section='-',
                 student_id='',
@@ -1482,6 +1486,10 @@ def fetch_records():
             parent_id = guardian.id
 
         if vals[3] != None:
+            if vals[7] == 'ICT':
+                strand = 'STEM'
+            else:
+                strand = vals[7]
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
@@ -1489,7 +1497,7 @@ def fetch_records():
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='12th Grade - %s' % vals[7],
+                    level='12th Grade - %s' % strand,
                     group='k12',
                     section='-',
                     absences=0,
@@ -1507,7 +1515,7 @@ def fetch_records():
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
                     student_id='',
                     middle_name=vals[3].strip().title().replace('.','').replace(',',''),
-                    level='12th Grade - %s' % vals[7],
+                    level='12th Grade - %s' % strand,
                     group='k12',
                     section='-',
                     absences=0,
@@ -1524,7 +1532,7 @@ def fetch_records():
                     id_no=str(int(vals[0])).replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
-                    level='12th Grade - %s' % vals[7],
+                    level='12th Grade - %s' % strand,
                     group='k12',
                     student_id='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     section='-',
@@ -1541,7 +1549,7 @@ def fetch_records():
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
                 student_id='',
-                level='12th Grade - %s' % vals[7],
+                level='12th Grade - %s' % strand,
                 group='k12',
                 section='-',
                 absences=0,
