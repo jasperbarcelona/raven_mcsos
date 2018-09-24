@@ -4384,7 +4384,7 @@ def rebuild_database():
     admin = AdminUser(
         school_no = 'sgb-lc2017',
         email = 'hello@pisara.tech',
-        password = 'ratmaxi8',
+        password = 'leonguinto',
         name = 'Super User',
         status = 'Active',
         students_access = 'View, Edit, and Delete',
@@ -4405,10 +4405,10 @@ def rebuild_database():
     school = School(
         school_no='sgb-lc2017',
         api_key='ecc67d28db284a2fb351d58fe18965f9',
-        name="Yobhel Christian Academy, Inc.",
-        address="Pili, Camarines Sur",
-        city="Pili",
-        email="yobhelchristianacademy@gmail.com",
+        name="Leon Guinto Memorial College",
+        address="Atimonan, Quezon",
+        city="Atimonan",
+        email="lgmc@gmail.com",
         contact="(042) 316-5471"
         )
 
