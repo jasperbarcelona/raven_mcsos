@@ -902,9 +902,11 @@ def fetch_batch_records():
 @app.route('/records/clear', methods=['GET', 'POST'])
 def clear_records():
     db.session.query(K12).delete()
+    db.session.query(Parent).delete()
     db.session.commit()
     student_count = K12.query.count()
-    return jsonify(students=student_count)
+    parent_count = Parent.query.count()
+    return jsonify(students=student_count,parents=parent_count)
 
 
 @app.route('/records/fetch', methods=['GET', 'POST'])
@@ -935,7 +937,7 @@ def fetch_records():
         if str(vals[6])[:2] == '09':
             contact_number = str(vals[6])
         else:
-            contact_number = ''
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
