@@ -876,7 +876,7 @@ def fetch_batch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',','')
+                    parent_contact=contact_number
                     )
             else:
                 new_record = K12(
@@ -890,7 +890,7 @@ def fetch_batch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',','')
+                parent_contact=contact_number
                 )
         db.session.add(new_record)
         db.session.commit()
@@ -992,7 +992,7 @@ def fetch_records():
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
-                    id_no=str(int(vals[0])).replace('.','').replace(',',''),
+                    id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
                     student_id='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
@@ -1003,7 +1003,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                    parent_contact=contact_number,
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
@@ -1019,7 +1019,7 @@ def fetch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
         db.session.add(new_record)
@@ -1104,7 +1104,7 @@ def fetch_records():
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
-                    id_no=str(int(vals[0])).replace('.','').replace(',',''),
+                    id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
                     level='8th Grade',
@@ -1115,7 +1115,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                    parent_contact=contact_number,
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
@@ -1131,7 +1131,7 @@ def fetch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
         db.session.add(new_record)
@@ -1217,7 +1217,7 @@ def fetch_records():
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
-                    id_no=str(int(vals[0])).replace('.','').replace(',',''),
+                    id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
                     level='9th Grade',
@@ -1228,7 +1228,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                    parent_contact=contact_number,
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
@@ -1244,7 +1244,7 @@ def fetch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
         db.session.add(new_record)
@@ -1330,7 +1330,7 @@ def fetch_records():
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
-                    id_no=str(int(vals[0])).replace('.','').replace(',',''),
+                    id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
                     level='10th Grade',
@@ -1341,7 +1341,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                    parent_contact=contact_number,
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
@@ -1357,7 +1357,7 @@ def fetch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
         db.session.add(new_record)
@@ -1447,7 +1447,7 @@ def fetch_records():
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
-                    id_no=str(int(vals[0])).replace('.','').replace(',',''),
+                    id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
                     level='11th Grade - %s' % strand,
@@ -1458,7 +1458,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                    parent_contact=contact_number,
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
@@ -1474,7 +1474,7 @@ def fetch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
         db.session.add(new_record)
@@ -1564,7 +1564,7 @@ def fetch_records():
             if vals[0]:
                 new_record = K12(
                     school_no=session['school_no'],
-                    id_no=str(int(vals[0])).replace('.','').replace(',',''),
+                    id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
                     last_name=vals[1].title().replace('.','').replace(',',''),
                     level='12th Grade - %s' % strand,
@@ -1575,7 +1575,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                    parent_contact=contact_number,
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
@@ -1591,7 +1591,7 @@ def fetch_records():
                 lates=0,
                 parent_id=parent_id,
                 parent_relation='Unknown',
-                parent_contact=str(vals[6]).replace('.','').replace(',',''),
+                parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
         db.session.add(new_record)
