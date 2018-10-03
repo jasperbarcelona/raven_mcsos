@@ -808,7 +808,7 @@ def fetch_batch_records():
         if str(vals[6])[:2] == '09':
             contact_number = str(vals[6])
         else:
-            contact_number = ''
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
