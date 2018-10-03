@@ -806,7 +806,7 @@ def fetch_batch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
@@ -935,7 +935,7 @@ def fetch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
@@ -1047,7 +1047,7 @@ def fetch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
@@ -1160,7 +1160,7 @@ def fetch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(str(vals[6])).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
@@ -1273,7 +1273,7 @@ def fetch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
@@ -1386,7 +1386,7 @@ def fetch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
@@ -1503,7 +1503,7 @@ def fetch_records():
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
         if str(vals[6])[:2] == '09':
-            contact_number = str(vals[6])
+            contact_number = str(vals[6]).replace('-','')
         else:
             contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
