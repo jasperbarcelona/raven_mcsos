@@ -1049,7 +1049,7 @@ def fetch_records():
         if str(vals[6])[:2] == '09':
             contact_number = str(vals[6])
         else:
-            contact_number = ''
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
@@ -1159,6 +1159,10 @@ def fetch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(str(vals[6])).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
@@ -1271,7 +1275,7 @@ def fetch_records():
         if str(vals[6])[:2] == '09':
             contact_number = str(vals[6])
         else:
-            contact_number = ''
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
@@ -1384,7 +1388,7 @@ def fetch_records():
         if str(vals[6])[:2] == '09':
             contact_number = str(vals[6])
         else:
-            contact_number = ''
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
@@ -1501,7 +1505,7 @@ def fetch_records():
         if str(vals[6])[:2] == '09':
             contact_number = str(vals[6])
         else:
-            contact_number = ''
+            contact_number = 'None'
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
