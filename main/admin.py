@@ -805,15 +805,19 @@ def fetch_batch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = ''
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
             guardian = Parent(
                 school_no = session['school_no'],
-                mobile_number = str(vals[6]).strip(),
-                name = vals[5].strip().title(),
+                mobile_number = contact_number,
+                name = vals[5],
                 email = 'n/a',
-                address = vals[4].strip().title()
+                address = vals[4]
                 )
             db.session.add(guardian)
             db.session.commit()
@@ -840,7 +844,7 @@ def fetch_batch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip()
+                    parent_contact=contact_number
                     )
             else:
                 new_record = K12(
@@ -855,7 +859,7 @@ def fetch_batch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip()
+                    parent_contact=contact_number
                     )
         else:
             if vals[0]:
@@ -895,11 +899,16 @@ def fetch_batch_records():
     return jsonify(status='success',total_students=total_students),201
 
 
+@app.route('/records/clear', methods=['GET', 'POST'])
+def clear_records():
+    db.session.query(K12).delete()
+    db.session.commit()
+    student_count = K12.query.count()
+    return jsonify(students=student_count)
+
+
 @app.route('/records/fetch', methods=['GET', 'POST'])
 def fetch_records():
-    K12.query.delete()
-    db.session.commit()
-
     path = 'static/records/Grade7.xlsx'
     cols = 9
 
@@ -923,12 +932,16 @@ def fetch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = ''
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
             guardian = Parent(
                 school_no = session['school_no'],
-                mobile_number = str(vals[6]).strip(),
+                mobile_number = contact_number,
                 name = vals[5].strip().title(),
                 email = 'n/a',
                 address = vals[4].strip().title()
@@ -953,7 +966,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
@@ -970,7 +983,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
         else:
@@ -1031,12 +1044,16 @@ def fetch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = ''
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
             guardian = Parent(
                 school_no = session['school_no'],
-                mobile_number = str(vals[6]).strip(),
+                mobile_number = contact_number,
                 name = vals[5].strip().title(),
                 email = 'n/a',
                 address = vals[4].strip().title()
@@ -1061,7 +1078,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
@@ -1078,7 +1095,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
         else:
@@ -1170,7 +1187,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
@@ -1187,7 +1204,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
         else:
@@ -1249,12 +1266,16 @@ def fetch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = ''
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
             guardian = Parent(
                 school_no = session['school_no'],
-                mobile_number = str(vals[6]).strip(),
+                mobile_number = contact_number,
                 name = vals[5].strip().title(),
                 email = 'n/a',
                 address = vals[4].strip().title()
@@ -1279,7 +1300,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
@@ -1296,7 +1317,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
         else:
@@ -1358,12 +1379,16 @@ def fetch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = ''
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
             guardian = Parent(
                 school_no = session['school_no'],
-                mobile_number = str(vals[6]).strip(),
+                mobile_number = contact_number,
                 name = vals[5].strip().title(),
                 email = 'n/a',
                 address = vals[4].strip().title()
@@ -1392,7 +1417,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
@@ -1409,7 +1434,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
         else:
@@ -1471,12 +1496,16 @@ def fetch_records():
                 vals.append(cell.value)
 
         guardian = Parent.query.filter_by(mobile_number=str(vals[6]).strip()).first()
+        if str(vals[6])[:2] == '09':
+            contact_number = str(vals[6])
+        else:
+            contact_number = ''
         if guardian != None and guardian.mobile_number != school.contact:
             parent_id = guardian.id
         else:
             guardian = Parent(
                 school_no = session['school_no'],
-                mobile_number = str(vals[6]).strip(),
+                mobile_number = contact_number,
                 name = vals[5].strip().title(),
                 email = 'n/a',
                 address = vals[4].strip().title()
@@ -1505,7 +1534,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
@@ -1522,7 +1551,7 @@ def fetch_records():
                     lates=0,
                     parent_id=parent_id,
                     parent_relation='Unknown',
-                    parent_contact=str(vals[6]).strip(),
+                    parent_contact=contact_number,
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
         else:
