@@ -893,16 +893,19 @@ def fetch_batch_records():
                 parent_contact=contact_number
                 )
         db.session.add(new_record)
-        db.session.commit()
         total_students += 1
-
+    db.session.commit()
     return jsonify(status='success',total_students=total_students),201
 
 
 @app.route('/records/clear', methods=['GET', 'POST'])
 def clear_records():
-    db.session.query(K12).delete()
-    db.session.query(Parent).delete()
+    students = K12.query.all()
+    parents = Parent.query.all()
+    for student in students:
+        db.session.delete(student)
+    for parent in parents:
+        db.session.delete(parent)
     db.session.commit()
     student_count = K12.query.count()
     parent_count = Parent.query.count()
@@ -949,12 +952,11 @@ def fetch_records():
                 address = vals[4].strip().title()
                 )
             db.session.add(guardian)
-            db.session.commit()
             parent_id = guardian.id
 
         if vals[3] != None:
             if vals[0]:
-                new_record = K12(
+                new_record_7 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
@@ -972,7 +974,7 @@ def fetch_records():
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_7 = K12(
                     school_no=session['school_no'],
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
@@ -990,7 +992,7 @@ def fetch_records():
                     )
         else:
             if vals[0]:
-                new_record = K12(
+                new_record_7 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
@@ -1007,7 +1009,7 @@ def fetch_records():
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_7 = K12(
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
@@ -1022,8 +1024,7 @@ def fetch_records():
                 parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
-        db.session.add(new_record)
-        db.session.commit()
+        db.session.add(new_record_7)
         total_students += 1
 
     path = 'static/records/Grade8.xlsx'
@@ -1061,12 +1062,11 @@ def fetch_records():
                 address = vals[4].strip().title()
                 )
             db.session.add(guardian)
-            db.session.commit()
             parent_id = guardian.id
 
         if vals[3] != None:
             if vals[0]:
-                new_record = K12(
+                new_record_8 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
@@ -1084,7 +1084,7 @@ def fetch_records():
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_8 = K12(
                     school_no=session['school_no'],
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
@@ -1102,7 +1102,7 @@ def fetch_records():
                     )
         else:
             if vals[0]:
-                new_record = K12(
+                new_record_8 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
@@ -1119,7 +1119,7 @@ def fetch_records():
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_8 = K12(
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
@@ -1134,8 +1134,7 @@ def fetch_records():
                 parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
-        db.session.add(new_record)
-        db.session.commit()
+        db.session.add(new_record_8)
         total_students += 1
 
     path = 'static/records/Grade9.xlsx'
@@ -1174,12 +1173,11 @@ def fetch_records():
                 address = vals[4].strip().title()
                 )
             db.session.add(guardian)
-            db.session.commit()
             parent_id = guardian.id
 
         if vals[3] != None:
             if vals[0]:
-                new_record = K12(
+                new_record_9 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
@@ -1197,7 +1195,7 @@ def fetch_records():
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_9 = K12(
                     school_no=session['school_no'],
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
@@ -1215,7 +1213,7 @@ def fetch_records():
                     )
         else:
             if vals[0]:
-                new_record = K12(
+                new_record_9 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
@@ -1232,7 +1230,7 @@ def fetch_records():
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_9 = K12(
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
@@ -1247,8 +1245,7 @@ def fetch_records():
                 parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
-        db.session.add(new_record)
-        db.session.commit()
+        db.session.add(new_record_9)
         total_students += 1
 
     path = 'static/records/Grade10.xlsx'
@@ -1287,12 +1284,11 @@ def fetch_records():
                 address = vals[4].strip().title()
                 )
             db.session.add(guardian)
-            db.session.commit()
             parent_id = guardian.id
 
         if vals[3] != None:
             if vals[0]:
-                new_record = K12(
+                new_record_10 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
@@ -1310,7 +1306,7 @@ def fetch_records():
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_10 = K12(
                     school_no=session['school_no'],
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
@@ -1328,7 +1324,7 @@ def fetch_records():
                     )
         else:
             if vals[0]:
-                new_record = K12(
+                new_record_10 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
@@ -1345,7 +1341,7 @@ def fetch_records():
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_10 = K12(
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
@@ -1360,8 +1356,7 @@ def fetch_records():
                 parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
-        db.session.add(new_record)
-        db.session.commit()
+        db.session.add(new_record_10)
         total_students += 1
 
     path = 'static/records/Grade11.xlsx'
@@ -1400,7 +1395,6 @@ def fetch_records():
                 address = vals[4].strip().title()
                 )
             db.session.add(guardian)
-            db.session.commit()
             parent_id = guardian.id
 
         if vals[3] != None:
@@ -1409,7 +1403,7 @@ def fetch_records():
             else:
                 strand = vals[7]
             if vals[0]:
-                new_record = K12(
+                new_record_11 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
@@ -1427,7 +1421,7 @@ def fetch_records():
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_11 = K12(
                     school_no=session['school_no'],
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
@@ -1445,7 +1439,7 @@ def fetch_records():
                     )
         else:
             if vals[0]:
-                new_record = K12(
+                new_record_11 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
@@ -1462,7 +1456,7 @@ def fetch_records():
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_11 = K12(
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
@@ -1477,8 +1471,7 @@ def fetch_records():
                 parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
-        db.session.add(new_record)
-        db.session.commit()
+        db.session.add(new_record_11)
         total_students += 1
 
     path = 'static/records/Grade12.xlsx'
@@ -1517,7 +1510,6 @@ def fetch_records():
                 address = vals[4].strip().title()
                 )
             db.session.add(guardian)
-            db.session.commit()
             parent_id = guardian.id
 
         if vals[3] != None:
@@ -1526,7 +1518,7 @@ def fetch_records():
             else:
                 strand = vals[7]
             if vals[0]:
-                new_record = K12(
+                new_record_12 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
@@ -1544,7 +1536,7 @@ def fetch_records():
                     added_by=vals[5].strip().title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_12 = K12(
                     school_no=session['school_no'],
                     first_name=vals[2].strip().title().replace('.','').replace(',',''),
                     last_name=vals[1].strip().title().replace('.','').replace(',',''),
@@ -1562,7 +1554,7 @@ def fetch_records():
                     )
         else:
             if vals[0]:
-                new_record = K12(
+                new_record_12 = K12(
                     school_no=session['school_no'],
                     id_no='000%s' % str(int(vals[0])).strip().replace('.','').replace(',',''),
                     first_name=vals[2].title().replace('.','').replace(',',''),
@@ -1579,7 +1571,7 @@ def fetch_records():
                     added_by=vals[5].title().replace('.','').replace(',',''),
                     )
             else:
-                new_record = K12(
+                new_record_12 = K12(
                 school_no=session['school_no'],
                 first_name=vals[2].title().replace('.','').replace(',',''),
                 last_name=vals[1].title().replace('.','').replace(',',''),
@@ -1594,9 +1586,9 @@ def fetch_records():
                 parent_contact=contact_number,
                 added_by=vals[5].title().replace('.','').replace(',',''),
                 )
-        db.session.add(new_record)
-        db.session.commit()
+        db.session.add(new_record_12)
         total_students += 1
+    db.session.commit()
     return jsonify(status='success',total_students=total_students),201
 
 
